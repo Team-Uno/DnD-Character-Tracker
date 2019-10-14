@@ -13,7 +13,7 @@
 - ### As a player, I want an icon that represents the class of my character for quick visual identification.
 - ### As a player, I want to see the impacts my selections have on my ability scores so that I can test certain selections out.
 - ### As a player, I want to add experience or character property descriptions as needed, so that I can track my character's progress per battle. 
-- ### As a player, I want to see on my character sheet; which selections are affecting an indvidual character property's values. 
+- ### As a player I want to see on my character sheet which selections are affecting an indvidual character's property values. 
 ## Dev Team
 - ### As a developer, I want to include the proper attributions to insulate myself from legal consequences.
 - ### As a developer, I want well written documentation so that I can expand my user base to those unfamiliar with this game or these concepts.
