@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel = ".css/charCreator" type="text/css" href="./css/reset.css">
+  <link rel = "stylesheet" type="text/css" href="./css/style.css">
+
+  <title>D&D Character Creator and Tracker</title>
 </head>
 
 <body>
@@ -20,5 +23,60 @@
     Name: <input type="text" name="fullname">
     <input type="submit" value="Submit">
   </form>
+
+  
+<label for="race-selector">Choose a race:</label>
+<select name="race" id="race-selector">
+  <option value="">--Please choose an option--</option>
+  <option value="Dwarf">Dwarf</option>
+  <option value="Elf">Elf</option>
+  <option value="Halfling">Halfling</option>
+  <option value="Human">Human</option>
+  <option value="Dragonborn">Dragonborn</option>
+  <option value="Gnome">Gnome</option>
+  <option value="Half-Elf">Half-Elf</option>
+  <option value="Half-Orc">Half-Orc</option>
+  <option value="Tiefling">Tiefling</option>
+</select>
+
+<label for="class-selector">Choose a class:</label>
+<select name="class" id="class-selector">
+  <option value="">--Please choose an option--</option>
+  <option value="Fighter">Fighter</option>
+  <option value="Wizard">Wizard</option>
+  <option value="Rogue">Rogue</option>
+  <option value="Ranger">Ranger</option>
+</select>
+
+<label for="skills-selector">Choose two skills:</label>
+<select name="skills" id="skills-selector">
+  <option value="">--Please choose an option--</option>
+  <option value="input skill">input skill</option>
+  <option value="input skill">input skill</option>
+  <option value="input skill">inputskill</option>
+</select>
+
+<label for="abilities-selector">Choose three skills:</label>
+<select name="abilities" id="abilities-selector">
+  <option value="">--Please choose an option--</option>
+  <option value="input ability">input ability</option>
+  <option value="input ability">input ability</option>
+  <option value="input ability">input ability</option>
+</select>
+
+<label for="alignment-selector">Choose an alignment:</label>
+<select name="alignment" id="alignment-selector">
+  <option value="">--Please choose an option--</option>
+  <option value="Lawful Good">Lawful Good</option>
+  <option value="Neutral Good">Neutral Good</option>
+  <option value="Chaotic Good">Chaotic Good</option>
+  <option value="Lawful Neutral">Lawful Neutral</option>
+  <option value="Neutral">Neutral</option>
+  <option value="Chaotic Neutral">Chaotic Neutral</option>
+  <option value="Lawful Evil">Lawful Evil</option>
+  <option value="Neutral Evil">Neutral Evil</option>
+  <option value="Chaotic Evil">Chaotic Evil</option>
+</select>
+
 </body>
 </html>
