@@ -319,6 +319,16 @@ var rangerClass = new CharacterClass(
   rangerAbilities.spells
 );
 
-
+var rougeClass = new CharacterClass(
+  'rouge',
+  8,
+  5,
+  ['dex', 'int'],
+  ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'],
+  rougeAbilities,
+  [2, 3, 4 ,5, 6],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  []
+);
 
 
