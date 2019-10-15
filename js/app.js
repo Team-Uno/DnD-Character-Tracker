@@ -293,18 +293,32 @@ var wizardAbilities = {
       'master transmuter'
     ],
   },
-},
+};
 
 var fighterClass = new CharacterClass(
   'fighter',
   10,
   6,
-  ['strength', 'constitution'],
+  ['str', 'con'],
   ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
   fighterAbilities,
   [2, 3, 4, 5, 6],
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   []
 );
+
+var rangerClass = new CharacterClass(
+  'ranger',
+  10,
+  6,
+  ['str', 'dex'],
+  ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'],
+  rangerAbilities,
+  [2, 3, 4, 5, 6],
+  [0, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
+  rangerAbilities.spells
+);
+
+
 
 
