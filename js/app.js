@@ -18,7 +18,7 @@ var Character = function(name, level, xp, hitPoints, skills, abilities, alignmen
   this.characterClass = characterClass;
 };
 
-var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells) {
+var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
   this.name = name;
   this.hitPoints = hitPoints;
   this.hitDice = hitDice;
@@ -28,6 +28,8 @@ var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abili
   this.proficiency = proficiency;
   this.spellsKnown = spellsKnown;
   this.spells = spells;
+  this.cantripsKnown = cantripsKnown;
+  this.cantrips = cantrips;
 };
 
 var fighterAbilities = {
