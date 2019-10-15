@@ -10,7 +10,60 @@ var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abili
   this.spells = spells;
 };
 
-
+var fighterAbilities = {
+  fightingStyle: [
+    'archery',
+    'defense',
+    'dueling',
+    'great weapon fighting',
+    'protection',
+    'two weapon fighting'
+  ],
+  generalAbilities: [
+    'second wind',
+    'action surge',
+    'extra attack',
+    'indomitable'
+  ],
+  martialArchetype: {
+    champion: {
+      skills:[
+        ['improved critical'],
+        ['remarkable athlete'],
+        ['additional fighting style'],
+        ['superior critical'],
+        ['survivor']
+      ],
+    },
+    battleMaster: {
+      manuevers: [
+        'commander\'s strike',
+        'disarming attack',
+        'distracting strike',
+        'evasive footwork',
+        'feinting attack',
+        'goading attack',
+        'lunging attack',
+        'maneuvering attack',
+        'menacing attack',
+        'parry',
+        'precision attack',
+        'pushing attack',
+        'rally',
+        'riposte',
+        'sweeping attack',
+        'trip attack'
+      ],
+      skills: [
+        ['combat superiority'],
+        ['know your enemy'],
+        ['improved combat superiority'],
+        ['relentless'],
+        ['advanced combat superiority'],
+      ],
+    },
+  },
+};
 
 
 
