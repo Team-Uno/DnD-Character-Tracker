@@ -4,125 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel = ".css/charCreator" type="text/css" href="./css/reset.css">
+  <link rel = ".css/charCreator" type="text/css" href="./css/reset.css" href=".js/app.js">
   <link rel = "stylesheet" type="text/css" href="./css/style.css">
 
   <title>D&D Character Creator and Tracker</title>
 </head>
 
 <body>
-  <header>Navigation Bar or Logo</header>
+  <!-- Add logo -->
+  <header>
+    <nav>
+        <a id="currentPage">Character Creator</a>
+        <a href="./pages/selectCharacter.html">Select Characters</a>
+        <a href="./pages/aboutUs.html">About Us</a>
+    </nav>
+  </header>
+  <main>
+    <form id="characterCreatorForm">
+        <label for="fullName"> Name: </label>
+        <input type="text" name="fullname" id="fullName">
 
-  <div id="nav">
-     <ul>Character Creator</ul>
-     <ul>Select Characters</ul>
-     <ul>About Us</ul>
-  </div>
-  
-  <form action="/action_page.php">
-    Name: <input type="text" name="fullname">
-    <input type="submit" value="Submit">
-  </form>
+      <div id="raceDiv">
+        <label for="raceSelector">Choose a race: </label>
+        <select name="race" id="raceSelector">
+          <option value="">--Please choose an option--</option>
+          <option value="Dwarf">Dwarf</option>
+          <option value="Elf">Elf</option>
+          <option value="Halfling">Halfling</option>
+          <option value="Human">Human</option>
+          <option value="Dragonborn">Dragonborn</option>
+          <option value="Gnome">Gnome</option>
+          <option value="Half-Elf">Half-Elf</option>
+          <option value="Half-Orc">Half-Orc</option>
+          <option value="Tiefling">Tiefling</option>
+        </select>
+      </div>
 
-<div>
-<label for="race-selector">Choose a race:</label>
-<select name="race" id="race-selector">
-  <option value="">--Please choose an option--</option>
-  <option value="Dwarf">Dwarf</option>
-  <option value="Elf">Elf</option>
-  <option value="Halfling">Halfling</option>
-  <option value="Human">Human</option>
-  <option value="Dragonborn">Dragonborn</option>
-  <option value="Gnome">Gnome</option>
-  <option value="Half-Elf">Half-Elf</option>
-  <option value="Half-Orc">Half-Orc</option>
-  <option value="Tiefling">Tiefling</option>
-</select>
-</div>
+      <div id="classDiv">
+          <label for="classSelector">Choose a class: </label>
+          <select name="class" id="classSelector">
+            <option value="">--Please choose an option--</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Rogue">Rogue</option>
+            <option value="Ranger">Ranger</option>
+          </select>
+      </div>
 
-<div>
-<label for="class-selector">Choose a class:</label>
-<select name="class" id="class-selector">
-  <option value="">--Please choose an option--</option>
-  <option value="Fighter">Fighter</option>
-  <option value="Wizard">Wizard</option>
-  <option value="Rogue">Rogue</option>
-  <option value="Ranger">Ranger</option>
-</select>
-</div>
+      <div id="skillsDiv">
+        <label for="skillsSelector">Choose two skills:</label>
+          <select name="skills" id="skillsSelector">
+            <option value="">--Please choose an option--</option>
+            <option value="input skill">input skill</option>
+            <option value="input skill">input skill</option>
+            <option value="input skill">inputskill</option>
+          </select>
+      </div>
 
-<div>
-<label for="skills-selector">Choose two skills:</label>
-<select name="skills" id="skills-selector">
-  <option value="">--Please choose an option--</option>
-  <option value="input skill">input skill</option>
-  <option value="input skill">input skill</option>
-  <option value="input skill">inputskill</option>
-</select>
-</div>
-<div>
-<label for="abilities-selector">Choose three skills:</label>
-<select name="abilities" id="abilities-selector">
-  <option value="">--Please choose an option--</option>
-  <option value="input ability">input ability</option>
-  <option value="input ability">input ability</option>
-  <option value="input ability">input ability</option>
-</select>
-</div>
+      <div id="abilitiesDiv">
+        <label for="abilitiesSelector">Choose three skills:</label>
+        <select name="abilities" id="abilitiesSelector">
+          <option value="">--Please choose an option--</option>
+          <option value="input ability">input ability</option>
+          <option value="input ability">input ability</option>
+          <option value="input ability">input ability</option>
+        </select>
+      </div>
 
-<div>
-<label for="alignment-selector">Choose an alignment:</label>
-<select name="alignment" id="alignment-selector">
-  <option value="">--Please choose an option--</option>
-  <option value="Lawful Good">Lawful Good</option>
-  <option value="Neutral Good">Neutral Good</option>
-  <option value="Chaotic Good">Chaotic Good</option>
-  <option value="Lawful Neutral">Lawful Neutral</option>
-  <option value="Neutral">Neutral</option>
-  <option value="Chaotic Neutral">Chaotic Neutral</option>
-  <option value="Lawful Evil">Lawful Evil</option>
-  <option value="Neutral Evil">Neutral Evil</option>
-  <option value="Chaotic Evil">Chaotic Evil</option>
-</select>
-</div>
-<p><b>Ability Scores</b></Ability></p>
+      <div id="alignmentDiv">
+        <label for="alignmentSelector">Choose an alignment:</label>
+        <select name="alignment" id="alignmentSelector">
+          <option value="">--Please choose an option--</option>
+          <option value="Lawful Good">Lawful Good</option>
+          <option value="Neutral Good">Neutral Good</option>
+          <option value="Chaotic Good">Chaotic Good</option>
+          <option value="Lawful Neutral">Lawful Neutral</option>
+          <option value="Neutral">Neutral</option>
+          <option value="Chaotic Neutral">Chaotic Neutral</option>
+          <option value="Lawful Evil">Lawful Evil</option>
+          <option value="Neutral Evil">Neutral Evil</option>
+          <option value="Chaotic Evil">Chaotic Evil</option>
+        </select>
+      </div>
+      <fieldset form="characterCreatorForm" name="Ability Scores">
+        <caption>Ability Scores</caption>
+        <div id="abilityScoreDiv">
+          <label for="strengthNumber">Strength</label> 
+          <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-<p><b>Strength</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
+          <label for="dexterityNumber">Dexterity</label> 
+          <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-<p><b>Dexterity</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
+          <label for="constitutionNumber">Constitution</label> 
+          <input type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-<p><b>Constitution</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
+          <label for="intelligenceNumber">Intelligence</label> 
+          <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-<p><b>Intelligence</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
+          <label for="wisdomNumber">Wisdom</label> 
+          <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-<p><b>Wisdom</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
-
-<p><b>Charisma</b></p>
-<form action="/action_page.php">
-  Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-  <input type="submit">
-</form>
-
-
+          <label for="charismaNumber">Charisma</label> 
+          <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+        </div>
+      </fieldset>
+      <label for="background">Background Information: </label>
+      <input type="text" name="background" id="background">
+      <input type="submit" value="Save This Character!">
+    </form>
+  </main>
 </body>
 </html>
