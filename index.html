@@ -42,21 +42,29 @@
       </div>
 
       <div id="skillsDiv">
-        <label for="skillsSelect">Choose two skills:</label>
-          <select name="skills" id="skillsSelect">
+          <label for="skillsSelectFirst">Choose two skills:</label>
+          <select name="skillsSelectFirst" id="skillsSelectFirst">
             <option value="">--Please choose an option--</option>
             <option value="input skill">input skill</option>
+          </select>
+
+          <label for="skillsSelectSecond">Choose two skills:</label>
+          <select name="skillsSelectSecond" id="skillsSelectSecond" disabled="true">
+            <option value="">--Please choose your first skill--</option>
             <option value="input skill">input skill</option>
-            <option value="input skill">inputskill</option>
           </select>
       </div>
 
       <div id="abilitiesDiv">
-        <label for="abilitiesSelect">Choose three skills:</label>
-        <select name="abilities" id="abilitiesSelect">
+        <label for="abilitiesSelectFirst">Choose your first ability:</label>
+        <select name="abilitiesSelectFirst" id="abilitiesSelectFirst">
           <option value="">--Please choose an option--</option>
           <option value="input ability">input ability</option>
-          <option value="input ability">input ability</option>
+        </select>
+
+        <label for="abilitiesSelectSecond">Choose your second ability:</label>
+        <select name="abilitiesSelectSecond" id="abilitiesSelectSecond" disabled="true">
+          <option value="">--Please choose your first ability--</option>
           <option value="input ability">input ability</option>
         </select>
       </div>
