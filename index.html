@@ -15,18 +15,18 @@
   <header>
     <nav>
         <a id="currentPage">Character Creator</a>
-        <a href="selectCharacter.html">Select Characters</a>
-        <a href="./pages/aboutUs.html">"About Us</a>
+        <a href="./pages/selectCharacter.html">Select Characters</a>
+        <a href="./pages/aboutUs.html">About Us</a>
     </nav>
   </header>
   <main>
-    <form>
+    <form id="characterCreatorForm">
         <label for="fullName"> Name: </label>
         <input type="text" name="fullname" id="fullName">
 
       <div id="raceDiv">
-        <label for="race-selector">Choose a race: </label>
-        <select name="race" id="race-selector">
+        <label for="raceSelector">Choose a race: </label>
+        <select name="race" id="raceSelector">
           <option value="">--Please choose an option--</option>
           <option value="Dwarf">Dwarf</option>
           <option value="Elf">Elf</option>
@@ -41,7 +41,7 @@
       </div>
 
       <div id="classDiv">
-          <label for="class-selector">Choose a class: </label>
+          <label for="classSelector">Choose a class: </label>
           <select name="class" id="classSelector">
             <option value="">--Please choose an option--</option>
             <option value="Fighter">Fighter</option>
@@ -52,8 +52,8 @@
       </div>
 
       <div id="skillsDiv">
-        <label for="skills-selector">Choose two skills:</label>
-          <select name="skills" id="skills-selector">
+        <label for="skillsSelector">Choose two skills:</label>
+          <select name="skills" id="skillsSelector">
             <option value="">--Please choose an option--</option>
             <option value="input skill">input skill</option>
             <option value="input skill">input skill</option>
@@ -62,8 +62,8 @@
       </div>
 
       <div id="abilitiesDiv">
-        <label for="abilities-selector">Choose three skills:</label>
-        <select name="abilities" id="abilities-selector">
+        <label for="abilitiesSelector">Choose three skills:</label>
+        <select name="abilities" id="abilitiesSelector">
           <option value="">--Please choose an option--</option>
           <option value="input ability">input ability</option>
           <option value="input ability">input ability</option>
@@ -72,8 +72,8 @@
       </div>
 
       <div id="alignmentDiv">
-        <label for="alignment-selector">Choose an alignment:</label>
-        <select name="alignment" id="alignment-selector">
+        <label for="alignmentSelector">Choose an alignment:</label>
+        <select name="alignment" id="alignmentSelector">
           <option value="">--Please choose an option--</option>
           <option value="Lawful Good">Lawful Good</option>
           <option value="Neutral Good">Neutral Good</option>
@@ -86,25 +86,28 @@
           <option value="Chaotic Evil">Chaotic Evil</option>
         </select>
       </div>
-      <p><b>Ability Scores</b></p>
+      <fieldset form="characterCreatorForm" name="Ability Scores">
+        <caption>Ability Scores</caption>
+        <div id="abilityScoreDiv">
+          <label for="strengthNumber">Strength</label> 
+          <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-      <p><b>Strength</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
+          <label for="dexterityNumber">Dexterity</label> 
+          <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-      <p><b>Dexterity</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
+          <label for="constitutionNumber">Constitution</label> 
+          <input type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-      <p><b>Constitution</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
+          <label for="intelligenceNumber">Intelligence</label> 
+          <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-      <p><b>Intelligence</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
+          <label for="wisdomNumber">Wisdom</label> 
+          <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
 
-      <p><b>Wisdom</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-
-      <p><b>Charisma</b></p>
-      Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
+          <label for="charismaNumber">Charisma</label> 
+          <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+        </div>
+      </fieldset>
       <input type="submit" value="Save This Character!">
     </form>
   </main>
