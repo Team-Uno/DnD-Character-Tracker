@@ -12,7 +12,7 @@ var Race = function(name, raceAbilities, raceBonus, raceSpeed){
   this.raceSpeed = raceSpeed;
   raceArray.push(this);
 };
-
+// Make Objects
 //empty array is for possible raceAbilities
 var dwarf = new Race('Dwarf',[],['cons',2],25);
 var elf = new Race('Elf',[],['dex',2],'30'); //int +1

@@ -75,6 +75,17 @@ var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abili
   characterClassArray.push(this);
 };
 
-var fighterClass = new CharacterClass('fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
-console.log(fighterClass);
-console.log(characterClassArray);
+function populateCharacterClassSelect(){
+  for (var i = 0; i < characterClassArray.length; i++){
+    var newCharacterClassNode = document.createElement('option');
+    newCharacterClassNode.value = characterClassArray[i].name;
+    newCharacterClassNode.innerText = characterClassArray[i].name;
+    targetCharacterClassForm.appendChild(newCharacterClassNode);
+  }
+}
+
+// Make Objects
+var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
+
+// Run Functions
+populateCharacterClassSelect();
