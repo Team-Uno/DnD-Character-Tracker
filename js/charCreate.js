@@ -58,6 +58,7 @@ var fighterAbilities = {
 var alignments = ['Lawful Good','Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
 // Global Variables
 var characterClassArray = [];
+var characterArray = [];
 var selectedCharacterClass = null;
 var selectedFirstSkill = null;
 // Dom Variables
@@ -68,6 +69,7 @@ var targetAbilitySelectElement = document.getElementById('abilitiesSelectFirst')
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var abilitiesDefault = document.getElementById('abilitiesDefault');
+var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
   this.name = name;
@@ -101,6 +103,7 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
   this.cha = cha;
   this.background = background;
   this.characterClass = characterClass;
+  characterArray.push(this);
 };
 
 //Dom Functions
@@ -181,11 +184,12 @@ function skillSelectFirstListener(event){
   populateSkillsSelectSecond();
 }
 
-// function submitListener(event){
-//   event.preventDefault();
-//   console.log(document.forms.characterCreatorForm.elements.fullName.value);
-//   new Character(document.forms.characterCreatorForm.elements.fullName.value, 0, 0, )
-// }
+function submitListener(event){
+  event.preventDefault();
+  console.log(document.forms.characterCreatorForm.elements.fullName.value);
+  new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name);
+  console.log(characterArray);
+}
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
@@ -194,4 +198,4 @@ populateCharacterClassSelect();
 populateAlignmentSelect();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
-// targetSubmitButtonElement.addEventListener('click', submitListener);
+targetSubmitButtonElement.addEventListener('click', submitListener);
