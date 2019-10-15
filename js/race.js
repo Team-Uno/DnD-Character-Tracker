@@ -1,7 +1,6 @@
 'use strict';
 //Global Variables
 var targetRaceForm = document.getElementById('raceSelector');
-var newRaceNode = document.createElement('option');
 //Object and Array Associated Variables
 var raceArray = [];
 
@@ -14,7 +13,7 @@ var Race = function(name, raceAbilities, raceBonus, raceSpeed){
   raceArray.push(this);
 };
 
-// //empty array is for possible raceAbilities
+//empty array is for possible raceAbilities
 var dwarf = new Race('Dwarf',[],['cons',2],25);
 var elf = new Race('Elf',[],['dex',2],'30'); //int +1
 var halfling = new Race('Halfling',[],['dex',2],25);
@@ -25,3 +24,14 @@ var halfElf = new Race('Half Elf',[],['char',2],30); //two other ability points 
 var halfOrc = new Race('Half Orc',[],['cons',1],30);
 var tiefling = new Race('Tiefling',[],['char',2],30);
 console.log(raceArray);
+
+function populateRaceSelect (){
+  for (var i = 0; i < raceArray.length; i++){
+    var newRaceNode = document.createElement('option');
+    newRaceNode.value = raceArray[i].name;
+    newRaceNode.innerText = raceArray[i].name;
+    targetRaceForm.appendChild(newRaceNode);
+  }
+}
+// Run Functions
+populateRaceSelect();
