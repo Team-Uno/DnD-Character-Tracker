@@ -58,6 +58,8 @@ var fighterAbilities = {
 // Global Variables
 var characterClassArray = [];
 var targetCharacterClassForm = document.getElementById('classSelect');
+var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
+var selectedCharacterClass = null;
 
 //Global Functions
 var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
@@ -84,29 +86,40 @@ function populateCharacterClassSelect(){
   }
 }
 
-function populateInitialSkillSelectFirst{
+function populateSkillSelectFirst(){
   for (var i = 0; i < characterClassArray.length; i++){
-    var newCharacterClassNode = document.createElement('option');
-    newCharacterClassNode.value = characterClassArray[i].name;
-    newCharacterClassNode.innerText = characterClassArray[i].name;
-    targetCharacterClassForm.appendChild(newCharacterClassNode);
+    if(characterClassArray[i].name === selectedCharacterClass){
+      for(var j = 0; j < characterClassArray[i].skills.length; j++){
+        var newSkillSelectNode = document.createElement('option');
+        newSkillSelectNode.value = characterClassArray[i].skills[j];
+        newSkillSelectNode.innerText = characterClassArray[i].skills[j];
+        targetFirstSkillSelectElement.appendChild(newSkillSelectNode);
+      }
+    }
   }
 }
 
-function populateAbilitiesSelectFirst(){
-  for (var i = 0; i < characterClassArray.length; i++){
-    var newCharacterClassNode = document.createElement('option');
-    newCharacterClassNode.value = characterClassArray[i].name;
-    newCharacterClassNode.innerText = characterClassArray[i].name;
-    targetCharacterClassForm.appendChild(newCharacterClassNode);
-  }
-}
+// function populateSkillsSelectSecond(){
+//   for (var i = 0; i < characterClassArray.length; i++){
+//     var newCharacterClassNode = document.createElement('option');
+//     newCharacterClassNode.value = characterClassArray[i].name;
+//     newCharacterClassNode.innerText = characterClassArray[i].name;
+//     targetCharacterClassForm.appendChild(newCharacterClassNode);
+//   }
+// }
+
 // Event Listeners
-function characterClassListener(){
-  
+function CharacterClassSelectListener(event){
+  selectedCharacterClass = event.target.value;
+  populateSkillSelectFirst();
 }
+
+// function skillSelectFirstListener(){
+
+// }
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
 // Run Functions
 populateCharacterClassSelect();
+targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
