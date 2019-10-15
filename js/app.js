@@ -85,6 +85,40 @@ var fighterAbilities = {
   },
 };
 
+var rougeAbilities = {
+  generalAbilities: [
+    'expertise',
+    'sneak attack',
+    'thieves\'s cant',
+    'cunning action',
+    'uncanny dodge',
+    'evasion',
+    'reliable talent',
+    'blind sense',
+    'slippery mind',
+    'elusive',
+    'stroke of luck'
+  ],
+  thief: {
+    skills: [
+      'fast hands',
+      'second-story work',
+      'supreme sneak',
+      'use magic device',
+      'thief\'s reflexes'
+    ],
+  assassin: {
+    skills: [
+      'bonus proficiencies',
+      'assassinate',
+      'infiltratoin expertise',
+      'imposter',
+      'death strike', 
+      ],
+    },
+  },
+},
+
 var fighterClass = new CharacterClass(
   'fighter',
   10,
