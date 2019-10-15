@@ -20,13 +20,13 @@
     </nav>
   </header>
   <main>
-    <form id="characterCreatorForm">
+    <form name="characterCreatorForm">
         <label for="fullName"> Name: </label>
-        <input type="text" name="fullname" id="fullName">
+        <input type="text" name="fullName" id="fullName">
 
       <div id="raceDiv">
         <label for="raceSelect">Choose a race: </label>
-        <select name="race" id="raceSelect">
+        <select name="raceSelect" id="raceSelect">
           <option value="">--Please choose an option--</option>
         </select>
       </div>
@@ -57,14 +57,7 @@
       <div id="abilitiesDiv">
         <label for="abilitiesSelectFirst">Choose your first ability:</label>
         <select name="abilitiesSelectFirst" id="abilitiesSelectFirst">
-          <option value="">--Please choose an option--</option>
-          <option value="input ability">input ability</option>
-        </select>
-
-        <label for="abilitiesSelectSecond">Choose your second ability:</label>
-        <select name="abilitiesSelectSecond" id="abilitiesSelectSecond" disabled="true">
-          <option value="">--Please choose your first ability--</option>
-          <option value="input ability">input ability</option>
+          <option value="" id="abilitiesDefault">--Please choose an option--</option>
         </select>
       </div>
 
@@ -72,15 +65,6 @@
         <label for="alignmentSelect">Choose an alignment:</label>
         <select name="alignment" id="alignmentSelect">
           <option value="">--Please choose an option--</option>
-          <option value="Lawful Good">Lawful Good</option>
-          <option value="Neutral Good">Neutral Good</option>
-          <option value="Chaotic Good">Chaotic Good</option>
-          <option value="Lawful Neutral">Lawful Neutral</option>
-          <option value="Neutral">Neutral</option>
-          <option value="Chaotic Neutral">Chaotic Neutral</option>
-          <option value="Lawful Evil">Lawful Evil</option>
-          <option value="Neutral Evil">Neutral Evil</option>
-          <option value="Chaotic Evil">Chaotic Evil</option>
         </select>
       </div>
       <fieldset form="characterCreatorForm" name="Ability Scores">
@@ -107,7 +91,7 @@
       </fieldset>
       <label for="background">Background Information: </label>
       <input type="text" name="background" id="background">
-      <input type="submit" value="Save This Character!">
+      <input type="submit" value="Save This Character!" id="submitButton">
     </form>
   </main>
 </body>
