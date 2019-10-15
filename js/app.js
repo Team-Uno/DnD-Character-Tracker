@@ -65,6 +65,16 @@ var fighterAbilities = {
   },
 };
 
-
+var fighterClass = new CharacterClass(
+  'fighter',
+  10,
+  6,
+  ['strength', 'constitution'],
+  ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
+  fighterAbilities,
+  [2, 3, 4, 5, 6],
+  0,
+  [],
+);
 
 
