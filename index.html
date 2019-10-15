@@ -21,11 +21,11 @@
   </header>
   <main>
     <form>
-        Name: <input type="text" name="fullname">
-        <input type="submit" value="Submit">
+        <label for="fullName"> Name: </label>
+        <input type="text" name="fullname" id="fullName">
 
-        <div>
-        <label for="race-selector">Choose a race:</label>
+      <div id="raceDiv">
+        <label for="race-selector">Choose a race: </label>
         <select name="race" id="race-selector">
           <option value="">--Please choose an option--</option>
           <option value="Dwarf">Dwarf</option>
@@ -40,9 +40,9 @@
         </select>
       </div>
 
-      <div>
-        <label for="class-selector">Choose a class:</label>
-          <select name="class" id="class-selector">
+      <div id="classDiv">
+          <label for="class-selector">Choose a class: </label>
+          <select name="class" id="classSelector">
             <option value="">--Please choose an option--</option>
             <option value="Fighter">Fighter</option>
             <option value="Wizard">Wizard</option>
@@ -51,7 +51,7 @@
           </select>
       </div>
 
-      <div>
+      <div id="skillsDiv">
         <label for="skills-selector">Choose two skills:</label>
           <select name="skills" id="skills-selector">
             <option value="">--Please choose an option--</option>
@@ -60,7 +60,8 @@
             <option value="input skill">inputskill</option>
           </select>
       </div>
-      <div>
+
+      <div id="abilitiesDiv">
         <label for="abilities-selector">Choose three skills:</label>
         <select name="abilities" id="abilities-selector">
           <option value="">--Please choose an option--</option>
@@ -70,7 +71,7 @@
         </select>
       </div>
 
-      <div>
+      <div id="alignmentDiv">
         <label for="alignment-selector">Choose an alignment:</label>
         <select name="alignment" id="alignment-selector">
           <option value="">--Please choose an option--</option>
@@ -89,23 +90,18 @@
 
       <p><b>Strength</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-      <input type="submit">
 
       <p><b>Dexterity</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-      <input type="submit">
 
       <p><b>Constitution</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-      <input type="submit">
 
       <p><b>Intelligence</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-      <input type="submit">
 
       <p><b>Wisdom</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
-      <input type="submit">
 
       <p><b>Charisma</b></p>
       Enter Number (between 1 and 10): <input type="number" name="number" min="1" max="10">
