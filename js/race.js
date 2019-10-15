@@ -1,6 +1,6 @@
 'use strict';
 //Global Variables
-var targetRaceForm = document.getElementById('raceSelector');
+var targetRaceForm = document.getElementById('raceSelect');
 //Object and Array Associated Variables
 var raceArray = [];
 
@@ -23,7 +23,6 @@ var Gnome = new Race('Gnome',[],['cons',1],25);
 var halfElf = new Race('Half Elf',[],['char',2],30); //two other ability points +1
 var halfOrc = new Race('Half Orc',[],['cons',1],30);
 var tiefling = new Race('Tiefling',[],['char',2],30);
-console.log(raceArray);
 
 function populateRaceSelect (){
   for (var i = 0; i < raceArray.length; i++){
