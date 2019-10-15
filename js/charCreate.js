@@ -66,11 +66,12 @@ var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
 var targetSecondSkillSelectElement = document.getElementById('skillSelectSecond');
 var targetAbilitySelectElement = document.getElementById('abilitiesSelectFirst');
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
+var targetSubmitButtonElement = document.getElementById('submitButton');
 var abilitiesDefault = document.getElementById('abilitiesDefault');
-//Global Functions
-var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
+//Constructor Functions
+var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
   this.name = name;
-  this.hitPoints = hitPoints;
+  this.startingHitPoints = startingHitPoints;
   this.hitDice = hitDice;
   this.saveThrow = saveThrow;
   this.skills = skills;
@@ -83,6 +84,26 @@ var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abili
   characterClassArray.push(this);
 };
 
+var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, str, dex, con, int, wis, cha, background, characterClass) {
+  this.name = name;
+  this.level = level;
+  this.xp = xp;
+  this.startingHitPoints = startingHitPoints;
+  this.skills = skills;
+  this.abilities = abilities;
+  this.alignment = alignment;
+  this.savingThrow = savingThrow;
+  this.str = str;
+  this.dex = dex;
+  this.con = con;
+  this.int = int;
+  this.wis = wis;
+  this.cha = cha;
+  this.background = background;
+  this.characterClass = characterClass;
+};
+
+//Dom Functions
 function populateCharacterClassSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
     var newCharacterClassNode = document.createElement('option');
@@ -149,10 +170,16 @@ function CharacterClassSelectListener(event){
   populateFighterAbilitiesSelectFirst();
 }
 
-function skillSelectFirstListener(){
+function skillSelectFirstListener(event){
   selectedFirstSkill = event.target.value;
   targetSecondSkillSelectElement.disabled = false;
   populateSkillsSelectSecond();
+}
+
+function submitListener(event){
+  event.preventDefault();
+  console.log(document.forms.characterCreatorForm.elements.fullName.value);
+  new Character(document.forms.characterCreatorForm.elements.fullName.value, 0, 0, )
 }
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
@@ -162,3 +189,4 @@ populateCharacterClassSelect();
 populateAlignmentSelect();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
+targetSubmitButtonElement.addEventListener('click', submitListener);
