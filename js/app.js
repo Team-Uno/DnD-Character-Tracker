@@ -116,7 +116,7 @@ var rougeAbilities = {
         'assassinate',
         'infiltratoin expertise',
         'imposter',
-        'death strike', 
+        'death strike'
       ],
     },
   },
@@ -189,7 +189,7 @@ var rangerAbilities = {
       'commune with nature',
       'conjure volley',
       'swift quiver',
-      'tree stride',
+      'tree stride'
     ],
   },
   fightingStyle: [
@@ -225,7 +225,7 @@ var rangerAbilities = {
         'ranger\'s companion',
         'exceptional training',
         'bestial fury',
-        'share spells',
+        'share spells'
       ],
     },
   },
