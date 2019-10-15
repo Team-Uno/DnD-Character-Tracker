@@ -1,3 +1,23 @@
+
+var Character = function(name, level, xp, hitPoints, skills, abilities, alignment, savingThrow, str, dex, con, int, wis, cha, background, characterClass) {
+  this.name = name;
+  this.level = level;
+  this.xp = xp;
+  this.hitPoints = hitPoints;
+  this.skills = skills;
+  this.abilities = abilities;
+  this.alignment = alignment;
+  this.savingThrow = savingThrow;
+  this.str = str;
+  this.dex = dex;
+  this.con = con;
+  this.int = int;
+  this.wis = wis;
+  this.cha = cha;
+  this.background = background;
+  this.characterClass = characterClass;
+};
+
 var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells) {
   this.name = name;
   this.hitPoints = hitPoints;
