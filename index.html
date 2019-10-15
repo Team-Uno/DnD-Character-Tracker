@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel = ".css/charCreator" type="text/css" href="./css/reset.css" href=".js/app.js">
+  <link rel = "stylesheet" type="text/css" href="./css/reset.css">
   <link rel = "stylesheet" type="text/css" href="./css/style.css">
 
   <title>D&D Character Creator and Tracker</title>
@@ -25,26 +25,16 @@
         <input type="text" name="fullname" id="fullName">
 
       <div id="raceDiv">
-        <label for="raceSelector">Choose a race: </label>
-        <select name="race" id="raceSelector">
+        <label for="raceSelect">Choose a race: </label>
+        <select name="race" id="raceSelect">
           <option value="">--Please choose an option--</option>
-          <option value="Dwarf">Dwarf</option>
-          <option value="Elf">Elf</option>
-          <option value="Halfling">Halfling</option>
-          <option value="Human">Human</option>
-          <option value="Dragonborn">Dragonborn</option>
-          <option value="Gnome">Gnome</option>
-          <option value="Half-Elf">Half-Elf</option>
-          <option value="Half-Orc">Half-Orc</option>
-          <option value="Tiefling">Tiefling</option>
         </select>
       </div>
 
       <div id="classDiv">
-          <label for="classSelector">Choose a class: </label>
-          <select name="class" id="classSelector">
+          <label for="classSelect">Choose a class: </label>
+          <select name="class" id="classSelect">
             <option value="">--Please choose an option--</option>
-            <option value="Fighter">Fighter</option>
             <option value="Wizard">Wizard</option>
             <option value="Rogue">Rogue</option>
             <option value="Ranger">Ranger</option>
@@ -52,8 +42,8 @@
       </div>
 
       <div id="skillsDiv">
-        <label for="skillsSelector">Choose two skills:</label>
-          <select name="skills" id="skillsSelector">
+        <label for="skillsSelect">Choose two skills:</label>
+          <select name="skills" id="skillsSelect">
             <option value="">--Please choose an option--</option>
             <option value="input skill">input skill</option>
             <option value="input skill">input skill</option>
@@ -62,8 +52,8 @@
       </div>
 
       <div id="abilitiesDiv">
-        <label for="abilitiesSelector">Choose three skills:</label>
-        <select name="abilities" id="abilitiesSelector">
+        <label for="abilitiesSelect">Choose three skills:</label>
+        <select name="abilities" id="abilitiesSelect">
           <option value="">--Please choose an option--</option>
           <option value="input ability">input ability</option>
           <option value="input ability">input ability</option>
@@ -72,8 +62,8 @@
       </div>
 
       <div id="alignmentDiv">
-        <label for="alignmentSelector">Choose an alignment:</label>
-        <select name="alignment" id="alignmentSelector">
+        <label for="alignmentSelect">Choose an alignment:</label>
+        <select name="alignment" id="alignmentSelect">
           <option value="">--Please choose an option--</option>
           <option value="Lawful Good">Lawful Good</option>
           <option value="Neutral Good">Neutral Good</option>
@@ -114,4 +104,6 @@
     </form>
   </main>
 </body>
+<script src="./js/race.js"></script>
+<script src="./js/charCreate.js"></script>
 </html>
