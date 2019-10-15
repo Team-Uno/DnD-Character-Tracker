@@ -334,7 +334,9 @@ var fighterClass = new CharacterClass(
   ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
   fighterAbilities,
   [2, 3, 4, 5, 6],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  0,
+  [],
+  0,
   []
 );
 
@@ -347,7 +349,9 @@ var rangerClass = new CharacterClass(
   rangerAbilities,
   [2, 3, 4, 5, 6],
   [0, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
-  rangerAbilities.spells
+  rangerAbilities.spells,
+  0,
+  []
 );
 
 var rougeClass = new CharacterClass(
@@ -358,7 +362,9 @@ var rougeClass = new CharacterClass(
   ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'],
   rougeAbilities,
   [2, 3, 4 ,5, 6],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  0,
+  [],
+  0,
   []
 );
 
@@ -371,5 +377,7 @@ var wizardClass = new CharacterClass(
   wizardAbilities,
   [2, 3, 4, 5, 6],
   [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],
-  wizardAbilities.spells
+  wizardAbilities.spells,
+  [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+  wizardAbilities.spells.cantrips
 );
