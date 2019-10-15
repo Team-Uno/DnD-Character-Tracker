@@ -234,7 +234,35 @@ var wizardAbilities = {
     'spell mastery',
     'signature spells'
   ],
-  cantrips: [],
+  spells : {
+    cantrips: [
+      'acid splash',
+      'blade ward',
+      'chill touch',
+      'dancing lights',
+      'fire bolts',
+      'friends',
+      'light',
+      'mage hand',
+      'mending',
+      'message',
+      'minor illusion',
+      'poison spray',
+      'prestidigitation',
+      'ray of frost',
+      'shocking grasp',
+      'true strike'
+    ],
+    firstLevel: [],
+    secondLevel: [],
+    thirdLevel: [],
+    fourthLevel: [],
+    fifthLevel: [],
+    sixthLevel: [],
+    seventhLevel: [],
+    eighthLevel: [],
+    ninthLevel: [],
+  },
   arcaneTradition: {
     abjuration: [
       'abjuration savant',
@@ -293,6 +321,7 @@ var wizardAbilities = {
       'master transmuter'
     ],
   },
+
 };
 
 var fighterClass = new CharacterClass(
