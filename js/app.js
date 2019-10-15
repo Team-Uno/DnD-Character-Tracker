@@ -228,6 +228,73 @@ var rangerAbilities = {
   },
 };
 
+var wizardAbilities = {
+  generalAbilities: [
+    'arcane recovery',
+    'spell mastery',
+    'signature spells'
+  ],
+  cantrips: [],
+  arcaneTradition: {
+    abjuration: [
+      'abjuration savant',
+      'arcane wizard',
+      'projected ward',
+      'improved abjuration',
+      'spell resistance'
+    ],
+    conjuration: [
+      'conjuration',
+      'minor conjuration',
+      'benign transposition',
+      'focus conjuration',
+      'durable summons'
+    ],
+    divination: [
+      'divination savant',
+      'portent',
+      'expert divination',
+      'the third eye',
+      'greater portent'
+    ],
+    enchantment: [
+      'enchantment savant',
+      'hypnotic gaze',
+      'instinctive charm',
+      'split enchantment',
+      'alter memories'
+    ],
+    evocation: [
+      'evocation savant',
+      'sculpt spells',
+      'potent cantrip',
+      'empowered evocation',
+      'overchannel'
+    ],
+    illusion: [
+      'illusion savant',
+      'improved minor illusion',
+      'malleable illusions',
+      'illusory self',
+      'illusory reality'
+    ],
+    necromancy: [
+      'necromancy savant',
+      'grim harvest',
+      'undead thralls',
+      'injured to undeath',
+      'command undeath'
+    ],
+    transmutation: [
+      'transmutation savant',
+      'minor alchemy',
+      'transmuter\'s stone',
+      'shapechanger',
+      'master transmuter'
+    ],
+  },
+},
+
 var fighterClass = new CharacterClass(
   'fighter',
   10,
