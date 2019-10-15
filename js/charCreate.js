@@ -106,6 +106,12 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
   characterArray.push(this);
 };
 
+//Local Storage
+function saveCharacter(){
+  var character = JSON.stringify(characterArray[0]);
+  window.localStorage.setItem(characterArray[0].name, character);
+}
+
 //Dom Functions
 function populateCharacterClassSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
@@ -189,6 +195,7 @@ function submitListener(event){
   console.log(document.forms.characterCreatorForm.elements.fullName.value);
   new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name);
   console.log(characterArray);
+  saveCharacter();
 }
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
