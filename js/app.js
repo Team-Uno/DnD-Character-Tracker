@@ -360,4 +360,14 @@ var rougeClass = new CharacterClass(
   []
 );
 
-
+var wizardClass = new CharacterClass(
+  'wizard',
+  6,
+  4,
+  ['int', 'wis'],
+  ['arcana', 'history', 'insight', 'investigation', 'medicine', 'religion'],
+  wizardAbilities,
+  [2, 3, 4, 5, 6],
+  [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],
+  wizardAbilities.spells
+);
