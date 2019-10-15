@@ -21,7 +21,7 @@ var CharacterClass = function(name, hitPoints, hitDice, saveThrow, skills, abili
   this.name = name;
   this.hitPoints = hitPoints;
   this.hitDice = hitDice;
-  this.saveThrow - saveThrow;
+  this.saveThrow = saveThrow;
   this.skills = skills;
   this.abilities = abilities;
   this.proficiency = proficiency;
@@ -80,7 +80,7 @@ var fighterAbilities = {
         ['know your enemy'],
         ['improved combat superiority'],
         ['relentless'],
-        ['advanced combat superiority'],
+        ['advanced combat superiority']
       ],
     },
   },
@@ -100,21 +100,23 @@ var rougeAbilities = {
     'elusive',
     'stroke of luck'
   ],
-  thief: {
-    skills: [
-      'fast hands',
-      'second-story work',
-      'supreme sneak',
-      'use magic device',
-      'thief\'s reflexes'
-    ],
-  assassin: {
-    skills: [
-      'bonus proficiencies',
-      'assassinate',
-      'infiltratoin expertise',
-      'imposter',
-      'death strike', 
+  rougeArchetype: {
+    thief: {
+      skills: [
+        'fast hands',
+        'second-story work',
+        'supreme sneak',
+        'use magic device',
+        'thief\'s reflexes'
+      ],
+    },
+    assassin: {
+      skills: [
+        'bonus proficiencies',
+        'assassinate',
+        'infiltratoin expertise',
+        'imposter',
+        'death strike', 
       ],
     },
   },
