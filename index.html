@@ -11,20 +11,23 @@
 </head>
 
 <body>
-  <!-- Add logo -->
   <header>
     <nav id="navbar">
 
-        <div class="logo">
-          <a href=""><img src=".imgs/DnD_Logo2.png" alt="logo image"></a>
+      <div class="logo">
+        <a href=""><img src="./imgs/DnD_Logo.png" alt="DnD_Logo" height="50" ></a>
 
-        <a id="currentPage">Character Creator</a>
-        <a href="./pages/selectCharacter.html">Select Characters</a>
-        <a href="./pages/aboutUs.html">About Us</a>
-        </div>
+        <ul>
+          <li><a id="currentPage">Character Creator</a></li>
+          <li><a href="./pages/selectCharacter.html">Select Characters</a></li>
+          <li><a href="./pages/aboutUs.html">About Us</a></li>
+        </ul>
+      </div>
     </nav>
+  
   </header>
   <main>
+    <div id="form">
     <form name="characterCreatorForm">
         <label for="fullName"> Name: </label>
         <input type="text" name="fullName" id="fullName">
@@ -93,6 +96,7 @@
           <label for="charismaNumber">Charisma</label> 
           <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
         </div>
+      </div> 
       </fieldset>
       <label for="background">Background Information: </label>
       <input type="text" name="background" id="background">
