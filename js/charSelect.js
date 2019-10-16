@@ -2,11 +2,16 @@
 
 var allSavedCharacters = [];
 
+var selectCharacter = document.getElementsByClassName('nameLink');
+var allKeys = Object.keys(localStorage);
+console.log(allKeys);
+
 function checkForSavedCharacters(){
-  var test = window.localStorage.getItem('character');
-  if(test){
-    allSavedCharacters.push(JSON.parse(test));
+  for(var i = 0; i < allKeys.length; i++){
+    var characters = window.localStorage.getItem(`${allKeys[i]}`);
+    allSavedCharacters.push(JSON.parse(characters));
   }
+  console.log(allSavedCharacters);
 }
 
 function createCharacterSelects(){
@@ -14,10 +19,10 @@ function createCharacterSelects(){
   for(var i = 0; i < allSavedCharacters.length; i++){
     var cardNode = document.createElement('div');
     var classLogoNode = document.createElement('img');
-    //TODO: add sr for logo images based on class
     classLogoNode.src = allSavedCharacters[i].classLogo;
     var charNameNode = document.createElement('a');
-    charNameNode.setAttribute = ('id', 'nameLink');
+    charNameNode.setAttribute = ('class', 'nameLink');
+    charNameNode.setAttribute = ('id', `${allSavedCharacters[i].name}`);
     charNameNode.innerText = allSavedCharacters[i].name;
     charNameNode.setAttribute = ('href', '../pages/characterSheet.html');
     var charInfoNode = document.createElement('div');
@@ -25,11 +30,18 @@ function createCharacterSelects(){
     cardNode.appendChild(classLogoNode);
     cardNode.appendChild(charNameNode);
     cardNode.appendChild(charInfoNode);
+    targetCardNode.appendChild(cardNode);
   }
-  targetCardNode.appendChild(cardNode);
 }
 
+// function saveCharacterReference(){
+//   name = 
+// }
+
+// selectCharacter.addEventListener('click', saveCharacterReference());
 
 checkForSavedCharacters();
-createCharacterSelects();
 console.log(allSavedCharacters);
+createCharacterSelects();
+
+console.log(characterArray);
