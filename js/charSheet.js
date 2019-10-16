@@ -71,6 +71,13 @@ function populateClass(){
   classValueNode.innerText = currentCharacter.characterClass;
   targetClassNode.appendChild(classValueNode);
 }
+function populateRace(){
+  var targetRaceNode = document.getElementById('race');
+  var raceValueNode = document.createElement('p');
+  raceValueNode.value = currentCharacter.characterRace;
+  raceValueNode.innerText = currentCharacter.characterRace;
+  targetRaceNode.appendChild(raceValueNode);
+}
 
 
 loadCharacter();

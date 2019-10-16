@@ -86,7 +86,7 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   characterClassArray.push(this);
 };
 
-var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, abilityScore, background, characterClass) {
+var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, abilityScore, background, characterClass, characterRace) {
   this.name = name;
   this.level = level;
   this.xp = xp;
@@ -98,6 +98,7 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
   this.abilityScore = abilityScore;
   this.background = background;
   this.characterClass = characterClass;
+  this.characterRace = characterRace;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   characterArray.push(this);
 };
