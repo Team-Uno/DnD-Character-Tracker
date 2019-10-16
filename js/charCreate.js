@@ -108,8 +108,8 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
 
 //Local Storage
 function saveCharacter(){
-  var character = JSON.stringify(characterArray[0]);
-  window.localStorage.setItem(characterArray[0].name, character);
+  var saveCharacter = JSON.stringify(characterArray[0]);
+  window.localStorage.setItem(characterArray[0].name, saveCharacter);
 }
 
 //Dom Functions
