@@ -86,7 +86,7 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   characterClassArray.push(this);
 };
 
-var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, str, dex, con, int, wis, cha, background, characterClass) {
+var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, str, dex, con, int, wis, cha, background, characterClass, race) {
   this.name = name;
   this.level = level;
   this.xp = xp;
@@ -103,6 +103,7 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
   this.cha = cha;
   this.background = background;
   this.characterClass = characterClass;
+  this.race = race;
   characterArray.push(this);
 };
 
@@ -192,7 +193,7 @@ function skillSelectFirstListener(event){
 
 function submitListener(event){
   event.preventDefault();
-  new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name);
+  new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   console.log(characterArray);
   saveCharacter();
 }
