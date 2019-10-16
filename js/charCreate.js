@@ -60,6 +60,7 @@ var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
+
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
   this.name = name;
   this.startingHitPoints = startingHitPoints;
@@ -92,6 +93,7 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.characterClass = characterClass;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   this.race = race;
+  this.classLogo = classLogo;
 
   characterArray.push(this);
 };
@@ -133,11 +135,25 @@ Character.prototype.calcAbilityModifier = function(){
     }
   }
 };
+Character.prototype.pickClassLogo = function(){
+  while(this.characterClass.toLowerCase() === 'fighter'){
+    this.classLogo = '../img/fighterLogo';
+  }
+  while(this.this.characterClass.toLowerCase() === 'rouge'){
+    this.classLogo = '../img/rougeLogo';
+  }
+  while(this.this.characterClass.toLowerCase() === 'ranger'){
+    this.classLogo = '../img/rangerLogo';
+  }
+  while(this.this.characterClass.toLowerCase() === 'wizard'){
+    this.classLogo = '../img/wizardLogo';
+  }
+};
 
 //Local Storage
 function saveCharacter(){
   var saveCharacter = JSON.stringify(characterArray[0]);
-  window.localStorage.setItem(characterArray[0].name, saveCharacter);
+  window.localStorage.setItem('character', saveCharacter);
 }
 
 //Dom Functions
@@ -234,6 +250,7 @@ function submitListener(event){
   console.log(document.forms.characterCreatorForm.elements.fullName.value);
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
+  newCharacter.prototype.pickClassLogo();
   console.log(characterArray);
   saveCharacter();
 }
