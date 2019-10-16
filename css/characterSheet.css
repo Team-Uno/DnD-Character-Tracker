@@ -1,0 +1,60 @@
+main {
+  width: 960px;
+  margin: 5% auto;
+  padding: 10% auto;
+}
+
+header {
+  background-color:grey;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: center;
+}
+
+
+#navbar {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+}
+
+#ul {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+  margin: 10px 10px 10px 10px
+}
+
+#sectionOne {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+#upperLeft,
+#upperMiddle,
+#upperRight {
+  padding: 20px 100px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#upperLeft div,
+#upperMiddle div,
+#upperRight div {
+  text-align: left;
+  display: inline;
+}
+
+#hitPoints {
+  justify-content: center;
+}

@@ -2,7 +2,6 @@ body {
   width: 960px;
   margin: 10% auto;
   padding: 10% auto;
-  
 }
 
 header {
@@ -11,7 +10,6 @@ header {
   align-items: center;
   height: 100px;
   justify-content: center;
-  
 }
 
 
@@ -19,7 +17,7 @@ header {
   display: flex;
   align-items: flex-start;
   align-items: center;
- }
+}
 
 #ul {
   align-items: center;
@@ -37,7 +35,6 @@ li {
   padding: 0px;
   margin: 30px;
   width: 1
-
 }
 
 #raceDiv {
@@ -58,54 +55,54 @@ li {
 
 #strengthNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
     
 #dexterityNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
 
 #constitutionNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
 
 #intelligenceNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
 
 #wisdomNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
 
 #charismaNumber {
   border: solid 1px black;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 60px;
 }
