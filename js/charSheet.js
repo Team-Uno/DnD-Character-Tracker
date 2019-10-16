@@ -106,6 +106,43 @@ function populateAbilityScores(){
   targetCharismaScoreNode.appendChild(charismaValueNode);
 
 }
+function populateAbilityModifiers(){
+  var targetStrengthModNode = document.getElementById('strengthModifier');
+  var strengthModValueNode = document.createElement('div');
+  strengthModValueNode.value = currentCharacter.abilityModifiers[0];
+  strengthModValueNode.innerText = currentCharacter.abilityModifiers[0];
+  targetStrengthModNode.appendChild(strengthModValueNode);
+
+  var targetDexterityModNode = document.getElementById('dexterityModifier');
+  var dexterityModValueNode = document.createElement('div');
+  dexterityModValueNode.value = currentCharacter.abilityModifiers[1];
+  dexterityModValueNode.innerText = currentCharacter.abilityModifiers[1];
+  targetDexterityModNode.appendChild(dexterityModValueNode);
+
+  var targetConstitutionModNode = document.getElementById('constitutionModifier');
+  var constitutionModValueNode = document.createElement('div');
+  constitutionModValueNode.value = currentCharacter.abilityModifiers[2];
+  constitutionModValueNode.innerText = currentCharacter.abilityModifiers[2];
+  targetConstitutionModNode.appendChild(constitutionModValueNode);
+
+  var targetIntelligenceModNode = document.getElementById('intelligenceModifier');
+  var intelligenceModValueNode = document.createElement('div');
+  intelligenceModValueNode.value = currentCharacter.abilityModifiers[3];
+  intelligenceModValueNode.innerText = currentCharacter.abilityModifiers[3];
+  targetIntelligenceModNode.appendChild(intelligenceModValueNode);
+
+  var targetWisdomModNode = document.getElementById('wisdomModifier');
+  var wisdomModValueNode = document.createElement('div');
+  wisdomModValueNode.value = currentCharacter.abilityModifiers[4];
+  wisdomModValueNode.innerText = currentCharacter.abilityModifiers[4];
+  targetWisdomModNode.appendChild(wisdomModValueNode);
+
+  var targetCharismaModNode = document.getElementById('charismaModifier');
+  var charismaModValueNode = document.createElement('div');
+  charismaModValueNode.value = currentCharacter.abilityModifiers[5];
+  charismaModValueNode.innerText = currentCharacter.abilityModifiers[5];
+  targetCharismaModNode.appendChild(charismaModValueNode);
+}
 function populateClass(){
   var targetClassNode = document.getElementById('class');
   var classValueNode = document.createElement('div');
@@ -138,6 +175,7 @@ function populateExp(){
 
 loadCharacter();
 console.log(currentCharacter);
+populateAbilityModifiers();
 populateAbilityScores();
 populateName();
 populateHitPoints();
