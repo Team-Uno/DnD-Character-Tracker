@@ -45,7 +45,7 @@ var characterClassArray = [];
 var characterArray = [];
 var selectedCharacterClass = null;
 var selectedFirstSkill = null;
-var selectedAbilities = [];
+var selectedAbilitiesArray = [];
 var pointsPool = null;
 var pointsPoolArray = [];
 var d6 = 6;
@@ -190,6 +190,7 @@ function populateFighterAbilitiesSelect(){
         var newSelectNode = document.createElement('select');
         newSelectNode.name = `abilitySelect${j}`;
         newSelectNode.id = `abilitySelect${j}`;
+        newSelectNode.className = 'abilitySelect';
         newLabelNode.appendChild(newSelectNode);
         for(var k = 0; k < selectedCharacterClass.abilities.length; k++){
           var newAbilityOptionNode = document.createElement('option');
@@ -231,8 +232,8 @@ function skillSelectFirstListener(event){
 
 function submitListener(event){
   event.preventDefault();
-  console.log(document.forms.characterCreatorForm.elements.fullName.value);
-  var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
+  pushAbilitiesToArray();
+  var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   console.log(characterArray);
   saveCharacter();
@@ -271,6 +272,14 @@ function displayStatBlockListener(){
 function statAdder(accumulator, currentElement){
   return accumulator + currentElement;
 }
+
+function pushAbilitiesToArray(){
+  var targetAbilityClass = document.querySelectorAll('.abilitySelect');
+  for(var i = 0; i < formElements.levelInput.value;i++){
+    selectedAbilitiesArray.push(targetAbilityClass[i].value);
+  }
+}
+
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
@@ -281,3 +290,4 @@ targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
+// targetAbilityClass.addEventListener('click', pushAbilitiesToArray);
