@@ -1,74 +1,58 @@
 'use strict';
 
 //Source Data
-var fighterAbilities = {
-  fightingStyle: [
-    'archery',
-    'defense',
-    'dueling',
-    'great weapon fighting',
-    'protection',
-    'two weapon fighting'
-  ],
-  generalAbilities: [
-    'second wind',
-    'action surge',
-    'extra attack',
-    'indomitable'
-  ],
-  martialArchetype: {
-    champion: {
-      skills:[
-        ['improved critical'],
-        ['remarkable athlete'],
-        ['additional fighting style'],
-        ['superior critical'],
-        ['survivor']
-      ],
-    },
-    battleMaster: {
-      manuevers: [
-        'commander\'s strike',
-        'disarming attack',
-        'distracting strike',
-        'evasive footwork',
-        'feinting attack',
-        'goading attack',
-        'lunging attack',
-        'maneuvering attack',
-        'menacing attack',
-        'parry',
-        'precision attack',
-        'pushing attack',
-        'rally',
-        'riposte',
-        'sweeping attack',
-        'trip attack'
-      ],
-      skills: [
-        ['combat superiority'],
-        ['know your enemy'],
-        ['improved combat superiority'],
-        ['relentless'],
-        ['advanced combat superiority']
-      ],
-    },
-  },
-};
+var fighterAbilities = [
+  'archery',
+  'defense',
+  'dueling',
+  'great weapon fighting',
+  'protection',
+  'two weapon fighting',
+  'second wind',
+  'action surge',
+  'extra attack',
+  'indomitable',
+  'improved critical',
+  'remarkable athlete',
+  'additional fighting style',
+  'superior critical',
+  'survivor',
+  'commander\'s strike',
+  'disarming attack',
+  'evasive footwork',
+  'feinting attack',
+  'goading attack',
+  'lunging attack',
+  'maneuvering attack',
+  'menacing attack',
+  'parry',
+  'precision attack',
+  'pushing attack',
+  'rally',
+  'riposte',
+  'sweeping attack',
+  'trip attack',
+  'combat superiority',
+  'know your enemy',
+  'improved combat superiority',
+  'relentless',
+  'advanced combat superiority'
+];
+
 var alignments = ['Lawful Good','Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
 // Global Variables
 var characterClassArray = [];
 var characterArray = [];
 var selectedCharacterClass = null;
 var selectedFirstSkill = null;
+var selectedAbilities = [];
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
 var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
 var targetSecondSkillSelectElement = document.getElementById('skillSelectSecond');
-var targetAbilitySelectElement = document.getElementById('abilitiesSelectFirst');
+var targetAbilityDivElement = document.getElementById('abilityDiv');
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
-var abilitiesDefault = document.getElementById('abilitiesDefault');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
@@ -152,17 +136,28 @@ function populateSkillsSelectSecond(){
 }
 
 function populateFighterAbilitiesSelectFirst(){
+  debugger;
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
-      for(var j = 0; j < fighterAbilities.fightingStyle.length; j++){
-        var newAbilitySelectNode = document.createElement('option');
-        newAbilitySelectNode.value = fighterAbilities.fightingStyle[j];
-        newAbilitySelectNode.innerText = fighterAbilities.fightingStyle[j];
-        targetAbilitySelectElement.appendChild(newAbilitySelectNode);
+      for(var j = 0; j < formElements.levelInput.value;j++){
+        var newLabelNode = document.createElement('label');
+        newLabelNode.for = `abilitySelect${j}`;
+        newLabelNode.innerText = 'Choose an ability:';
+        targetAbilityDivElement.appendChild(newLabelNode);
+
+        var newSelectNode = document.createElement('select');
+        newSelectNode.name = `abilitySelect${j}`;
+        newSelectNode.id = `abilitySelect${j}`;
+        newLabelNode.appendChild(newSelectNode);
+        for(var k = 0; k < selectedCharacterClass.abilities.length; k++){
+          var newAbilityOptionNode = document.createElement('option');
+          newAbilityOptionNode.value = selectedCharacterClass.abilities[k];
+          newAbilityOptionNode.innerText = selectedCharacterClass.abilities[k];
+          newSelectNode.appendChild(newAbilityOptionNode);
+        }
       }
     }
   }
-  abilitiesDefault.innerText = 'Fighting Styles';
 }
 
 function populateAlignmentSelect(){
@@ -173,6 +168,7 @@ function populateAlignmentSelect(){
     targetAlignmentSelectElement.appendChild(newAlignmentOptionNode);
   }
 }
+
 // Event Listeners
 function CharacterClassSelectListener(event){
   selectedCharacterClass = event.target.value;

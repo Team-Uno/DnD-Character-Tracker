@@ -24,6 +24,10 @@
         <label for="fullName"> Name: </label>
         <input type="text" name="fullName" id="fullName">
 
+      <div id="levelDiv">
+        <label for="levelInput">Desired Level:</label>
+        <input type="number" name="levelInput" id="levelInput" min="1" max="20" placeholder="1">
+      </div>      
       <div id="raceDiv">
         <label for="raceSelect">Choose a race: </label>
         <select name="raceSelect" id="raceSelect">
@@ -54,11 +58,7 @@
           </select>
       </div>
 
-      <div id="abilitiesDiv">
-        <label for="abilitiesSelectFirst">Choose your first ability:</label>
-        <select name="abilitiesSelectFirst" id="abilitiesSelectFirst">
-          <option value="" id="abilitiesDefault">--Please choose an option--</option>
-        </select>
+      <div id="abilityDiv">
       </div>
 
       <div id="alignmentDiv">
