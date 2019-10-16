@@ -93,7 +93,7 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.characterClass = characterClass;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   this.race = race;
-  this.classLogo = classLogo;
+  this.classLogo = '';
 
   characterArray.push(this);
 };
@@ -136,17 +136,17 @@ Character.prototype.calcAbilityModifier = function(){
   }
 };
 Character.prototype.pickClassLogo = function(){
-  while(this.characterClass.toLowerCase() === 'fighter'){
-    this.classLogo = '../img/fighterLogo';
+  if(this.characterClass.toLowerCase() === 'fighter'){
+    this.classLogo = '../imgs/fighterLogo.png';
   }
-  while(this.this.characterClass.toLowerCase() === 'rouge'){
-    this.classLogo = '../img/rougeLogo';
+  if(this.characterClass.toLowerCase() === 'rouge'){
+    this.classLogo = '../imgs/rougeLogo.png';
   }
-  while(this.this.characterClass.toLowerCase() === 'ranger'){
-    this.classLogo = '../img/rangerLogo';
+  if(this.characterClass.toLowerCase() === 'ranger'){
+    this.classLogo = '../imgs/rangerLogo.png';
   }
-  while(this.this.characterClass.toLowerCase() === 'wizard'){
-    this.classLogo = '../img/wizardLogo';
+  if(this.characterClass.toLowerCase() === 'wizard'){
+    this.classLogo = '../imgs/wizardLogo.png';
   }
 };
 
@@ -251,7 +251,7 @@ function submitListener(event){
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
-  newCharacter.prototype.pickClassLogo();
+  newCharacter.pickClassLogo();
   console.log(characterArray);
   saveCharacter();
 }
