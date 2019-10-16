@@ -2,20 +2,58 @@
 
 //Global Variable
 var currentCharacter = null;
-
+//Dom Variables
+var targetRollDiceButton = document.getElementById('rollDiceButton');
+var targetRollDiceSelect = document.getElementById('diceRollSelect');
+var targetDiceRollDisplay = document.getElementById('diceRollDisplay');
 //Helper functions
 function hitPointCalc(){
   return currentCharacter.startingHitPoints + currentCharacter.abilityModifiers[2];
 }
+function displayDiceRoll(){
+  var rollTotal = 0;
+  if(targetRollDiceSelect.value === 'd20'){
+    rollTotal = roll20();
+  }
+  if(targetRollDiceSelect.value === 'd12'){
+    rollTotal = roll12();
+  }
+  if(targetRollDiceSelect.value === 'd10'){
+    rollTotal = roll10();
+  }
+  if(targetRollDiceSelect.value === 'd6'){
+    rollTotal = roll6();
+  }
+  if(targetRollDiceSelect.value === 'd4'){
+    rollTotal = roll4();
+  }
+  targetDiceRollDisplay.value = rollTotal;
+  targetDiceRollDisplay.innerText = rollTotal;
+}
 //Dice rollers
 function roll20(){
-  var roll = Math.floor(Math.random())
+  return Math.floor(Math.random() * (20 -1 + 1) +1);
 }
+function roll12(){
+  return Math.floor(Math.random() * (12 -1 + 1) +1);
+}
+function roll10(){
+  return Math.floor(Math.random() * (10 -1 + 1) +1);
+}
+function roll6(){
+  return Math.floor(Math.random() * (6 -1 + 1) +1);
+}
+function roll4(){
+  return Math.floor(Math.random() * (4 -1 + 1) +1);
+}
+
 //Local storage functions
 function loadCharacter(){
   var savedCharacter = localStorage.getItem('bob');
   currentCharacter = JSON.parse(savedCharacter);
 }
+//Event Listener
+targetRollDiceButton.addEventListener('click', displayDiceRoll);
 //DOM functions
 function populateName(){
   var targetNameNode = document.getElementById('name');
