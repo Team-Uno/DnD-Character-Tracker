@@ -9,6 +9,12 @@ function loadCharacter(){
   var savedCharacter = localStorage.getItem('bob');
   currentCharacter = JSON.parse(savedCharacter);
 }
+function populateName(){
+  var targetNameNode = document.getElementById('name');
+  var nameValueNode = document.createElement('p');
+  nameValueNode.innerText = currentCharacter.name;
+  targetNameNode.appendChild(nameValueNode);
+}
 
 //Get ability score values and create html elements to display
 function populateAbilityScores(){
@@ -50,5 +56,8 @@ function populateAbilityScores(){
 
 }
 
+
+
 loadCharacter();
 populateAbilityScores();
+populateName();
