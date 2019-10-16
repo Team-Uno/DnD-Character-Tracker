@@ -1,8 +1,6 @@
 'use strict';
 
 var allSavedCharacters = [];
-
-var selectCharacter = document.getElementsByClassName('nameLink');
 var allKeys = Object.keys(localStorage);
 console.log(allKeys);
 
@@ -20,28 +18,38 @@ function createCharacterSelects(){
     var cardNode = document.createElement('div');
     var classLogoNode = document.createElement('img');
     classLogoNode.src = allSavedCharacters[i].classLogo;
-    var charNameNode = document.createElement('a');
-    charNameNode.setAttribute = ('class', 'nameLink');
-    charNameNode.setAttribute = ('id', `${allSavedCharacters[i].name}`);
+    var charNameNode = document.createElement('p');
+    charNameNode.setAttribute('class', 'nameLink');
+    charNameNode.setAttribute('id', `${allSavedCharacters[i].name}`);
     charNameNode.innerText = allSavedCharacters[i].name;
-    charNameNode.setAttribute = ('href', '../pages/characterSheet.html');
     var charInfoNode = document.createElement('div');
     charInfoNode.innerText = `${allSavedCharacters[i].level}/${allSavedCharacters[i].characterClass}/${allSavedCharacters[i].race}`;
+    var charSelectButton = document.createElement('button');
+    charSelectButton.setAttribute('id', `${allSavedCharacters[i].name}`);
+    charSelectButton.setAttribute('class', 'charSelectButton');
+    charSelectButton.innerText = 'Select Character';
+    charSelectButton.addEventListener('click', saveCharacterReference);
     cardNode.appendChild(classLogoNode);
     cardNode.appendChild(charNameNode);
     cardNode.appendChild(charInfoNode);
+    cardNode.appendChild(charSelectButton);
     targetCardNode.appendChild(cardNode);
   }
 }
 
-// function saveCharacterReference(){
-//   name = 
-// }
+function saveCharacterReference(event){
+  var selectedName = event.target.id;
+  console.log(selectedName);
+  for(var i = 0; i < allSavedCharacters.length; i++){
+    if(selectedName === allSavedCharacters[i].name){
+      var selectedCharacter = JSON.stringify(allSavedCharacters[i]);
+      window.localStorage.setItem('selectedCharacter', selectedCharacter);
+    }
+  }
+}
 
-// selectCharacter.addEventListener('click', saveCharacterReference());
+
 
 checkForSavedCharacters();
 console.log(allSavedCharacters);
 createCharacterSelects();
-
-console.log(characterArray);
