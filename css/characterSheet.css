@@ -1,0 +1,32 @@
+body {
+  width: 960px;
+  margin: 10% auto;
+  padding: 10% auto;
+}
+
+header {
+  background-color:grey;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: center;
+}
+
+
+#navbar {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+}
+
+#ul {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+  margin: 10px 10px 10px 10px
+}
