@@ -92,6 +92,7 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.xp = xp;
   this.gold = gold;
   this.startingHitPoints = startingHitPoints;
+  this.startingArmorClass = 10;
   this.skills = skills;
   this.abilities = abilities;
   this.alignment = alignment;

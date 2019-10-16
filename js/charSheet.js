@@ -10,6 +10,9 @@ var targetDiceRollDisplay = document.getElementById('diceRollDisplay');
 function hitPointCalc(){
   return currentCharacter.startingHitPoints + currentCharacter.abilityModifiers[2];
 }
+function armorClassCalc(){
+  return currentCharacter.startingArmorClass + currentCharacter.abilityModifiers[1];
+}
 function displayDiceRoll(){
   var rollTotal = 0;
   if(targetRollDiceSelect.value === 'd20'){
@@ -178,6 +181,13 @@ function populateAlignment(){
   alignmentValueNode.innerText = currentCharacter.alignment;
   targetAlignmentNode.appendChild(alignmentValueNode);
 }
+function populateArmorClass(){
+  var targetArmorClassNode = document.getElementById('armorClass');
+  var armorClassNode = document.createElement('div');
+  armorClassNode.value = armorClassCalc();
+  armorClassNode.innerText = armorClassCalc();
+  targetArmorClassNode.appendChild(armorClassNode);
+}
 
 
 loadCharacter();
@@ -191,3 +201,4 @@ populateRace();
 populateGold();
 populateExp();
 populateAlignment();
+populateArmorClass();
