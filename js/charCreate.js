@@ -49,6 +49,7 @@ var selectedAbilitiesArray = [];
 var pointsPool = null;
 var pointsPoolArray = [];
 var d6 = 6;
+
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
 var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
@@ -70,6 +71,7 @@ var charismaNumber = document.getElementById('charismaNumber')
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
+
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
   this.name = name;
   this.startingHitPoints = startingHitPoints;
@@ -102,6 +104,7 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.characterClass = characterClass;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   this.race = race;
+  this.classLogo = '';
 
   characterArray.push(this);
 };
@@ -143,11 +146,26 @@ Character.prototype.calcAbilityModifier = function(){
     }
   }
 };
+Character.prototype.pickClassLogo = function(){
+  if(this.characterClass.toLowerCase() === 'fighter'){
+    this.classLogo = '../imgs/fighterLogo.png';
+  }
+  if(this.characterClass.toLowerCase() === 'rouge'){
+    this.classLogo = '../imgs/rougeLogo.png';
+  }
+  if(this.characterClass.toLowerCase() === 'ranger'){
+    this.classLogo = '../imgs/rangerLogo.png';
+  }
+  if(this.characterClass.toLowerCase() === 'wizard'){
+    this.classLogo = '../imgs/wizardLogo.png';
+  }
+};
 
 //Local Storage
 function saveCharacter(){
   var saveCharacter = JSON.stringify(characterArray[0]);
-  window.localStorage.setItem(characterArray[0].name, saveCharacter);
+  window.localStorage.setItem(`${characterArray[0].name}`, saveCharacter);
+
 }
 
 //Dom Functions
@@ -241,11 +259,10 @@ function skillSelectFirstListener(event){
 }
 
 function submitListener(event){
-  event.preventDefault();
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
-  console.log(characterArray);
+  newCharacter.pickClassLogo();
   saveCharacter();
 }
 
@@ -269,6 +286,7 @@ function generateStatBlockListener (){
   }
   displayStatBlockListener();
 }
+
 function abilityScoreChangeListener(event){
   var clickBox = event.target;
   var targetBox = event.target.parentElement.childNodes[1];
@@ -281,6 +299,7 @@ function abilityScoreChangeListener(event){
   }
   displayStatBlockListener();
 }
+
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = pointsPool;
@@ -307,6 +326,8 @@ targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
+
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
 
 //todo: Rename "ability" variables to be more clear.
+
