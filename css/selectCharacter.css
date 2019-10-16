@@ -1,0 +1,45 @@
+
+
+body {
+  width: 960px;
+  margin: 10% auto;
+  padding: 10% auto;
+}
+
+h1 {
+  font-family:'Alegreya SC', serif;
+}
+
+header {
+  background-color:grey;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: center;
+}
+
+
+#navbar {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+}
+
+#ul {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+  margin: 10px 10px 10px 10px
+}
+
+.container {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}
