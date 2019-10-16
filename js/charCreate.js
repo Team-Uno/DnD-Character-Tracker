@@ -46,6 +46,9 @@ var characterArray = [];
 var selectedCharacterClass = null;
 var selectedFirstSkill = null;
 var selectedAbilities = [];
+var pointsPool = null;
+var pointsPoolArray = [];
+var d6 = 6;
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
 var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
@@ -135,8 +138,7 @@ function populateSkillsSelectSecond(){
   }
 }
 
-function populateFighterAbilitiesSelectFirst(){
-  debugger;
+function populateFighterAbilitiesSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
@@ -178,7 +180,7 @@ function CharacterClassSelectListener(event){
     }
   }
   populateSkillSelectFirst();
-  populateFighterAbilitiesSelectFirst();
+  populateFighterAbilitiesSelect();
 }
 
 function skillSelectFirstListener(event){
@@ -193,12 +195,36 @@ function submitListener(event){
   console.log(characterArray);
   saveCharacter();
 }
+// Helper Functions
+function generateStatBlock (){
+  for (var j = 0; j < 6;j++){
+    pointsPoolArray = [];
+    for (var i = 0; i < 4;i++){
+      pointsPoolArray.push(Math.floor((Math.random() * d6) + 1));
+    }
+    var minNumber = null;
+    var newPointsPoolArray = pointsPoolArray.filter(function(element){
+      if(element === Math.min(...pointsPoolArray) && minNumber === null){
+        minNumber = element;
+      } else if(element !== Math.min(...pointsPoolArray || minNumber)){
+        return true;
+      }
+    });
+    var totalValue = newPointsPoolArray.reduce(statAdder);
+    pointsPool += totalValue;
+  }
+  console.log(pointsPool);
+}
+function statAdder(accumulator, currentElement){
+  return accumulator + currentElement;
+}
 // Make Objects
 var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
 // Run Functions
 populateCharacterClassSelect();
 populateAlignmentSelect();
+generateStatBlock();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
