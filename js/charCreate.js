@@ -186,7 +186,6 @@ function skillSelectFirstListener(event){
 
 function submitListener(event){
   event.preventDefault();
-  console.log(document.forms.characterCreatorForm.elements.fullName.value);
   new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name);
   console.log(characterArray);
 }
