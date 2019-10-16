@@ -7,6 +7,10 @@ var currentCharacter = null;
 function hitPointCalc(){
   return currentCharacter.startingHitPoints + currentCharacter.abilityModifiers[2];
 }
+//Dice rollers
+function roll20(){
+  var roll = Math.floor(Math.random())
+}
 //Local storage functions
 function loadCharacter(){
   var savedCharacter = localStorage.getItem('bob');
@@ -93,3 +97,4 @@ populateAbilityScores();
 populateName();
 populateHitPoints();
 populateClass();
+populateGold();

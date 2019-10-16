@@ -140,7 +140,7 @@ Character.prototype.calcAbilityModifier = function(){
       this.abilityModifiers[i] = 5;
     }
   }
-}
+};
 
 //Local Storage
 function saveCharacter(){
