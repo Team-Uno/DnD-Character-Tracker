@@ -58,6 +58,16 @@ var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
+var targetAbilityScorePlus = document.getElementsByClassName('abilityScorePlus');
+//Ability Score Value DOM references
+var strengthNumber = document.getElementById('strengthNumber')
+var dexterityNumber = document.getElementById('dexterityNumber')
+var constitutionNumber = document.getElementById('constitutionNumber')
+var intelligenceNumber = document.getElementById('intelligenceNumber')
+var wisdomNumber = document.getElementById('wisdomNumber')
+var charismaNumber = document.getElementById('charismaNumber')
+// var targetAbilityScoreMinus = document.getElementsByClassName('abilityScoreMinus');
+var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
@@ -259,11 +269,18 @@ function generateStatBlockListener (){
   }
   displayStatBlockListener();
 }
-
-// function abilityScoreChangeListener(event){
-//   var initialValue = event.target.value;
-  
-// }
+function abilityScoreChangeListener(event){
+  var clickBox = event.target;
+  var targetBox = event.target.parentElement.childNodes[1];
+  if(clickBox.className === 'abilityScorePlus'){
+    pointsPool += -1;
+    targetBox.value ++;
+  } else if (clickBox.className === 'abilityScoreMinus'){
+    pointsPool += 1;
+    targetBox.value --;
+  }
+  displayStatBlockListener();
+}
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = pointsPool;
@@ -290,4 +307,6 @@ targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
-// targetAbilityClass.addEventListener('click', pushAbilitiesToArray);
+targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
+
+//todo: Rename "ability" variables to be more clear.

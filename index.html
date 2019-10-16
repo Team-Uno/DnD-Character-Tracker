@@ -78,25 +78,49 @@
       <fieldset form="characterCreatorForm" name="Ability Scores">
         <caption>Ability Scores</caption>
         <div id="abilityScoreDiv">
-          <label for="strengthNumber">Strength</label> 
-          <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+          <section id="strength">
+              <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" disabled="true" value="1";>
+              <label for="strengthNumber">Strength</label> 
+              <button type="button" class="abilityScorePlus">+</button>
+              <button type="button" class="abilityScoreMinus">-</button>
+          </section>
+          
+          <section id="dexterity">
+            <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" disabled="true" value="1">
+            <label for="dexterityNumber">Dexterity</label> 
+            <button type="button" class="abilityScorePlus">+</button>
+            <button type="button" class="abilityScoreMinus">-</button>
+          </section>
 
-          <label for="dexterityNumber">Dexterity</label> 
-          <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+          <section id="constitution">
+              <input type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" disabled="true" value="1">
+              <label for="constitutionNumber">Constitution</label> 
+              <button type="button" class="abilityScorePlus">+</button>
+              <button type="button" class="abilityScoreMinus">-</button>
+          </section>
 
-          <label for="constitutionNumber">Constitution</label> 
-          <input type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+          <section id="intelligence">
+            <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" disabled="true" value="1">
+            <label for="intelligenceNumber">Intelligence</label> 
+            <button type="button" class="abilityScorePlus">+</button>
+            <button type="button" class="abilityScoreMinus">-</button>
+          </section>
 
-          <label for="intelligenceNumber">Intelligence</label> 
-          <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+          <section id="wisdom">
+            <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" disabled="true" value="1">
+            <label for="wisdomNumber">Wisdom</label> 
+            <button type="button" class="abilityScorePlus">+</button>
+            <button type="button" class="abilityScoreMinus">-</button>
+          </section>
 
-          <label for="wisdomNumber">Wisdom</label> 
-          <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
+          <section id="charisma">
+              <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" disabled="true" value="1">
+              <label for="charismaNumber">Charisma</label> 
+              <button type="button" class="abilityScorePlus">+</button>
+              <button type="button" class="abilityScoreMinus">-</button>
+          </section>
 
-          <label for="charismaNumber">Charisma</label> 
-          <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" placeholder="Please enter a number (between 1 and 10).">
-
-          <output for="abilityScoreDiv" id="abilityScoreOutput">0</output>
+          <output for="abilityScoreDiv" id="abilityScoreOutput">Total Points: 0</output>
         </div>
       </div> 
       </fieldset>
