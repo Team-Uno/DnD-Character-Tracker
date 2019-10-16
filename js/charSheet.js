@@ -188,6 +188,45 @@ function populateArmorClass(){
   armorClassNode.innerText = armorClassCalc();
   targetArmorClassNode.appendChild(armorClassNode);
 }
+function populateSkillModifiers(){
+  var targetAcrobaticsNode = document.getElementById('acrobatics');
+  targetAcrobaticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  var targetAnimalHandlingNode = document.getElementById('animalHandling');
+  targetAnimalHandlingNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  var targetArcanaNode = document.getElementById('arcana');
+  targetArcanaNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetAthleticsNode = document.getElementById('athletics');
+  targetAthleticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  var targetDeceptionNode = document.getElementById('deception');
+  targetDeceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  var targetHistoryNode = document.getElementById('history');
+  targetHistoryNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetInsightNode = document.getElementById('insight');
+  targetInsightNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  var targetIntimidationNode = document.getElementById('intimidation');
+  targetIntimidationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  var targetInvestigationNode = document.getElementById('investigation');
+  targetInvestigationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetMedicineNode = document.getElementById('medicine');
+  targetMedicineNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  var targetNatureNode = document.getElementById('nature');
+  targetNatureNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetPerceptionNode = document.getElementById('perception');
+  targetPerceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  var targetPerformanceNode = document.getElementById('performance');
+  targetPerformanceNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  var targetPersuasionNode = document.getElementById('persuasion');
+  targetPersuasionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  var targetReligionNode = document.getElementById('religion');
+  targetReligionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetSleightOfHandNode = document.getElementById('sleightOfHand');
+  targetSleightOfHandNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  var targeStealthNode = document.getElementById('stealth');
+  targeStealthNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  var targetSurvivalNode = document.getElementById('survival');
+  targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+}
+
 
 
 loadCharacter();
@@ -202,3 +241,4 @@ populateGold();
 populateExp();
 populateAlignment();
 populateArmorClass();
+populateSkillModifiers();
