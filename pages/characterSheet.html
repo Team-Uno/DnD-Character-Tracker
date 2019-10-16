@@ -13,5 +13,91 @@
           <a href="../pages/aboutUs.html">About Us</a>
       </nav>
   </header>
+  <main>
+    <div id="sectionOne">
+      <div id="upperLeft">
+        <div id="name">Name:</div>
+        <div id="hitPoints">HP:</div>
+        <div id="armorClass">Armor Class:</div>
+      </div>
+      <div id="upperMiddle">
+        <div id="class">Class:</div>
+        <div id="race">Race:</div>
+        <div id="alignment">Alignment:</div>
+        <div id="gold">Gold:</div>
+      </div>
+      <div id="upperRight">
+        <div id="experienceTotal">Exp:</div>
+        <div id="experienceChart"></div>
+      </div>
+    </div>
+    <div id=sectionTwo>
+      <div id="bottomLeft"></div>
+      <div id="bottomMiddle"></div>
+      <div id="bottomRight">
+        <select id="diceRollSelect">
+          <option id="d20">d20</option>
+          <option id="d12">d12</option>
+          <option id="d10">d10</option>
+          <option id="d6">d6</option>
+          <option id="d4">d4</option>
+        </select>
+        <div id="diceRollDisplay"></div>
+        <button id="rollDiceButton">Roll!</button>
+      </div>
+    </div>
+    <div id=sectionThree>
+      <div class="abilityModifiers" id="strengthModifier">
+        <div class="abilityScores" id="strengthValue">Str</div>
+      </div>
+      <div class="abilityModifiers" id="dexterityModifier">
+          <div class="abilityScores" id="dexterityValue">Dex</div>
+        </div>
+      <div class="abilityModifiers" id="constitutionModifier">
+          <div class="abilityScores" id="constitutionValue">Con</div>
+        </div>
+      <div class="abilityModifiers" id="intelligenceModifier">
+          <div class="abilityScores" id="intelligenceValue">Int</div>
+        </div>
+      <div class="abilityModifiers" id="wisdomModifier">
+          <div class="abilityScores" id="wisdomValue">Wis</div>
+        </div>
+      <div class="abilityModifiers" id="charismaModifier">
+          <div class="abilityScores" id="charismaValue">Cha</div>
+
+        </div>
+    </div>
+    <div id="sectionFour">
+      <div id="skills">
+        <ul>
+          <li>Acrobatics</li>
+          <li>Animal Handling</li>
+          <li>Arcana</li>
+          <li>Athletics</li>
+          <li>Deception</li>
+          <li>History</li>
+          <li>Insight</li>
+          <li>Intimidation</li>
+          <li>Investigation</li>
+          <li>Medicine</li>
+          <li>Nature</li>
+          <li>Perception</li>
+          <li>Performance</li>
+          <li>Persuasion</li>
+          <li>Religion</li>
+          <li>Sleight of Hand</li>
+          <li>Stealth</li>
+          <li>Survival</li>
+        </ul>
+      </div>
+      <div id="abilities"></div>
+      <div id="items"></div>
+    </div>
+    <div id="sectionFive">
+      <div id="background"></div>
+    </div>
+  </main>
 </body>
+<script src="../js/charCreate.js"></script>
+<script src="../js/charSheet.js"></script>
 </html>
