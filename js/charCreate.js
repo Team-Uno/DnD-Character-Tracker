@@ -86,7 +86,7 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   characterClassArray.push(this);
 };
 
-var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, str, dex, con, int, wis, cha, background, characterClass) {
+var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, abilityScore, background, characterClass) {
   this.name = name;
   this.level = level;
   this.xp = xp;
@@ -95,16 +95,50 @@ var Character = function(name, level, xp, startingHitPoints, skills, abilities, 
   this.abilities = abilities;
   this.alignment = alignment;
   this.savingThrow = savingThrow;
-  this.str = str;
-  this.dex = dex;
-  this.con = con;
-  this.int = int;
-  this.wis = wis;
-  this.cha = cha;
+  this.abilityScore = abilityScore;
   this.background = background;
   this.characterClass = characterClass;
+  this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   characterArray.push(this);
 };
+
+Character.prototype.calcAbilityModifier = function(){
+  for(var i = 0; i < this.abilityScore.length; i++){
+    if(this.abilityScore[i] === 0 || this.abilityScore[i] === 1){
+      this.abilityModifiers[i] = -5;
+    }
+    if(this.abilityScore[i] === 2 || this.abilityScore[i] === 3){
+      this.abilityModifiers[i] = -4;
+    }
+    if(this.abilityScore[i] === 4 || this.abilityScore[i] === 5){
+      this.abilityModifiers[i] = -3;
+    }
+    if(this.abilityScore[i] === 6 || this.abilityScore[i] === 7){
+      this.abilityModifiers[i] = -2;
+    }
+    if(this.abilityScore[i] === 8 || this.abilityScore[i] === 9){
+      this.abilityModifiers[i] = -1;
+    }
+    if(this.abilityScore[i] === 10 || this.abilityScore[i] === 11){
+      this.abilityModifiers[i] = 0;
+    }
+    if(this.abilityScore[i] === 12 || this.abilityScore[i] === 13){
+      this.abilityModifiers[i] = 1;
+    }
+    if(this.abilityScore[i] === 14 || this.abilityScore[i] === 15){
+      this.abilityModifiers[i] = 2;
+    }
+    if(this.abilityScore[i] === 16 || this.abilityScore[i] === 17){
+      this.abilityModifiers[i] = 3;
+    }
+    if(this.abilityScore[i] === 18 || this.abilityScore[i] === 19){
+      this.abilityModifiers[i] = 4;
+    }
+    if(this.abilityScore[i] === 20){
+      this.abilityModifiers[i] = 5;
+    }
+  }
+}
 
 //Local Storage
 function saveCharacter(){
@@ -193,7 +227,8 @@ function skillSelectFirstListener(event){
 function submitListener(event){
   event.preventDefault();
   console.log(document.forms.characterCreatorForm.elements.fullName.value);
-  new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, formElements.strengthNumber.value, formElements.dexterityNumber.value, formElements.constitutionNumber.value, formElements.intelligenceNumber.value, formElements.wisdomNumber.value, formElements.charismaNumber.value, formElements.background.value, selectedCharacterClass.name);
+  var newCharacter = new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name);
+  newCharacter.calcAbilityModifier();
   console.log(characterArray);
   saveCharacter();
 }
