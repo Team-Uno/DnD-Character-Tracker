@@ -226,7 +226,12 @@ function populateSkillModifiers(){
   var targetSurvivalNode = document.getElementById('survival');
   targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
 }
-
+function populateBackground(){
+  var targetBackgroundNode = document.getElementById('background');
+  var backgroundNode = document.createElement('p');
+  backgroundNode.innerText = currentCharacter.background;
+  targetBackgroundNode.appendChild(backgroundNode);
+}
 
 
 loadCharacter();
@@ -242,3 +247,4 @@ populateExp();
 populateAlignment();
 populateArmorClass();
 populateSkillModifiers();
+populateBackground();
