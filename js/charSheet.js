@@ -52,7 +52,7 @@ function roll4(){
 
 //Local storage functions
 function loadCharacter(){
-  var savedCharacter = localStorage.getItem('bob');
+  var savedCharacter = localStorage.getItem('selectedCharacter');
   currentCharacter = JSON.parse(savedCharacter);
 }
 //Event Listener

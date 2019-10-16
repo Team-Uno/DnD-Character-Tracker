@@ -249,12 +249,10 @@ function skillSelectFirstListener(event){
 }
 
 function submitListener(event){
-  // event.preventDefault();
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
-  console.log(characterArray);
   saveCharacter();
 }
 
@@ -279,10 +277,6 @@ function generateStatBlockListener (){
   displayStatBlockListener();
 }
 
-// function abilityScoreChangeListener(event){
-//   var initialValue = event.target.value;
-  
-// }
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = pointsPool;
@@ -309,6 +303,6 @@ targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
-// targetAbilityClass.addEventListener('click', pushAbilitiesToArray);
+
 
 

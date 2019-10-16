@@ -1,15 +1,14 @@
 'use strict';
 
+//Global variables
 var allSavedCharacters = [];
 var allKeys = Object.keys(localStorage);
-console.log(allKeys);
 
 function checkForSavedCharacters(){
   for(var i = 0; i < allKeys.length; i++){
     var characters = window.localStorage.getItem(`${allKeys[i]}`);
     allSavedCharacters.push(JSON.parse(characters));
   }
-  console.log(allSavedCharacters);
 }
 
 function createCharacterSelects(){
@@ -48,8 +47,5 @@ function saveCharacterReference(event){
   }
 }
 
-
-
 checkForSavedCharacters();
-console.log(allSavedCharacters);
 createCharacterSelects();
