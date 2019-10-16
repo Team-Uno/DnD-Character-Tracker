@@ -232,6 +232,29 @@ function populateBackground(){
   backgroundNode.innerText = currentCharacter.background;
   targetBackgroundNode.appendChild(backgroundNode);
 }
+//TODO: fix populate abilities once ability refactor is complete
+function populateAbilities(){
+  var targetAbilitiesNode = document.getElementById('abilities');
+  var abilitiesNode = document.createElement('p');
+  for(var i = 0; i < currentCharacter.abilities[0].length; i++){
+    abilitiesNode.innerText = currentCharacter.abilities[0][i];
+    targetAbilitiesNode.appendChild(abilitiesNode);
+  }
+}
+function populateSavingThrows(){
+  var targetStrengthSTNode = document.getElementById('strengthST');
+  targetStrengthSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  var targetDexteritySTNode = document.getElementById('dexterityST');
+  targetDexteritySTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  var targetConstitutionSTNode = document.getElementById('constitutionST');
+  targetConstitutionSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[2]} `);
+  var targetIntelligenceSTNode = document.getElementById('intelligenceST');
+  targetIntelligenceSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  var targetWisdomSTNode = document.getElementById('wisdomST');
+  targetWisdomSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  var targetCharismaSTNode = document.getElementById('charismaST');
+  targetCharismaSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+}
 
 
 loadCharacter();
@@ -248,3 +271,5 @@ populateAlignment();
 populateArmorClass();
 populateSkillModifiers();
 populateBackground();
+populateAbilities();
+populateSavingThrows();
