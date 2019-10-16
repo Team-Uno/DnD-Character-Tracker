@@ -12,7 +12,6 @@ function loadCharacter(){
   var savedCharacter = localStorage.getItem('bob');
   currentCharacter = JSON.parse(savedCharacter);
 }
-
 //DOM functions
 function populateName(){
   var targetNameNode = document.getElementById('name');
@@ -20,15 +19,13 @@ function populateName(){
   nameValueNode.innerText = currentCharacter.name;
   targetNameNode.appendChild(nameValueNode);
 }
-function populatehitPoints(){
+function populateHitPoints(){
   var targetHitPointNode = document.getElementById('hitPoints');
   var hitPointValueNode = document.createElement('p');
   hitPointValueNode.value = hitPointCalc();
   hitPointValueNode.innerText = hitPointCalc();
   targetHitPointNode.appendChild(hitPointValueNode);
 }
-
-//Get ability score values and create html elements to display
 function populateAbilityScores(){
   var targetStrengthScoreNode = document.getElementById('strengthValue');
   var strengthValueNode = document.createElement('p');
@@ -67,11 +64,18 @@ function populateAbilityScores(){
   targetCharismaScoreNode.appendChild(charismaValueNode);
 
 }
-
+function populateClass(){
+  var targetClassNode = document.getElementById('class');
+  var classValueNode = document.createElement('p');
+  classValueNode.value = currentCharacter.characterClass;
+  classValueNode.innerText = currentCharacter.characterClass;
+  targetClassNode.appendChild(classValueNode);
+}
 
 
 loadCharacter();
 console.log(currentCharacter);
 populateAbilityScores();
 populateName();
-populatehitPoints();
+populateHitPoints();
+populateClass();
