@@ -58,6 +58,9 @@ var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
+var targetAbilityScorePlus = document.getElementsByClassName('abilityScorePlus');
+// var targetAbilityScoreMinus = document.getElementsByClassName('abilityScoreMinus');
+var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
@@ -260,10 +263,16 @@ function generateStatBlockListener (){
   displayStatBlockListener();
 }
 
-// function abilityScoreChangeListener(event){
-//   var initialValue = event.target.value;
-  
-// }
+function abilityScoreChangeListener(event){
+  var targetBox = event.target;
+  console.log(targetBox);
+  if(targetBox.className === 'abilityScorePlus'){
+    pointsPool += -1;
+  } else if (targetBox.className === 'abilityScoreMinus'){
+    pointsPool += 1;
+  }
+  displayStatBlockListener();
+}
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = pointsPool;
@@ -290,4 +299,6 @@ targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
-// targetAbilityClass.addEventListener('click', pushAbilitiesToArray);
+targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
+
+//todo: Rename "ability" variables to be more clear.
