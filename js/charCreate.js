@@ -86,10 +86,11 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   characterClassArray.push(this);
 };
 
-var Character = function(name, level, xp, startingHitPoints, skills, abilities, alignment, savingThrow, abilityScore, background, characterClass, characterRace) {
+var Character = function(name, level, xp, gold, startingHitPoints, skills, abilities, alignment, savingThrow, abilityScore, background, characterClass, characterRace) {
   this.name = name;
   this.level = level;
   this.xp = xp;
+  this.gold = gold;
   this.startingHitPoints = startingHitPoints;
   this.skills = skills;
   this.abilities = abilities;
@@ -228,7 +229,7 @@ function skillSelectFirstListener(event){
 function submitListener(event){
   event.preventDefault();
   console.log(document.forms.characterCreatorForm.elements.fullName.value);
-  var newCharacter = new Character(formElements.fullName.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name);
+  var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], [formElements.abilitiesSelectFirst.value, fighterAbilities], formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name);
   newCharacter.calcAbilityModifier();
   console.log(characterArray);
   saveCharacter();
