@@ -56,6 +56,8 @@ var targetSecondSkillSelectElement = document.getElementById('skillSelectSecond'
 var targetAbilityDivElement = document.getElementById('abilityDiv');
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
+var targetAbilityOutput = document.getElementById('abilityScoreOutput');
+var targetStatButton = document.getElementById('statButton');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
@@ -195,8 +197,9 @@ function submitListener(event){
   console.log(characterArray);
   saveCharacter();
 }
-// Helper Functions
-function generateStatBlock (){
+
+function generateStatBlockListener (){
+  pointsPool = null;
   for (var j = 0; j < 6;j++){
     pointsPoolArray = [];
     for (var i = 0; i < 4;i++){
@@ -213,8 +216,18 @@ function generateStatBlock (){
     var totalValue = newPointsPoolArray.reduce(statAdder);
     pointsPool += totalValue;
   }
-  console.log(pointsPool);
+  displayStatBlockListener();
 }
+
+// function abilityScoreChangeListener(event){
+//   var initialValue = event.target.value;
+  
+// }
+// Helper Functions
+function displayStatBlockListener(){
+  targetAbilityOutput.innerText = pointsPool;
+}
+
 function statAdder(accumulator, currentElement){
   return accumulator + currentElement;
 }
@@ -224,7 +237,7 @@ var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acroba
 // Run Functions
 populateCharacterClassSelect();
 populateAlignmentSelect();
-generateStatBlock();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetSubmitButtonElement.addEventListener('click', submitListener);
+targetStatButton.addEventListener('click', generateStatBlockListener);
