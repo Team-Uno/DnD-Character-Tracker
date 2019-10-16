@@ -2,13 +2,18 @@
 
 //Global Variable
 var currentCharacter = null;
-//dom variables
 
-
+//Helper functions
+function hitPointCalc(){
+  return currentCharacter.startingHitPoints + currentCharacter.abilityModifiers[2];
+}
+//Local storage functions
 function loadCharacter(){
   var savedCharacter = localStorage.getItem('bob');
   currentCharacter = JSON.parse(savedCharacter);
 }
+
+//DOM functions
 function populateName(){
   var targetNameNode = document.getElementById('name');
   var nameValueNode = document.createElement('p');
@@ -18,8 +23,8 @@ function populateName(){
 function populatehitPoints(){
   var targetHitPointNode = document.getElementById('hitPoints');
   var hitPointValueNode = document.createElement('p');
-  hitPointValueNode.value = currentCharacter.startingHitPoints + currentCharacter.abilityModifiers[2];
-  hitPointValueNode.innerText = hitPointValueNode.value;
+  hitPointValueNode.value = hitPointCalc();
+  hitPointValueNode.innerText = hitPointCalc();
   targetHitPointNode.appendChild(hitPointValueNode);
 }
 
