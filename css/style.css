@@ -5,10 +5,26 @@ body {
   
 }
 
+header {
+  background-color:grey;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: center;
+  
+}
+
+
 #navbar {
-  margin: 0 auto;
-  display: inline;
-  background-color: grey;
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+ }
+
+#ul {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 li {
