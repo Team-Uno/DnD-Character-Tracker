@@ -78,6 +78,13 @@ function populateRace(){
   raceValueNode.innerText = currentCharacter.characterRace;
   targetRaceNode.appendChild(raceValueNode);
 }
+function populateGold(){
+  var targetGoldNode = document.getElementById('gold');
+  var goldValueNode = document.createElement('p');
+  goldValueNode.value = currentCharacter.gold;
+  goldValueNode.innerText = currentCharacter.gold;
+  targetGoldNode.appendChild(goldValueNode);
+}
 
 
 loadCharacter();
