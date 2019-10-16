@@ -153,8 +153,8 @@ function populateClass(){
 function populateRace(){
   var targetRaceNode = document.getElementById('race');
   var raceValueNode = document.createElement('div');
-  raceValueNode.value = currentCharacter.characterRace;
-  raceValueNode.innerText = currentCharacter.characterRace;
+  raceValueNode.value = currentCharacter.race;
+  raceValueNode.innerText = currentCharacter.race;
   targetRaceNode.appendChild(raceValueNode);
 }
 function populateGold(){
@@ -171,6 +171,13 @@ function populateExp(){
   expValueNode.innerText = currentCharacter.xp;
   targetExpNode.appendChild(expValueNode);
 }
+function populateAlignment(){
+  var targetAlignmentNode = document.getElementById('alignment');
+  var alignmentValueNode = document.createElement('div');
+  alignmentValueNode.value = currentCharacter.alignment;
+  alignmentValueNode.innerText = currentCharacter.alignment;
+  targetAlignmentNode.appendChild(alignmentValueNode);
+}
 
 
 loadCharacter();
@@ -180,5 +187,7 @@ populateAbilityScores();
 populateName();
 populateHitPoints();
 populateClass();
+populateRace();
 populateGold();
 populateExp();
+populateAlignment();
