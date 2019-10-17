@@ -245,10 +245,6 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   this.skills = skills;
   this.abilities = abilities;
   this.proficiency = proficiency;
-  this.spellsKnown = spellsKnown;
-  this.spells = spells;
-  this.cantripsKnown = cantripsKnown;
-  this.cantrips = cantrips;
   characterClassArray.push(this);
 };
 
