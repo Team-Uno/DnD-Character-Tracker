@@ -119,6 +119,30 @@ fieldset {
 #charisma {
   grid-area: chaAS;
 }
+#strASLabel {
+  grid-area: strASLabel;
+}
+#abilityScoreDiv {
+  grid-area: abilityScoreDiv;
+}
+#strengthNumber {
+  grid-area: strengthNumber;
+  width: 30px;
+}
+#strASButton {
+  grid-area: strASButton;
+}
+#dexASLabel {
+  grid-area: dexASLabel;
+}
+#dexterityNumber {
+  grid-area: dexterityNumber;
+  width: 30px;
+}
+#dexASButton {
+  grid-area: dexASButton;
+}
+
 
 body {
   display: grid;
@@ -172,37 +196,35 @@ form {
     "alignmentDiv alignmentDiv alignmentDiv";
 
 }
-section,
+/* section,
 fieldset {
   display: inline-block;
-}
+} */
 #mainRight {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "nameDiv nameDiv nameDiv"
-    "levelDiv levelDiv levelDiv"
-    "raceDiv raceDiv raceDiv"
-    "classDiv classDiv classDiv"
-    "skillsDiv skillsDiv skillsDiv"
-    "abilityDiv abilityDiv abilityDiv"
-    "backgroundDiv backgroundDiv backgroundDiv"
-    "alignmentDiv alignmentDiv alignmentDiv";
-
-  /* grid-template-areas: 
-    "abilityHeading abilityHeading abilityHeading abilityHeading abilityHeading abilityHeading"
-    "asField asField asField asField asField asField asField"; */
+  grid-template-columns: 1fr;
+  grid-template-rows: .25fr 1fr;
+  grid-template-areas: 
+    "abilityHeading"
+    "asField";
 }
-/* #abilityScoreField {
+#abilityScoreField {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 
     "strAS dexAS conAS intAS wisAS chaAS"
     ". . statButton asPoints . .";
+}
+#strength {
+  display: flex;
+  flex-direction: column;
+}
+#dexterity {
+  display: flex;
+  flex-direction: column;
+}
 
-} */
 
 
 
