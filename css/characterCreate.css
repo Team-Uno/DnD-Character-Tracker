@@ -1,4 +1,217 @@
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+#logo {
+  grid-area: logo;
+}
+#navBar {
+  grid-area: navBar;
+}
+form {
+  grid-area: form;
+}
+#mainLeft {
+  grid-area: mainLeft;
+}
+#mainRight {
+  grid-area: mainRight;
+}
+h1 {
+  grid-area: h1;
+}
+#fullNameLabel {
+  grid-area: nameLabel;
+}
+#fullName {
+  grid-area: fullName;
+}
+#levelLabel {
+  grid-area: levelLabel;
+}
+#levelInput {
+  grid-area: level;
+}
+#raceLabel {
+  grid-area: raceLabel;
+}
+#raceSelect {
+  grid-area: race;
+}
+#classLabel {
+  grid-area: classLabel;
+}
+#classSelect {
+  grid-area: classSelect;
+}
+#skillLabel {
+  grid-area: skillLabel;
+}
+#skillSelectFirst {
+  grid-area: skillSelectFirst;
+}
+#skillSelectSecond {
+  grid-area: skillSelectSecond;
+}
+#nameDiv {
+  grid-area: nameDiv;
+}
+#levelDiv {
+  grid-area: levelDiv;
+}
+#raceDiv {
+  grid-area: raceDiv;
+}
+#classDiv {
+  grid-area: classDiv;
+}
+#skillsDiv {
+  grid-area: skillsDiv;
+}
+#abilityDiv {
+  grid-area: abilityDiv;
+}
+#alignmentDiv {
+  grid-area: alignmentDiv;
+}
+#backgroundDiv {
+  grid-area: backgroundDiv;
+}
+#abilityScoreHeading {
+  grid-area: abilityHeading;
+}
+fieldset {
+  grid-area: asField;
+}
+#statButton {
+  grid-area: statButton;
+}
+#abilityScoreOutput {
+  grid-area: asPoints;
+}
+#submitButton {
+  grid-area: charSubmit;
+  width: 200px;
+  height: 50px;
+  align-self: center;
+  justify-self: center;
+}
+#strength {
+  grid-area: strAS;
+}
+#dexterity {
+  grid-area: dexAS;
+}
+#constitution {
+  grid-area: conAS;
+}
+#intelligence {
+  grid-area: intAS;
+}
+#wisdom {
+  grid-area: widAS;
+}
+#charisma {
+  grid-area: chaAS;
+}
+
 body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .25fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr .25fr;
+  grid-template-areas:
+    ". . ."
+    "logo . navBar";
+  border: 1px solid black;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .125fr 1fr .125fr;
+  grid-template-areas:
+    ". h1 ."
+    "form form form"
+    ". charSubmit .";
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "mainLeft mainRight"
+    "charSubmit charSubmit";
+}
+#mainLeft {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "nameDiv nameDiv nameDiv"
+    "levelDiv levelDiv levelDiv"
+    "raceDiv raceDiv raceDiv"
+    "classDiv classDiv classDiv"
+    "skillsDiv skillsDiv skillsDiv"
+    "abilityDiv abilityDiv abilityDiv"
+    "backgroundDiv backgroundDiv backgroundDiv"
+    "alignmentDiv alignmentDiv alignmentDiv";
+
+}
+section,
+fieldset {
+  display: inline-block;
+}
+#mainRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "nameDiv nameDiv nameDiv"
+    "levelDiv levelDiv levelDiv"
+    "raceDiv raceDiv raceDiv"
+    "classDiv classDiv classDiv"
+    "skillsDiv skillsDiv skillsDiv"
+    "abilityDiv abilityDiv abilityDiv"
+    "backgroundDiv backgroundDiv backgroundDiv"
+    "alignmentDiv alignmentDiv alignmentDiv";
+
+  /* grid-template-areas: 
+    "abilityHeading abilityHeading abilityHeading abilityHeading abilityHeading abilityHeading"
+    "asField asField asField asField asField asField asField"; */
+}
+/* #abilityScoreField {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "strAS dexAS conAS intAS wisAS chaAS"
+    ". . statButton asPoints . .";
+
+} */
+
+
+
+
+
+
+
+
+/* body {
   width: 960px;
   margin: 10% auto;
   padding: 10% auto;
@@ -105,4 +318,4 @@ li {
   border-radius: 100px;
   text-align: center;
   line-height: 60px;
-}
+} */

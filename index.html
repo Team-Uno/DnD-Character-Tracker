@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel = "stylesheet" type="text/css" href="./css/characterCreate.css">
+  <link rel = "stylesheet" type="text/css" href="./css/reset.css">
   <link rel = "stylesheet" type="text/css" href="./css/characterCreate.css">
 
   <title>D&D Character Creator and Tracker</title>
@@ -22,105 +22,122 @@
     </nav>
   </header>
   <main>
-    <div id="form">
+    <h1>Create your Character</h1>
+    <!-- <div id="form"> -->
     <form name="characterCreatorForm">
-        <label for="fullName"> Name: </label>
-        <input type="text" name="fullName" id="fullName">
-
-      <div id="levelDiv">
-        <label for="levelInput">Desired Level:</label>
-        <input type="number" name="levelInput" id="levelInput" min="1" max="20" placeholder="1">
-      </div>      
-      <div id="raceDiv">
-        <label for="raceSelect">Choose a race: </label>
-        <select name="raceSelect" id="raceSelect">
-          <option value="">--Please choose an option--</option>
-        </select>
-      </div>
-
-      <div id="classDiv">
-          <label for="classSelect">Choose a class: </label>
+      <div id=mainLeft>
+        <div class="selectorDiv" id="nameDiv">
+          <label for="fullName" id="fullNameLabel"> Name: </label>
+          <input type="text" name="fullName" id="fullName">
+        </div>
+        <div class="selectorDiv" id="levelDiv">
+          <label for="levelInput" id="levelLabel">Level:</label>
+          <input type="number" name="levelInput" id="levelInput" min="1" max="20" placeholder="1">
+        </div>      
+        <div class="selectorDiv" id="raceDiv">
+          <label for="raceSelect" id="raceLabel">Race: </label>
+          <select name="raceSelect" id="raceSelect">
+            <option value="">--Please choose an option--</option>
+          </select>
+        </div>
+  
+        <div class="selectorDiv" id="classDiv">
+          <label for="classSelect" id="classLabel">Class: </label>
           <select name="class" id="classSelect">
             <option value="">--Please choose an option--</option>
           </select>
-      </div>
-
-      <div id="skillsDiv">
-          <label for="skillSelectFirst">Choose two skills:</label>
+        </div>
+    
+        <div class="selectorDiv" id="skillsDiv">
+          <label for="skillSelectFirst" id="skillLabel">Skills:</label>
           <select name="skillSelectFirst" id="skillSelectFirst">
             <option value="">--Please choose an option--</option>
           </select>
 
-          <label for="skillSelectSecond">Choose two skills:</label>
+          <!-- <label for="skillSelectSecond"></label> -->
           <select name="skillSelectSecond" id="skillSelectSecond" disabled="true">
             <option value="">--Please choose your first skill--</option>
             <option value="input skill">input skill</option>
           </select>
-      </div>
+        </div>
 
-      <div id="abilityDiv">
+        <div class="selectorDiv" id="abilityDiv"> </div>
+        <div class="selectorDiv" id="alignmentDiv">
+          <label for="alignmentSelect" id="alignmentLabel">Alignment:</label>
+          <select name="alignment" id="alignmentSelect">
+            <option value="">--Please choose an option--</option>
+          </select>
+        </div>
+        <div class="selectorDiv" id="backgroundDiv">
+          <label for="background">Background: </label>
+          <input type="text" name="background" id="background">
+        </div>
       </div>
-
-      <div id="alignmentDiv">
-        <label for="alignmentSelect">Choose an alignment:</label>
-        <select name="alignment" id="alignmentSelect">
-          <option value="">--Please choose an option--</option>
-        </select>
-      </div>
-      <fieldset form="characterCreatorForm" name="Ability Scores">
-        <caption>Ability Scores</caption>
-        <div id="abilityScoreDiv">
-          <section id="strength">
+      <div id="mainRight">
+        <h2 id="abilityScoreHeading">Ability Scores</h2>
+        <fieldset form="characterCreatorForm" name="Ability Scores" id="abilityScoreField">
+          <!-- <caption>Ability Scores</caption> -->
+          <div id="abilityScoreDiv">
+            <section id="strength">
               <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" disabled="true" value="1";>
               <label for="strengthNumber">Strength</label> 
-              <button type="button" class="abilityScorePlus">+</button>
-              <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-          
-          <section id="dexterity">
-            <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" disabled="true" value="1">
-            <label for="dexterityNumber">Dexterity</label> 
-            <button type="button" class="abilityScorePlus">+</button>
-            <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-
-          <section id="constitution">
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+              
+            <section id="dexterity">
+              <input type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" disabled="true" value="1">
+              <label for="dexterityNumber">Dexterity</label> 
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+    
+            <section id="constitution">
               <input type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" disabled="true" value="1">
               <label for="constitutionNumber">Constitution</label> 
-              <button type="button" class="abilityScorePlus">+</button>
-              <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-
-          <section id="intelligence">
-            <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" disabled="true" value="1">
-            <label for="intelligenceNumber">Intelligence</label> 
-            <button type="button" class="abilityScorePlus">+</button>
-            <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-
-          <section id="wisdom">
-            <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" disabled="true" value="1">
-            <label for="wisdomNumber">Wisdom</label> 
-            <button type="button" class="abilityScorePlus">+</button>
-            <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-
-          <section id="charisma">
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+    
+            <section id="intelligence">
+              <input type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" disabled="true" value="1">
+              <label for="intelligenceNumber">Intelligence</label> 
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+  
+            <section id="wisdom">
+              <input type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" disabled="true" value="1">
+              <label for="wisdomNumber">Wisdom</label> 
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+    
+            <section id="charisma">
               <input type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" disabled="true" value="1">
               <label for="charismaNumber">Charisma</label> 
-              <button type="button" class="abilityScorePlus">+</button>
-              <button type="button" class="abilityScoreMinus">-</button>
-          </section>
-
+              <div class="abilityButtons">
+                <button type="button" class="abilityScorePlus">+</button>
+                <button type="button" class="abilityScoreMinus">-</button>
+              </div>
+            </section>
+          <!-- </div> -->
           <output for="abilityScoreDiv" id="abilityScoreOutput">Total Points: 0</output>
-        </div>
-      </div> 
-      </fieldset>
-      <label for="background">Background Information: </label>
-      <input type="text" name="background" id="background">
+          <button type="button" id="statButton">Roll your stats!</button>
+        </fieldset> 
+      </div>
       <input type="submit" value="Save This Character!" id="submitButton">
     </form>
-    <button type="button" id="statButton">Roll your stats!</button>
   </main>
 </body>
 <script src="./js/race.js"></script>

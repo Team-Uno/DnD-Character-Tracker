@@ -1,6 +1,33 @@
-
-
 body {
+  background-color: grey;
+  margin: 0px;
+}
+#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: white;
+}
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  background
+}
+.navItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 40px 0px 40px;
+}
+
+
+
+
+
+
+
+/* body {
   width: 960px;
   margin: 10% auto;
   padding: 10% auto;
@@ -42,4 +69,4 @@ li {
   grid-template-rows: 80px auto 80px; 
   grid-column-gap: 10px;
   grid-row-gap: 15px;
-}
+} */
