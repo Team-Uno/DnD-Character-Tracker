@@ -14,7 +14,7 @@ function getSavedKeys(){
 }
 
 function checkForSavedCharacters(){
-  getSavedKeys()
+  getSavedKeys();
   for(var i = 0; i < allKeys.length; i++){
     var characters = window.localStorage.getItem(`${allKeys[i]}`);
     allSavedCharacters.push(JSON.parse(characters));
@@ -37,19 +37,34 @@ function createCharacterSelects(){
     charInfoNode.innerText = `${allSavedCharacters[i].level}/${allSavedCharacters[i].characterClass}/${allSavedCharacters[i].race}`;
     var charSelectButton = document.createElement('button');
     charSelectButton.setAttribute('id', `${allSavedCharacters[i].name}`);
-    charSelectButton.setAttribute('class', 'charSelectButton');
     charSelectButton.innerText = 'Select Character';
     charSelectButton.addEventListener('click', onCharacterSelect);
+    var charDeleteButton = document.createElement('button');
+    charDeleteButton.setAttribute('id', `${allSavedCharacters[i].name}`);
+    charDeleteButton.innerText = ('Delete Character');
+    charDeleteButton.addEventListener('click', onCharacterDelete);
     cardNode.appendChild(classLogoNode);
     cardNode.appendChild(charNameNode);
     cardNode.appendChild(charInfoNode);
     cardNode.appendChild(charSelectButton);
+    cardNode.appendChild(charDeleteButton);
     targetGridNode.appendChild(cardNode);
   }
 }
 function onCharacterSelect(){
   saveCharacterReference(event);
   switchPage();
+}
+
+function onCharacterDelete(event){
+  var selectedName = event.target.id;
+  console.log(selectedName);
+  for(var i = 0; i < allSavedCharacters.length; i++){
+    if(selectedName === allSavedCharacters[i].name){
+      window.localStorage.removeItem(selectedName);
+    }
+  }
+  location.reload();
 }
 
 function switchPage(){
