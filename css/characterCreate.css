@@ -12,6 +12,14 @@ footer {
 }
 #navBar {
   grid-area: navBar;
+  align-items: center;
+  justify-content: center;
+}
+#navBar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 form {
   grid-area: form;
@@ -24,6 +32,8 @@ form {
 }
 h1 {
   grid-area: h1;
+  align-self: center;
+  justify-self: center;
 }
 #fullNameLabel {
   grid-area: nameLabel;
@@ -192,6 +202,8 @@ form {
   grid-template-areas: 
     "mainLeft mainRight"
     "charSubmit charSubmit";
+  margin-left: 50px;
+  margin-right: 50px;
 }
 #mainLeft {
   display: grid;
@@ -206,12 +218,11 @@ form {
     "abilityDiv abilityDiv abilityDiv"
     "backgroundDiv backgroundDiv backgroundDiv"
     "alignmentDiv alignmentDiv alignmentDiv";
+  border: 5px solid black;
+  padding: 10px;
+  margin-right: 5px;
 
 }
-/* section,
-fieldset {
-  display: inline-block;
-} */
 #mainRight {
   display: grid;
   grid-template-columns: 1fr;
@@ -219,40 +230,55 @@ fieldset {
   grid-template-areas: 
     "abilityHeading"
     "asField";
+  border: 5px solid black;
+  padding: 10px;
+  margin-left: 5px;
 }
 #abilityScoreDiv {
   display: flex;
   flex-direction: row;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-    "strAS dexAS conAS intAS wisAS chaAS"
-    ". . statButton asPoints . ."; */
 }
 #strength {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 #dexterity {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 #constitution {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 #intelligence {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 #wisdom {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 #charisma {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.abilityInputs {
+  margin-top: 10px;
+}
+.abilityButtons button {
+  margin: 10px 2.5px 10px 2.5px;
 }
 
 
