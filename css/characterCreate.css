@@ -125,22 +125,34 @@ fieldset {
 #abilityScoreDiv {
   grid-area: abilityScoreDiv;
 }
-#strengthNumber {
-  grid-area: strengthNumber;
-  width: 30px;
-}
 #strASButton {
   grid-area: strASButton;
 }
 #dexASLabel {
   grid-area: dexASLabel;
 }
+#dexASButton {
+  grid-area: dexASButton;
+}
+#strengthNumber {
+  grid-area: strengthNumber;
+  width: 30px;
+}
 #dexterityNumber {
   grid-area: dexterityNumber;
   width: 30px;
 }
-#dexASButton {
-  grid-area: dexASButton;
+#constitutionNumber {
+  width: 30px;
+}
+#intelligenceNumber {
+  width: 30px;
+}
+#wisdomNumber {
+  width: 30px;
+}
+#charismaNumber {
+  width: 30px;
 }
 
 
@@ -208,19 +220,37 @@ fieldset {
     "abilityHeading"
     "asField";
 }
-#abilityScoreField {
-  display: grid;
+#abilityScoreDiv {
+  display: flex;
+  flex-direction: row;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 
     "strAS dexAS conAS intAS wisAS chaAS"
-    ". . statButton asPoints . .";
+    ". . statButton asPoints . ."; */
 }
 #strength {
   display: flex;
   flex-direction: column;
 }
 #dexterity {
+  display: flex;
+  flex-direction: column;
+}
+#constitution {
+  display: flex;
+  flex-direction: column;
+}
+#intelligence {
+  display: flex;
+  flex-direction: column;
+}
+#wisdom {
+  display: flex;
+  flex-direction: column;
+}
+#charisma {
   display: flex;
   flex-direction: column;
 }
