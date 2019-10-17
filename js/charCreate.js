@@ -306,7 +306,7 @@ Character.prototype.pickClassLogo = function(){
     this.classLogo = '../imgs/fighterLogo.png';
   }
   if(this.characterClass.toLowerCase() === 'rouge'){
-    this.classLogo = '../imgs/rougeLogo.png';
+    this.classLogo = '../imgs/rogueLogo.png';
   }
   if(this.characterClass.toLowerCase() === 'ranger'){
     this.classLogo = '../imgs/rangerLogo.png';
