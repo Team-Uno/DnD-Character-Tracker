@@ -44,12 +44,13 @@ form {
   background-color: white;
 }
 h1 {
-  grid-area: h1;
+  /* grid-area: h1;
   align-self: center;
-  justify-self: center;
+  justify-self: center; */
   color: oldlace;
   font-size: 30px;
   font-weight: 700;
+  margin: 10px 50px 10px 50px;
 }
 #fullNameLabel {
   grid-area: nameLabel;
@@ -124,8 +125,9 @@ fieldset {
   grid-area: charSubmit;
   width: 200px;
   height: 50px;
-  align-self: center;
+  align-self: flex-start;
   justify-self: center;
+  margin-top: 10px;
 }
 #strength {
   grid-area: strAS;
@@ -180,6 +182,15 @@ fieldset {
 #charismaNumber {
   width: 30px;
 }
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .25fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
 header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -187,7 +198,6 @@ header {
   grid-template-areas:
     ". . ."
     "logo navBar navBar";
-  border: 1px solid black;
 }
 form {
   display: grid;
@@ -198,7 +208,7 @@ form {
     "charSubmit charSubmit";
   margin-left: 50px;
   margin-right: 50px;
-  padding: 50px;
+  padding: 30px;
 }
 #mainLeft {
   display: grid;
