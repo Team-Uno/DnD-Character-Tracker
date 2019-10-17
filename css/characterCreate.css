@@ -280,6 +280,13 @@ form {
 .abilityButtons button {
   margin: 10px 2.5px 10px 2.5px;
 }
+.selectorDiv {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.abilitySelect {
+  margin-right: 2px;
+}
 
 
 
