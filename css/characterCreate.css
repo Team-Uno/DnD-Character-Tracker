@@ -37,6 +37,10 @@ li {
   width: 1
 }
 
+#levelInput {
+padding: 20px 0px 20px 0px;
+}
+
 #raceDiv {
   padding: 20px 0px 20px 0px;
 }
