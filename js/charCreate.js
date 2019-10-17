@@ -365,10 +365,10 @@ function populateAbilitiesSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
-        var newLabelNode = document.createElement('label');
-        newLabelNode.for = `abilitySelect${j}`;
-        newLabelNode.innerText = 'Choose an ability:';
-        targetAbilityDivElement.appendChild(newLabelNode);
+        // var newLabelNode = document.createElement('label');
+        // newLabelNode.for = `abilitySelect${j}`;
+        // newLabelNode.innerText = 'Choose an ability:';
+        // targetAbilityDivElement.appendChild(newLabelNode);
 
         var newSelectNode = document.createElement('select');
         newSelectNode.name = `abilitySelect${j}`;
