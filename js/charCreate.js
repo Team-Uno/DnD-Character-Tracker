@@ -61,9 +61,9 @@ var wizardAbilities = [
   'minor alchemy',
   'transmuter\'s stone',
   'shapechanger',
-  'master transmuter',
+  'master transmuter'
 ];
-    
+
 var fighterAbilities = [
   'archery',
   'defense',
@@ -99,7 +99,7 @@ var fighterAbilities = [
   'know your enemy',
   'improved combat superiority',
   'relentless',
-  'advanced combat superiority',
+  'advanced combat superiority'
 ];
 
 var rougeAbilities = [
@@ -123,7 +123,7 @@ var rougeAbilities = [
   'assassinate',
   'infiltratoin expertise',
   'imposter',
-  'death strike',
+  'death strike'
 ];
 
 var rangerAbilities = [
@@ -200,10 +200,9 @@ var rangerAbilities = [
   'ranger\'s companion',
   'exceptional training',
   'bestial fury',
-  'share spells',
+  'share spells'
 ];
-    
-   
+
 var alignments = ['Lawful Good','Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
 // Global Variables
 var characterClassArray = [];
@@ -224,15 +223,6 @@ var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
-var targetAbilityScorePlus = document.getElementsByClassName('abilityScorePlus');
-//Ability Score Value DOM references
-var strengthNumber = document.getElementById('strengthNumber')
-var dexterityNumber = document.getElementById('dexterityNumber')
-var constitutionNumber = document.getElementById('constitutionNumber')
-var intelligenceNumber = document.getElementById('intelligenceNumber')
-var wisdomNumber = document.getElementById('wisdomNumber')
-var charismaNumber = document.getElementById('charismaNumber')
-// var targetAbilityScoreMinus = document.getElementsByClassName('abilityScoreMinus');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
@@ -419,8 +409,7 @@ function skillSelectFirstListener(event){
   populateSkillsSelectSecond();
 }
 
-function submitListener(event){
-  event.preventDefault();
+function submitListener(){
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
