@@ -1,8 +1,10 @@
 header {
+  height: 150px;
   grid-area: header;
 }
 main {
   grid-area: main;
+  background-color: darkslategray;
 }
 footer {
   grid-area: footer;
@@ -30,18 +32,24 @@ li {
   justify-content: space-between;
 }
 form {
+  background-color: darkred;
   grid-area: form;
 }
 #mainLeft {
   grid-area: mainLeft;
+  background-color: white;
 }
 #mainRight {
   grid-area: mainRight;
+  background-color: white;
 }
 h1 {
   grid-area: h1;
   align-self: center;
   justify-self: center;
+  color: oldlace;
+  font-size: 30px;
+  font-weight: 700;
 }
 #fullNameLabel {
   grid-area: nameLabel;
@@ -172,19 +180,6 @@ fieldset {
 #charismaNumber {
   width: 30px;
 }
-
-
-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: .25fr 2fr 1fr;
-  grid-template-areas:
-    "header header header"
-    "main main main"
-    "footer footer footer";
-}
-
-
 header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -193,15 +188,6 @@ header {
     ". . ."
     "logo navBar navBar";
   border: 1px solid black;
-}
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: .125fr 1fr .125fr;
-  grid-template-areas:
-    ". h1 ."
-    "form form form"
-    ". charSubmit .";
 }
 form {
   display: grid;
@@ -212,6 +198,7 @@ form {
     "charSubmit charSubmit";
   margin-left: 50px;
   margin-right: 50px;
+  padding: 50px;
 }
 #mainLeft {
   display: grid;
@@ -295,124 +282,3 @@ form {
 .abilitySelect {
   margin-right: 2px;
 }
-
-
-
-
-
-
-
-
-
-/* body {
-  width: 960px;
-  margin: 10% auto;
-  padding: 10% auto;
-}
-
-header {
-  background-color:grey;
-  display: flex;
-  align-items: center;
-  height: 100px;
-  justify-content: center;
-}
-
-
-#navbar {
-  display: flex;
-  align-items: flex-start;
-  align-items: center;
-}
-
-#ul {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-li {
-  display: inline;
-  padding: 5px;
-  margin: 10px 10px 10px 10px
-}
-
-#form {
-  padding: 0px;
-  margin: 30px;
-  width: 1
-}
-
-#levelInput {
-padding: 20px 0px 20px 0px;
-}
-
-#raceDiv {
-  padding: 20px 0px 20px 0px;
-}
-
-#skillsDiv {
-  padding: 20px 0px 20px 0px;
-}
-
-#abilitiesDiv {
-  padding: 0px 0px 20px 0px;
-}
-
-#alignmentDiv {
-  padding: 0px 0px 20px 0px;
-}
-
-#strengthNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-}
-    
-#dexterityNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-}
-
-#constitutionNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-}
-
-#intelligenceNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-}
-
-#wisdomNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-}
-
-#charismaNumber {
-  border: solid 1px black;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 60px;
-} */
