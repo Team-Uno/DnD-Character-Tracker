@@ -4,8 +4,6 @@
 var allSavedCharacters = [];
 var allKeys = [];
 
-console.log(allKeys);
-
 function getSavedKeys(){
   allKeys = Object.keys(localStorage);
   if(allKeys[0] === 'selectedCharacter'){
@@ -58,7 +56,6 @@ function onCharacterSelect(){
 
 function onCharacterDelete(event){
   var selectedName = event.target.id;
-  console.log(selectedName);
   for(var i = 0; i < allSavedCharacters.length; i++){
     if(selectedName === allSavedCharacters[i].name){
       window.localStorage.removeItem(selectedName);
@@ -73,7 +70,6 @@ function switchPage(){
 
 function saveCharacterReference(event){
   var selectedName = event.target.id;
-  console.log(selectedName);
   for(var i = 0; i < allSavedCharacters.length; i++){
     if(selectedName === allSavedCharacters[i].name){
       var selectedCharacter = JSON.stringify(allSavedCharacters[i]);
