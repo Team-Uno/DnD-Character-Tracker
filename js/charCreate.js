@@ -59,15 +59,6 @@ var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
-var targetAbilityScorePlus = document.getElementsByClassName('abilityScorePlus');
-//Ability Score Value DOM references
-var strengthNumber = document.getElementById('strengthNumber')
-var dexterityNumber = document.getElementById('dexterityNumber')
-var constitutionNumber = document.getElementById('constitutionNumber')
-var intelligenceNumber = document.getElementById('intelligenceNumber')
-var wisdomNumber = document.getElementById('wisdomNumber')
-var charismaNumber = document.getElementById('charismaNumber')
-// var targetAbilityScoreMinus = document.getElementsByClassName('abilityScoreMinus');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
@@ -258,7 +249,7 @@ function skillSelectFirstListener(event){
   populateSkillsSelectSecond();
 }
 
-function submitListener(event){
+function submitListener(){
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
@@ -317,7 +308,7 @@ function pushAbilitiesToArray(){
 }
 
 // Make Objects
-var fighterClass = new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
+new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
 // Run Functions
 populateCharacterClassSelect();
