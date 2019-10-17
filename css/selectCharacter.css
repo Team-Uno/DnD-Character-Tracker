@@ -1,0 +1,78 @@
+
+header {
+  height: 150px;
+  grid-area: header;
+}
+main {
+  grid-area: main;
+  background-color: darkslategray;
+}
+footer {
+  grid-area: footer;
+}
+#logo {
+  grid-area: logo;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+#navBar {
+  grid-area: navBar;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0px 30px 10px 30px;
+}
+li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#navBar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .25fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr .25fr;
+  grid-template-areas:
+    ". . ."
+    "logo navBar navBar";
+}
+h1{
+  color: oldlace;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 50px 10px 50px;
+}
+.grid-container {
+display: grid;
+grid-gap: 50px 50px;
+grid-template-columns: repeat(3, 1fr);
+background-color:darkred;
+padding: 30px;
+margin-left: 50px;
+margin-right: 50px;
+}
+.grid-item {
+background-color: white;
+border: 5px solid rgba(0, 0, 0, 0.8);
+font-size: 30px;
+text-align: center;
+height: 340px;
+}
+img{
+  max-height: 200px;
+  width: auto;
+}
+

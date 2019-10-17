@@ -1,0 +1,294 @@
+header {
+  height: 150px;
+  grid-area: header;
+}
+main {
+  grid-area: main;
+  background-color: darkslategray;
+}
+footer {
+  grid-area: footer;
+}
+#logo {
+  grid-area: logo;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+#navBar {
+  grid-area: navBar;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0px 30px 10px 30px;
+}
+li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#navBar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+form {
+  background-color: darkred;
+  grid-area: form;
+}
+#mainLeft {
+  grid-area: mainLeft;
+  background-color: white;
+}
+#mainRight {
+  grid-area: mainRight;
+  background-color: white;
+}
+h1 {
+  /* grid-area: h1;
+  align-self: center;
+  justify-self: center; */
+  color: oldlace;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 50px 10px 50px;
+}
+#fullNameLabel {
+  grid-area: nameLabel;
+}
+#fullName {
+  grid-area: fullName;
+}
+#levelLabel {
+  grid-area: levelLabel;
+}
+#levelInput {
+  grid-area: level;
+}
+#raceLabel {
+  grid-area: raceLabel;
+}
+#raceSelect {
+  grid-area: race;
+}
+#classLabel {
+  grid-area: classLabel;
+}
+#classSelect {
+  grid-area: classSelect;
+}
+#skillLabel {
+  grid-area: skillLabel;
+}
+#skillSelectFirst {
+  grid-area: skillSelectFirst;
+}
+#skillSelectSecond {
+  grid-area: skillSelectSecond;
+}
+#nameDiv {
+  grid-area: nameDiv;
+}
+#levelDiv {
+  grid-area: levelDiv;
+}
+#raceDiv {
+  grid-area: raceDiv;
+}
+#classDiv {
+  grid-area: classDiv;
+}
+#skillsDiv {
+  grid-area: skillsDiv;
+}
+#abilityDiv {
+  grid-area: abilityDiv;
+}
+#alignmentDiv {
+  grid-area: alignmentDiv;
+}
+#backgroundDiv {
+  grid-area: backgroundDiv;
+}
+#abilityScoreHeading {
+  grid-area: abilityHeading;
+}
+fieldset {
+  grid-area: asField;
+}
+#statButton {
+  grid-area: statButton;
+}
+#abilityScoreOutput {
+  grid-area: asPoints;
+}
+#submitButton {
+  grid-area: charSubmit;
+  width: 200px;
+  height: 50px;
+  align-self: flex-start;
+  justify-self: center;
+  margin-top: 10px;
+}
+#strength {
+  grid-area: strAS;
+}
+#dexterity {
+  grid-area: dexAS;
+}
+#constitution {
+  grid-area: conAS;
+}
+#intelligence {
+  grid-area: intAS;
+}
+#wisdom {
+  grid-area: widAS;
+}
+#charisma {
+  grid-area: chaAS;
+}
+#strASLabel {
+  grid-area: strASLabel;
+}
+#abilityScoreDiv {
+  grid-area: abilityScoreDiv;
+}
+#strASButton {
+  grid-area: strASButton;
+}
+#dexASLabel {
+  grid-area: dexASLabel;
+}
+#dexASButton {
+  grid-area: dexASButton;
+}
+#strengthNumber {
+  grid-area: strengthNumber;
+  width: 30px;
+}
+#dexterityNumber {
+  grid-area: dexterityNumber;
+  width: 30px;
+}
+#constitutionNumber {
+  width: 30px;
+}
+#intelligenceNumber {
+  width: 30px;
+}
+#wisdomNumber {
+  width: 30px;
+}
+#charismaNumber {
+  width: 30px;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .25fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr .25fr;
+  grid-template-areas:
+    ". . ."
+    "logo navBar navBar";
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "mainLeft mainRight"
+    "charSubmit charSubmit";
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 30px;
+}
+#mainLeft {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "nameDiv nameDiv nameDiv"
+    "levelDiv levelDiv levelDiv"
+    "raceDiv raceDiv raceDiv"
+    "classDiv classDiv classDiv"
+    "skillsDiv skillsDiv skillsDiv"
+    "abilityDiv abilityDiv abilityDiv"
+    "backgroundDiv backgroundDiv backgroundDiv"
+    "alignmentDiv alignmentDiv alignmentDiv";
+  border: 5px solid black;
+  padding: 10px;
+  margin-right: 5px;
+
+}
+#mainRight {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .25fr 1fr;
+  grid-template-areas: 
+    "abilityHeading"
+    "asField";
+  border: 5px solid black;
+  padding: 10px;
+  margin-left: 5px;
+}
+#abilityScoreDiv {
+  display: flex;
+  flex-direction: row;
+}
+#strength {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#dexterity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#constitution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#intelligence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#wisdom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#charisma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.abilityInputs {
+  margin-top: 10px;
+}
+.abilityButtons button {
+  margin: 10px 2.5px 10px 2.5px;
+}
+.selectorDiv {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.abilitySelect {
+  margin-right: 2px;
+}
