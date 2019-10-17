@@ -7,6 +7,7 @@
   <link rel = "stylesheet" type="text/css" href="./css/reset.css">
   <link rel = "stylesheet" type="text/css" href="./css/characterCreate.css">
   <link rel= "stylesheet" type = "text/css" href="./css/tooltip.css">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya+SC:500|Press+Start+2P&display=swap" rel="stylesheet">
 
   <title>D&D Character Creator and Tracker</title>
 </head>
@@ -62,7 +63,7 @@
 
           <label for="skillSelectSecond">Choose two skills:</label>
           <select name="skillSelectSecond" id="skillSelectSecond" disabled="true">
-            <option value="">--Please choose your first skill--</option>
+            <option value="" >--Please choose your first skill--</option>
             <option value="input skill">input skill</option>
           </select>
       </div>
@@ -77,7 +78,9 @@
         </select>
       </div>
       <fieldset form="characterCreatorForm" name="Ability Scores">
+        <div id="abilityScoresTitle">
         <caption>Ability Scores</caption>
+        </div>
         <div id="abilityScoreDiv">
           <section id="strength">
               <input type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" disabled="true" value="0";>

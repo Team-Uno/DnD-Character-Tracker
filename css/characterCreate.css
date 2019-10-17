@@ -2,6 +2,9 @@ body {
   width: 960px;
   margin: 10% auto;
   padding: 10% auto;
+  font-family: 'Alegreya SC', serif;
+  font-style: medium;
+  font-size: 20px;
 }
 
 header {
@@ -11,7 +14,6 @@ header {
   height: 100px;
   justify-content: center;
 }
-
 
 #navbar {
   display: flex;
@@ -109,4 +111,16 @@ padding: 20px 0px 20px 0px;
   border-radius: 100px;
   text-align: center;
   line-height: 60px;
+}
+
+.fieldset {
+  padding: 20px 20px 20px 20px;
+}
+
+#abilityScoresTitle {
+  font-size: 25px;
+}
+
+#abilityScoreOutput {
+  padding: 20px 20px 20px 20px;
 }
