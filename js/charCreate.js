@@ -475,7 +475,7 @@ function racialBonusToolTipMakeInvisible(){
 }
 // Helper Functions
 function displayStatBlockListener(){
-  targetAbilityOutput.innerText = pointsPool;
+  targetAbilityOutput.innerText = `Total Points: ${pointsPool}`;
 }
 
 function statAdder(accumulator, currentElement){
