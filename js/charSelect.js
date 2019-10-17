@@ -2,18 +2,30 @@
 
 //Global variables
 var allSavedCharacters = [];
-var allKeys = Object.keys(localStorage);
+var allKeys = [];
+
+console.log(allKeys);
+
+function getSavedKeys(){
+  allKeys = Object.keys(localStorage);
+  if(allKeys[0] === 'selectedCharacter'){
+    allKeys.splice(0,1);
+  }
+}
 
 function checkForSavedCharacters(){
+  getSavedKeys()
   for(var i = 0; i < allKeys.length; i++){
     var characters = window.localStorage.getItem(`${allKeys[i]}`);
     allSavedCharacters.push(JSON.parse(characters));
+    console.log(allSavedCharacters);
   }
 }
 
 function createCharacterSelects(){
-  var targetCardNode = document.getElementById('cardTarget');
+  // var targetCardNode = document.getElementById('cardTarget');
   for(var i = 0; i < allSavedCharacters.length; i++){
+    var targetGridNode = document.getElementById(`grid${i}`);
     var cardNode = document.createElement('div');
     var classLogoNode = document.createElement('img');
     classLogoNode.src = allSavedCharacters[i].classLogo;
@@ -27,13 +39,21 @@ function createCharacterSelects(){
     charSelectButton.setAttribute('id', `${allSavedCharacters[i].name}`);
     charSelectButton.setAttribute('class', 'charSelectButton');
     charSelectButton.innerText = 'Select Character';
-    charSelectButton.addEventListener('click', saveCharacterReference);
+    charSelectButton.addEventListener('click', onCharacterSelect);
     cardNode.appendChild(classLogoNode);
     cardNode.appendChild(charNameNode);
     cardNode.appendChild(charInfoNode);
     cardNode.appendChild(charSelectButton);
-    targetCardNode.appendChild(cardNode);
+    targetGridNode.appendChild(cardNode);
   }
+}
+function onCharacterSelect(){
+  saveCharacterReference(event);
+  switchPage();
+}
+
+function switchPage(){
+  window.location = '../pages/characterSheet.html';
 }
 
 function saveCharacterReference(event){
@@ -47,5 +67,10 @@ function saveCharacterReference(event){
   }
 }
 
+function clearCharacterReference(){
+  return window.localStorage.removeItem('selectedCharacter');
+}
+
+clearCharacterReference();
 checkForSavedCharacters();
 createCharacterSelects();
