@@ -101,6 +101,37 @@ li {
 #skills ul {
   display: flex;
   flex-direction: column;
+  box-sizing: content-box;  
+  width: 150px;
+  height: 0px;
+  padding: 20px;  
+}
+
+#abilities,
+#items,
+#background {
+  float: right;
+}
+
+
+#animalHandling,
+#arcana,
+#athletics,
+#deception,
+#history,
+#insight,
+#intimidation,
+#investigation,
+#medicine,
+#nature,
+#perception,
+#performance,
+#persuasion,
+#religion,
+#sleightOfHand,
+#stealth,
+#survival {
+  height: 10px;
 }
 
 
