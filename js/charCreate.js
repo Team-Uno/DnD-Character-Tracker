@@ -475,6 +475,8 @@ function pushAbilitiesToArray(){
 // Make Objects
 new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
+new CharacterClass()
+
 // Run Functions
 populateCharacterClassSelect();
 populateAlignmentSelect();
