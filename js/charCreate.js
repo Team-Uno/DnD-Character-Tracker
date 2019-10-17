@@ -61,9 +61,9 @@ var wizardAbilities = [
   'minor alchemy',
   'transmuter\'s stone',
   'shapechanger',
-  'master transmuter',
+  'master transmuter'
 ];
-    
+
 var fighterAbilities = [
   'archery',
   'defense',
@@ -99,7 +99,7 @@ var fighterAbilities = [
   'know your enemy',
   'improved combat superiority',
   'relentless',
-  'advanced combat superiority',
+  'advanced combat superiority'
 ];
 
 var rougeAbilities = [
@@ -123,7 +123,7 @@ var rougeAbilities = [
   'assassinate',
   'infiltratoin expertise',
   'imposter',
-  'death strike',
+  'death strike'
 ];
 
 var rangerAbilities = [
@@ -200,10 +200,9 @@ var rangerAbilities = [
   'ranger\'s companion',
   'exceptional training',
   'bestial fury',
-  'share spells',
+  'share spells'
 ];
-    
-   
+
 var alignments = ['Lawful Good','Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
 // Global Variables
 var characterClassArray = [];
@@ -228,7 +227,7 @@ var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 
-var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency, spellsKnown, spells, cantripsKnown, cantrips) {
+var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency) {
   this.name = name;
   this.startingHitPoints = startingHitPoints;
   this.hitDice = hitDice;
@@ -236,10 +235,6 @@ var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skill
   this.skills = skills;
   this.abilities = abilities;
   this.proficiency = proficiency;
-  this.spellsKnown = spellsKnown;
-  this.spells = spells;
-  this.cantripsKnown = cantripsKnown;
-  this.cantrips = cantrips;
   characterClassArray.push(this);
 };
 
@@ -473,9 +468,16 @@ function pushAbilitiesToArray(){
 }
 
 // Make Objects
-new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6], 0, [], 0, [] );
 
-new CharacterClass()
+new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6]);
+
+new CharacterClass('ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
+
+new CharacterClass('rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
+
+new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
+
+
 
 // Run Functions
 populateCharacterClassSelect();
