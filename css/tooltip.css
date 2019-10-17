@@ -1,0 +1,17 @@
+#tooltipContainer {
+  position: relative;
+  border-bottom: 2px dashed black;
+  width: 200px;
+}
+#tooltipTextInvis {
+  position: absolute;
+  right: 600px;
+  bottom: 618px;
+  visibility: hidden;
+}
+#tooltipTextVis {
+  position: absolute;
+  right: 600px;
+  bottom: 618px;
+  visibility: visible;
+}
