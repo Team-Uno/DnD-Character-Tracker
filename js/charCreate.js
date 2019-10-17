@@ -415,6 +415,7 @@ function submitListener(){
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
   saveCharacter();
+  window.location = '../pages/selectCharacter.html';
 }
 
 function generateStatBlockListener (){
