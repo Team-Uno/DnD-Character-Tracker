@@ -365,10 +365,10 @@ function populateAbilitiesSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
-        // var newLabelNode = document.createElement('label');
-        // newLabelNode.for = `abilitySelect${j}`;
+        var newLabelNode = document.createElement('label');
+        newLabelNode.for = `abilitySelect${j}`;
         // newLabelNode.innerText = 'Choose an ability:';
-        // targetAbilityDivElement.appendChild(newLabelNode);
+        targetAbilityDivElement.appendChild(newLabelNode);
 
         var newSelectNode = document.createElement('select');
         newSelectNode.name = `abilitySelect${j}`;
@@ -510,7 +510,7 @@ targetRaceSelect.addEventListener('change', displayRacialBonuses);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
-targetRaceToolTipPrompt.addEventListener('mouseenter', racialBonusToolTipMakeVisible);
-targetRaceToolTipPrompt.addEventListener('mouseleave', racialBonusToolTipMakeInvisible);
+// targetRaceToolTipPrompt.addEventListener('mouseenter', racialBonusToolTipMakeVisible);
+// targetRaceToolTipPrompt.addEventListener('mouseleave', racialBonusToolTipMakeInvisible);
 //todo: Rename "ability" variables to be more clear.
 
