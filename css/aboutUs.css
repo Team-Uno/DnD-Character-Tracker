@@ -1,0 +1,21 @@
+#container{
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(5, 20%);
+  gap: 50px 50px;
+}
+header{
+  grid-area: 1 / 1 / 2 / 10;
+}
+/* #bio1{
+  grid-area: 2 / 2 / 3 / 9;
+}
+#bio2{
+  grid-area: 3 / 2 / 4 / 9;
+}
+#bio3{
+  grid-area: 4 / 2 / 5 / 9;
+}
+footer{
+  grid-area: 5 / 2 / 6 / 9;
+} */
