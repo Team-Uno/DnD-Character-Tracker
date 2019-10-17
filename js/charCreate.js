@@ -224,6 +224,10 @@ var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
+var targetRaceDiv = document.getElementById('raceDiv');
+var targetRaceSelect = document.getElementById('raceSelect');
+var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
+var targetRaceTooltip = document.getElementById('tooltipTextInvis');
 var formElements = document.forms.characterCreatorForm.elements;
 //Constructor Functions
 
@@ -357,7 +361,7 @@ function populateSkillsSelectSecond(){
   }
 }
 
-function populateFighterAbilitiesSelect(){
+function populateAbilitiesSelect(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
@@ -400,7 +404,7 @@ function CharacterClassSelectListener(event){
     }
   }
   populateSkillSelectFirst();
-  populateFighterAbilitiesSelect();
+  populateAbilitiesSelect();
 }
 
 function skillSelectFirstListener(event){
@@ -452,6 +456,23 @@ function abilityScoreChangeListener(event){
   displayStatBlockListener();
 }
 
+function displayRacialBonuses(){
+  targetRaceToolTipPrompt.innerText = `Selected Race: ${formElements.raceSelect.value}`;
+  var raceBonusArray = [];
+  for (var i = 0; i < raceArray.length; i++){
+    if (formElements.raceSelect.value === raceArray[i].name){
+      raceBonusArray = raceArray[i].raceBonus;
+    }
+  }
+  targetRaceTooltip.textContent = `Racial Bonus: ${raceBonusArray[0]} +${raceBonusArray[1]}`;
+}
+
+function racialBonusToolTipMakeVisible(){
+  targetRaceTooltip.id = 'tooltipTextVis';
+}
+function racialBonusToolTipMakeInvisible(){
+  targetRaceTooltip.id = 'tooltipTextInvis';
+}
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = pointsPool;
@@ -485,10 +506,11 @@ populateCharacterClassSelect();
 populateAlignmentSelect();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
+targetRaceSelect.addEventListener('change', displayRacialBonuses);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
-
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
-
+targetRaceToolTipPrompt.addEventListener('mouseenter', racialBonusToolTipMakeVisible);
+targetRaceToolTipPrompt.addEventListener('mouseleave', racialBonusToolTipMakeInvisible);
 //todo: Rename "ability" variables to be more clear.
 
