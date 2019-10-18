@@ -259,7 +259,6 @@ function populateBackground(){
   backgroundNode.innerText = currentCharacter.background;
   targetBackgroundNode.appendChild(backgroundNode);
 }
-//TODO: fix populate abilities once ability refactor is complete
 function populateAbilities(){
   var targetAbilitiesNode = document.getElementById('abilities');
   for(var i = 0; i < currentCharacter.abilities.length; i++){
@@ -286,7 +285,6 @@ function populateSavingThrows(){
 
 
 loadCharacter();
-console.log(currentCharacter);
 populateAbilityModifiers();
 populateAbilityScores();
 populateName();
