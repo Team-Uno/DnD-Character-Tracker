@@ -11,6 +11,7 @@ var Race = function(name, raceAbilities, raceBonus, raceSpeed){
   this.raceBonus = raceBonus;
   this.raceSpeed = raceSpeed;
   raceArray.push(this);
+  console.log(raceArray);
 };
 // Make Objects
 //empty array is for possible raceAbilities

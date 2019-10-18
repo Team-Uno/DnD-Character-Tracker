@@ -13,6 +13,12 @@ function hitPointCalc(){
 function armorClassCalc(){
   return currentCharacter.startingArmorClass + currentCharacter.abilityModifiers[1];
 }
+function initiativeCalc(){
+  return currentCharacter.abilityModifiers[1];
+}
+function proficiencyCalc(){
+  return Math.ceil(1 + currentCharacter.level * .25) 
+}
 function displayDiceRoll(){
   var rollTotal = 0;
   if(targetRollDiceSelect.value === 'd20'){
@@ -174,6 +180,27 @@ function populateExp(){
   expValueNode.innerText = currentCharacter.xp;
   targetExpNode.appendChild(expValueNode);
 }
+function populateSpeed(){
+  var targetSpeedNode = document.getElementById('speed');
+  var speedNode = document.createElement('div');
+  speedNode.value = currentCharacter.speed;
+  speedNode.innerText = currentCharacter.speed;
+  targetSpeedNode.appendChild(speedNode);
+}
+function populateInitiative(){
+  var targetinitiativeNode = document.getElementById('initiative');
+  var initiativeNode = document.createElement('div');
+  initiativeNode.value = initiativeCalc();
+  initiativeNode.innerText = initiativeCalc();
+  targetinitiativeNode.appendChild(initiativeNode);
+}
+function populateProficiency(){
+  var targetProficiencyNode = document.getElementById('proficiencyBonus');
+  var proficiencyNode = document.createElement('div');
+  proficiencyNode.value = proficiencyCalc();
+  proficiencyNode.innerText = proficiencyCalc();
+  targetProficiencyNode.appendChild(proficiencyNode);
+}
 function populateAlignment(){
   var targetAlignmentNode = document.getElementById('alignment');
   var alignmentValueNode = document.createElement('div');
@@ -190,41 +217,41 @@ function populateArmorClass(){
 }
 function populateSkillModifiers(){
   var targetAcrobaticsNode = document.getElementById('acrobatics');
-  targetAcrobaticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetAcrobaticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetAnimalHandlingNode = document.getElementById('animalHandling');
-  targetAnimalHandlingNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetAnimalHandlingNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetArcanaNode = document.getElementById('arcana');
-  targetArcanaNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetArcanaNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetAthleticsNode = document.getElementById('athletics');
-  targetAthleticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  targetAthleticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} || `);
   var targetDeceptionNode = document.getElementById('deception');
-  targetDeceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetDeceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetHistoryNode = document.getElementById('history');
-  targetHistoryNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetHistoryNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetInsightNode = document.getElementById('insight');
-  targetInsightNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetInsightNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetIntimidationNode = document.getElementById('intimidation');
-  targetIntimidationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetIntimidationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetInvestigationNode = document.getElementById('investigation');
-  targetInvestigationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetInvestigationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetMedicineNode = document.getElementById('medicine');
-  targetMedicineNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetMedicineNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetNatureNode = document.getElementById('nature');
-  targetNatureNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetNatureNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetPerceptionNode = document.getElementById('perception');
-  targetPerceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetPerceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetPerformanceNode = document.getElementById('performance');
-  targetPerformanceNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetPerformanceNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetPersuasionNode = document.getElementById('persuasion');
-  targetPersuasionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetPersuasionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetReligionNode = document.getElementById('religion');
-  targetReligionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetReligionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetSleightOfHandNode = document.getElementById('sleightOfHand');
-  targetSleightOfHandNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetSleightOfHandNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targeStealthNode = document.getElementById('stealth');
-  targeStealthNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targeStealthNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetSurvivalNode = document.getElementById('survival');
-  targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
 }
 function populateBackground(){
   var targetBackgroundNode = document.getElementById('background');
@@ -232,33 +259,32 @@ function populateBackground(){
   backgroundNode.innerText = currentCharacter.background;
   targetBackgroundNode.appendChild(backgroundNode);
 }
-//TODO: fix populate abilities once ability refactor is complete
 function populateAbilities(){
   var targetAbilitiesNode = document.getElementById('abilities');
-  var abilitiesNode = document.createElement('p');
-  for(var i = 0; i < currentCharacter.abilities[0].length; i++){
-    abilitiesNode.innerText = currentCharacter.abilities[0][i];
+  for(var i = 0; i < currentCharacter.abilities.length; i++){
+    var abilitiesNode = document.createElement('p');
+    abilitiesNode.innerText = currentCharacter.abilities[i];
     targetAbilitiesNode.appendChild(abilitiesNode);
   }
 }
 function populateSavingThrows(){
   var targetStrengthSTNode = document.getElementById('strengthST');
-  targetStrengthSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  targetStrengthSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} || `);
   var targetDexteritySTNode = document.getElementById('dexterityST');
-  targetDexteritySTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetDexteritySTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetConstitutionSTNode = document.getElementById('constitutionST');
-  targetConstitutionSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[2]} `);
+  targetConstitutionSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[2]} || `);
   var targetIntelligenceSTNode = document.getElementById('intelligenceST');
-  targetIntelligenceSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetIntelligenceSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetWisdomSTNode = document.getElementById('wisdomST');
-  targetWisdomSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetWisdomSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetCharismaSTNode = document.getElementById('charismaST');
-  targetCharismaSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetCharismaSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
 }
 
 
+
 loadCharacter();
-console.log(currentCharacter);
 populateAbilityModifiers();
 populateAbilityScores();
 populateName();
@@ -267,6 +293,9 @@ populateClass();
 populateRace();
 populateGold();
 populateExp();
+populateProficiency();
+populateSpeed();
+populateInitiative();
 populateAlignment();
 populateArmorClass();
 populateSkillModifiers();

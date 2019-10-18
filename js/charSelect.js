@@ -35,9 +35,11 @@ function createCharacterSelects(){
     charInfoNode.innerText = `${allSavedCharacters[i].level}/${allSavedCharacters[i].characterClass}/${allSavedCharacters[i].race}`;
     var charSelectButton = document.createElement('button');
     charSelectButton.setAttribute('id', `${allSavedCharacters[i].name}`);
+    charSelectButton.setAttribute('class', 'selectButton');
     charSelectButton.innerText = 'Select Character';
     charSelectButton.addEventListener('click', onCharacterSelect);
     var charDeleteButton = document.createElement('button');
+    charDeleteButton.setAttribute('class', 'deleteButton');
     charDeleteButton.setAttribute('id', `${allSavedCharacters[i].name}`);
     charDeleteButton.innerText = ('Delete Character');
     charDeleteButton.addEventListener('click', onCharacterDelete);

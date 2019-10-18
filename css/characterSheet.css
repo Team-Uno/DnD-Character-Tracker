@@ -1,9 +1,18 @@
+body {
+  font-family: 'Alegreya SC', serif;
+}
+#myChart {
+  height: 250px;
+  width: 250px;
+}
+#rollDiceButton
 header {
   height: 150px;
   grid-area: header;
 }
 main {
   grid-area: main;
+  background-color: darkslategray;
 }
 footer {
   grid-area: footer;
@@ -30,15 +39,6 @@ li {
   align-items: center;
   justify-content: space-between;
 }
-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: .25fr 2fr 1fr;
-  grid-template-areas:
-    "header header header"
-    "main main main"
-    "footer footer footer";
-}
 header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -46,136 +46,209 @@ header {
   grid-template-areas:
     ". . ."
     "logo navBar navBar";
-  border: 1px solid black;
 }
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr .25fr;
-  grid-template-areas:
+h1{
+  color: oldlace;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 50px 10px 50px;
+  padding-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-main {
-  width: 960px;
-  margin: 5% auto;
-  padding: 10% auto;
+#content {
+  display: flex;
+  flex-direction: column;
+  background-color:darkred;
+  padding: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  }
+#sectionInputs {
+  display: flex;
+  flex-direction: row;
 }
-
-
 #sectionOne {
   display: flex;
-  flex-wrap: wrap;
-  height: 200px;
-  align-content: space-between;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  border: 5px solid black;
+  background-color: oldlace;
 }
-
-#upperLeft,
-#upperMiddle,
-#upperRight {
-  padding: 20px 100px 20px 20px;
+#upperLeft {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100px;
 }
-
-#upperLeft div,
-#upperMiddle div,
-#upperRight div {
-  text-align: left;
-  display: inline;
-  padding: 0px 30px 10px 0px;
+#name {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
 }
-
+#hitPoints {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#armorClass {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#class {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#race {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#alignment {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#gold {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#upperRight {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#experienceTotal {
+  align-items: center;
+  padding-top: 50px;
+}
 #sectionTwo {
   display: flex;
-  flex-wrap: wrap;
-  height: 150px;
-  align-content: space-between;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  border: 5px solid black;
+  background-color: oldlace;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-
-#bottomLeft {
-  text-align: left;
-  display: inline;
-  padding: 20px 30px 20px 20px;
-  height: 75px;
-  justify-content: space-between;
-}
-
-#sectionThree {
+#initiative {
   display: flex;
-  flex-wrap: wrap;
-  height: 100px;
-  align-content: space-between;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: row;
+  margin-top: 10px;
 }
-
-#strengthModifier,
-#dexterityModifier,
-#constitutionModifier,
-#intelligenceModifier,
-#wisdomModifier,
-#charismaModifier {
+#speed {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#proficiencyBonus{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#bottomMiddle {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
-
+#bottomMiddle h2 {
+  justify-self: flex-start;
+  margin-bottom: 20px;
+}
+#savingThrows {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+#bottomRight {
+  display: flex;
+  flex-direction: column;
+}
+#diceRollDisplay {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#rollDiceButton {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       8px 10px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 14px/1 "Alegreya", sans-serif;
+  text-align:    center;
+  margin-top: 5px;
+}
+#sectionThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  border: 5px solid black;
+  background-color: oldlace;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#sectionThree h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#abScores {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+.abilityModifiers {
+  text-align: center;
+}
+.abilityModifiers div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.abilityScores {
+  text-align: center;
+}
+#sectionFour {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  border: 5px solid black;
+  background-color: oldlace;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 #skills {
+  height: 334px;
+  width: 300px;
+}
+#abilities {
+  height: 334px;
+  width: 300px;
+  overflow: auto;
+}
+#sectionFive {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100px;
-  padding: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  border: 5px solid black;
+  background-color: oldlace;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
-
-#skills ul {
-  display: flex;
-  flex-direction: column;
-  box-sizing: content-box;  
-  width: 150px;
-  height: 0px;
-  padding: 20px;  
-}
-
-#abilities,
-#items,
-#background {
-  float: right;
-}
-
-
-#animalHandling,
-#arcana,
-#athletics,
-#deception,
-#history,
-#insight,
-#intimidation,
-#investigation,
-#medicine,
-#nature,
-#perception,
-#performance,
-#persuasion,
-#religion,
-#sleightOfHand,
-#stealth,
-#survival {
-  height: 10px;
+#sectionFive h3 {
+  text-align: center;
+  margin: 10px;
 }
 
