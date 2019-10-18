@@ -462,7 +462,6 @@ function generateStatBlockListener (){
 
 function abilityScoreChangeListener(event){
   var clickBox = event.target;
-  console.log(event.target.parentElement.parentElement.childNodes);
   var targetBox = event.target.parentElement.parentElement.childNodes[3];
   if(clickBox.className === 'abilityScorePlus'){
     pointsPool += -1;
@@ -524,7 +523,7 @@ new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal hand
 
 new CharacterClass('Ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
 
-new CharacterClass('Rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
+new CharacterClass('Rogue', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rogueAbilities, [2, 3, 4 ,5, 6]);
 
 new CharacterClass('Wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
 
