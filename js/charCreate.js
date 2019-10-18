@@ -364,7 +364,7 @@ function populateSkillsSelectSecond(){
 
 function populateAbilitiesSelect(){
   if(targetAbilityDivElement.firstChild){
-    for(var iterator = 0; iterator < targetAbilityDivElement.childNodes.length + 1; iterator++){
+    for(var iterator = 0; iterator <= targetAbilityDivElement.childNodes.length + 1; iterator++){
       targetAbilityDivElement.removeChild(targetAbilityDivElement.firstChild);
     }
   }
