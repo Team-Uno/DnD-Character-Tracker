@@ -102,7 +102,7 @@ var fighterAbilities = [
   'advanced combat superiority'
 ];
 
-var rougeAbilities = [
+var rogueAbilities = [
   'expertise',
   'sneak attack',
   'thieves\'s cant',
@@ -305,7 +305,7 @@ Character.prototype.pickClassLogo = function(){
   if(this.characterClass.toLowerCase() === 'fighter'){
     this.classLogo = '../imgs/fighterLogo.png';
   }
-  if(this.characterClass.toLowerCase() === 'rouge'){
+  if(this.characterClass.toLowerCase() === 'rogue'){
     this.classLogo = '../imgs/rogueLogo.png';
   }
   if(this.characterClass.toLowerCase() === 'ranger'){
@@ -496,7 +496,7 @@ new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal hand
 
 new CharacterClass('ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
 
-new CharacterClass('rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
+new CharacterClass('rogue', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rogueAbilities, [2, 3, 4 ,5, 6]);
 
 new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
 
