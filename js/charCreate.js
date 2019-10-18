@@ -229,9 +229,8 @@ var targetRaceSelect = document.getElementById('raceSelect');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
 var targetLevelInput = document.getElementById('levelInput');
 var formElements = document.forms.characterCreatorForm.elements;
-var tempClassAbilityFlag = 0;
-//Constructor Functions
 
+//Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency) {
   this.name = name;
   this.startingHitPoints = startingHitPoints;
