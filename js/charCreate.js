@@ -219,7 +219,7 @@ var raceBonusArray = [];
 var targetCharacterClassForm = document.getElementById('classSelect');
 var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
 var targetSecondSkillSelectElement = document.getElementById('skillSelectSecond');
-var targetAbilityDivElement = document.getElementById('abilityDiv');
+var targetAbilityDivElement = document.getElementById('testID');
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
@@ -229,6 +229,7 @@ var targetRaceSelect = document.getElementById('raceSelect');
 var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
 var formElements = document.forms.characterCreatorForm.elements;
+var tempClassAbilityFlag = 0;
 //Constructor Functions
 
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency) {
@@ -301,6 +302,7 @@ Character.prototype.calcAbilityModifier = function(){
     }
   }
 };
+
 Character.prototype.pickClassLogo = function(){
   if(this.characterClass.toLowerCase() === 'fighter'){
     this.classLogo = '../imgs/fighterLogo.png';
@@ -362,6 +364,11 @@ function populateSkillsSelectSecond(){
 }
 
 function populateAbilitiesSelect(){
+  if(targetAbilityDivElement.firstChild){
+    for(var iterator = 0; iterator < targetAbilityDivElement.childNodes.length + 1; iterator++){
+      targetAbilityDivElement.removeChild(targetAbilityDivElement.firstChild);
+    }
+  }
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
@@ -395,7 +402,7 @@ function populateAlignmentSelect(){
 }
 
 // Event Listeners
-function CharacterClassSelectListener(event){
+function characterClassSelectListener(event){
   selectedCharacterClass = event.target.value;
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass){
@@ -506,7 +513,7 @@ new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insigh
 // Run Functions
 populateCharacterClassSelect();
 populateAlignmentSelect();
-targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
+targetCharacterClassForm.addEventListener('change', characterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetRaceSelect.addEventListener('change', displayRacialBonuses);
 targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
