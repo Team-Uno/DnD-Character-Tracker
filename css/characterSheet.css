@@ -1,5 +1,6 @@
 body {
   font-family: 'Alegreya SC', serif;
+  background-color: darkslategray;
 }
 #myChart {
   height: 250px;
