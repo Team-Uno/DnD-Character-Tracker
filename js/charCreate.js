@@ -471,9 +471,6 @@ function displayRacialBonuses(){
 function racialBonusToolTipMakeVisible(){
   targetRaceTooltip.id = 'tooltipTextVis';
 }
-function racialBonusToolTipMakeInvisible(){
-  targetRaceTooltip.id = 'tooltipTextInvis';
-}
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = `Total Points: ${pointsPool}`;
@@ -511,7 +508,6 @@ targetRaceSelect.addEventListener('change', displayRacialBonuses);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
-targetRaceToolTipPrompt.addEventListener('mouseenter', racialBonusToolTipMakeVisible);
-targetRaceToolTipPrompt.addEventListener('mouseleave', racialBonusToolTipMakeInvisible);
+targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
 //todo: Rename "ability" variables to be more clear.
 
