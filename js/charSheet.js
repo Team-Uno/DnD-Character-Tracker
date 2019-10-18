@@ -13,6 +13,12 @@ function hitPointCalc(){
 function armorClassCalc(){
   return currentCharacter.startingArmorClass + currentCharacter.abilityModifiers[1];
 }
+function initiativeCalc(){
+  return currentCharacter.abilityModifiers[1];
+}
+function proficiencyCalc(){
+  return Math.ceil(1 + currentCharacter.level * .25) 
+}
 function displayDiceRoll(){
   var rollTotal = 0;
   if(targetRollDiceSelect.value === 'd20'){
@@ -174,6 +180,27 @@ function populateExp(){
   expValueNode.innerText = currentCharacter.xp;
   targetExpNode.appendChild(expValueNode);
 }
+function populateSpeed(){
+  var targetSpeedNode = document.getElementById('speed');
+  var speedNode = document.createElement('div');
+  speedNode.value = currentCharacter.speed;
+  speedNode.innerText = currentCharacter.speed;
+  targetSpeedNode.appendChild(speedNode);
+}
+function populateInitiative(){
+  var targetinitiativeNode = document.getElementById('initiative');
+  var initiativeNode = document.createElement('div');
+  initiativeNode.value = initiativeCalc();
+  initiativeNode.innerText = initiativeCalc();
+  targetinitiativeNode.appendChild(initiativeNode);
+}
+function populateProficiency(){
+  var targetProficiencyNode = document.getElementById('proficiencyBonus');
+  var proficiencyNode = document.createElement('div');
+  proficiencyNode.value = proficiencyCalc();
+  proficiencyNode.innerText = proficiencyCalc();
+  targetProficiencyNode.appendChild(proficiencyNode);
+}
 function populateAlignment(){
   var targetAlignmentNode = document.getElementById('alignment');
   var alignmentValueNode = document.createElement('div');
@@ -257,6 +284,7 @@ function populateSavingThrows(){
 }
 
 
+
 loadCharacter();
 console.log(currentCharacter);
 populateAbilityModifiers();
@@ -267,6 +295,9 @@ populateClass();
 populateRace();
 populateGold();
 populateExp();
+populateProficiency();
+populateSpeed();
+populateInitiative();
 populateAlignment();
 populateArmorClass();
 populateSkillModifiers();

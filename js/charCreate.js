@@ -265,19 +265,12 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   characterArray.push(this);
 };
 Character.prototype.getSpeed = function(){
-  if(this.characterClass.toLowerCase() === 'fighter'){
-    this.classLogo = '../imgs/fighterLogo.png';
+  for(var i = 0; i < raceArray.length; i++){
+    if(this.race === raceArray[i].name){
+      this.speed = raceArray[i].raceSpeed;
+    }
   }
-  if(this.characterClass.toLowerCase() === 'rouge'){
-    this.classLogo = '../imgs/rogueLogo.png';
-  }
-  if(this.characterClass.toLowerCase() === 'ranger'){
-    this.classLogo = '../imgs/rangerLogo.png';
-  }
-  if(this.characterClass.toLowerCase() === 'wizard'){
-    this.classLogo = '../imgs/wizardLogo.png';
-  }
-}
+};
 
 Character.prototype.calcAbilityModifier = function(){
   for(var i = 0; i < this.abilityScore.length; i++){
@@ -429,10 +422,12 @@ function skillSelectFirstListener(event){
 }
 
 function submitListener(){
+  event.preventDefault();
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
+  newCharacter.getSpeed();
   saveCharacter();
   window.location = '../pages/selectCharacter.html';
 }
