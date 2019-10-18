@@ -350,7 +350,7 @@ function populateSkillSelectFirst(){
 function populateSkillsSelectSecond(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
-      for(var j = 0; j < characterClassArray[i].skills.length; j++){
+      for(var j = 0; j < characterClassArray[i].skills.length - 1; j++){
         if(selectedFirstSkill !== characterClassArray[i].skills[j]){
           var newSkillSelectNode = document.createElement('option');
           newSkillSelectNode.value = characterClassArray[i].skills[j];
