@@ -6,6 +6,7 @@ body {
 header {
   height: 150px;
   grid-area: header;
+  background-color: white;
 }
 main {
   grid-area: main;
