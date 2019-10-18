@@ -1,3 +1,4 @@
+
 body {
   font-family: 'Alegreya SC', serif;
 }
@@ -22,9 +23,30 @@ body {
   text-align:    center;
   margin-left: 15px;
 }
+.abilityScorePlus {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       5px 5px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 12px/1 "Alegreya", sans-serif;
+  text-align:    center;
+}
+.abilityScoreMinus {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       5px 5px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 12px/1 "Alegreya", sans-serif;
+  text-align:    center;
+}
 header {
   height: 150px;
   grid-area: header;
+  background-color: white;
 }
 main {
   grid-area: main;

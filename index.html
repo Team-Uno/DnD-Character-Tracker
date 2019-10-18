@@ -32,28 +32,27 @@
         </div>
         <div class="selectorDiv" id="levelDiv">
           <label for="levelInput" id="levelLabel">Level:</label>
-          <input type="number" name="levelInput" id="levelInput" min="1" max="20" placeholder="1">
+          <input type="number" name="levelInput" id="levelInput" min="1" max="20" placeholder="--">
         </div>      
         <div class="selectorDiv" id="raceDiv">
           <label for="raceSelect" id="raceLabel">Race: </label>
           <select name="raceSelect" id="raceSelect">
             <option value="">--Please choose an option--</option>
           </select>
-          <p id="tooltipTextContainer"></p>
           <p id="tooltipTextInvis"></p>
         </div>
   
         <div class="selectorDiv" id="classDiv">
           <label for="classSelect" id="classLabel">Class: </label>
-          <select name="class" id="classSelect">
-            <option value="">--Please choose an option--</option>
+          <select name="class" id="classSelect" disabled="true">
+            <option value="">--First choose a level--</option>
           </select>
         </div>
     
         <div class="selectorDiv" id="skillsDiv">
           <label for="skillSelectFirst" id="skillLabel">Skills:</label>
-          <select name="skillSelectFirst" id="skillSelectFirst">
-            <option value="">--Please choose an option--</option>
+          <select name="skillSelectFirst" id="skillSelectFirst" disabled="true">
+            <option value="">--Please select a class--</option>
           </select>
 
           <!-- <label for="skillSelectSecond"></label> -->
@@ -65,6 +64,7 @@
 
         <div class="selectorDiv" id="abilityDiv">
           <label for="abilitySelect" id="abilityLabel">Abilities:</label>
+          <div id="testID"></div>
           </div>
         <div class="selectorDiv" id="alignmentDiv">
           <label for="alignmentSelect" id="alignmentLabel">Alignment:</label>
@@ -84,7 +84,7 @@
           <div id="abilityScoreDiv">
             <section id="strength">
               <label for="strengthNumber">Strength</label> 
-              <input class="abilityInputs" type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" disabled="true" value="1";>
+              <input class="abilityInputs" type="number" name="strengthNumber" id="strengthNumber" min="1" max="10" disabled="true" placeholder="--";>
               <div class="abilityButtons" id="strASButtton">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>
@@ -93,7 +93,7 @@
               
             <section id="dexterity">
               <label for="dexterityNumber">Dexterity</label>
-              <input class="abilityInputs" type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" disabled="true" value="1"> 
+              <input class="abilityInputs" type="number" name="dexterityNumber" id="dexterityNumber" min="1" max="10" disabled="true" placeholder="--"> 
               <div class="abilityButtons">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>
@@ -102,7 +102,7 @@
     
             <section id="constitution">
               <label for="constitutionNumber">Constitution</label> 
-              <input class="abilityInputs" type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" disabled="true" value="1">
+              <input class="abilityInputs" type="number" name="constitutionNumber" id="constitutionNumber" min="1" max="10" disabled="true" placeholder="--">
               <div class="abilityButtons">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>
@@ -111,7 +111,7 @@
     
             <section id="intelligence">
               <label for="intelligenceNumber">Intelligence</label>
-              <input class="abilityInputs" type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" disabled="true" value="1">
+              <input class="abilityInputs" type="number" name="intelligenceNumber" id="intelligenceNumber" min="1" max="10" disabled="true" placeholder="--">
               <div class="abilityButtons">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>
@@ -120,7 +120,7 @@
   
             <section id="wisdom">
               <label for="wisdomNumber">Wisdom</label> 
-              <input class="abilityInputs" type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" disabled="true" value="1">
+              <input class="abilityInputs" type="number" name="wisdomNumber" id="wisdomNumber" min="1" max="10" disabled="true" placeholder="--">
               <div class="abilityButtons">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>
@@ -129,7 +129,7 @@
     
             <section id="charisma">
               <label for="charismaNumber">Charisma</label> 
-              <input class="abilityInputs" type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" disabled="true" value="1">
+              <input class="abilityInputs" type="number" name= "charismaNumber" id="charismaNumber" min="1" max="10" disabled="true" placeholder="--">
               <div class="abilityButtons">
                 <button type="button" class="abilityScorePlus">+</button>
                 <button type="button" class="abilityScoreMinus">-</button>

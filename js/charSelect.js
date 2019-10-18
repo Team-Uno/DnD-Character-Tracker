@@ -16,7 +16,6 @@ function checkForSavedCharacters(){
   for(var i = 0; i < allKeys.length; i++){
     var characters = window.localStorage.getItem(`${allKeys[i]}`);
     allSavedCharacters.push(JSON.parse(characters));
-    console.log(allSavedCharacters);
   }
 }
 
