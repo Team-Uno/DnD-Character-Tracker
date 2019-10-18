@@ -259,9 +259,17 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.characterClass = characterClass;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   this.race = race;
+  this.speed;
   this.classLogo = '';
 
   characterArray.push(this);
+};
+Character.prototype.getSpeed = function(){
+  for(var i = 0; i < raceArray.length; i++){
+    if(this.race === raceArray[i].name){
+      this.speed = raceArray[i].raceSpeed;
+    }
+  }
 };
 
 Character.prototype.calcAbilityModifier = function(){
@@ -414,10 +422,12 @@ function skillSelectFirstListener(event){
 }
 
 function submitListener(){
+  event.preventDefault();
   pushAbilitiesToArray();
   var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
+  newCharacter.getSpeed();
   saveCharacter();
   window.location = '../pages/selectCharacter.html';
 }
@@ -493,11 +503,11 @@ function pushAbilitiesToArray(){
 
 new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'], fighterAbilities, [2, 3, 4, 5, 6]);
 
-new CharacterClass('ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
+new CharacterClass('Ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
 
-new CharacterClass('rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
+new CharacterClass('Rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
 
-new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
+new CharacterClass('Wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
 
 
 
