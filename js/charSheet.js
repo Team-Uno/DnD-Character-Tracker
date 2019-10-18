@@ -262,9 +262,9 @@ function populateBackground(){
 //TODO: fix populate abilities once ability refactor is complete
 function populateAbilities(){
   var targetAbilitiesNode = document.getElementById('abilities');
-  var abilitiesNode = document.createElement('p');
-  for(var i = 0; i < currentCharacter.abilities[0].length; i++){
-    abilitiesNode.innerText = currentCharacter.abilities[0][i];
+  for(var i = 0; i < currentCharacter.abilities.length; i++){
+    var abilitiesNode = document.createElement('p');
+    abilitiesNode.innerText = currentCharacter.abilities[i];
     targetAbilitiesNode.appendChild(abilitiesNode);
   }
 }
