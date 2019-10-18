@@ -213,7 +213,7 @@ var selectedAbilitiesArray = [];
 var pointsPool = null;
 var pointsPoolArray = [];
 var d6 = 6;
-var raceBonusArray = [];
+var raceBonusArray = null;
 
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
@@ -466,6 +466,11 @@ function abilityScoreChangeListener(event){
 }
 
 function displayRacialBonuses(){
+  if (raceBonusArray){
+    var statInputToReset = document.getElementById(`${raceBonusArray[0].toLowerCase()}Number`);
+    statInputToReset.value = 0;
+    raceBonusArray = null;
+  }
   for (var i = 0; i < raceArray.length; i++){
     if (formElements.raceSelect.value === raceArray[i].name){
       raceBonusArray = raceArray[i].raceBonus;
