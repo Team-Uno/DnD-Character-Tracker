@@ -228,6 +228,7 @@ var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var targetRaceSelect = document.getElementById('raceSelect');
 var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
+var targetLevelInput = document.getElementById('levelInput');
 var formElements = document.forms.characterCreatorForm.elements;
 var tempClassAbilityFlag = 0;
 //Constructor Functions
@@ -411,6 +412,8 @@ function characterClassSelectListener(event){
   }
   populateSkillSelectFirst();
   populateAbilitiesSelect();
+  formElements.skillSelectFirst.disabled = false;
+  formElements.skillSelectFirst.childNodes[1].innerText = '--Please choose an option--';
 }
 
 function skillSelectFirstListener(event){
@@ -482,6 +485,12 @@ function addRacialBonustoStatValue(){
   var targetStatInput = document.getElementById(`${raceBonusArray[0].toLowerCase()}Number`);
   targetStatInput.value = raceBonusArray[1];
 }
+
+function unlockOptionsOnLevelChange(){
+  formElements.classSelect.disabled = false;
+  formElements.classSelect.childNodes[1].innerText = '--Please choose an option--';
+}
+
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = `Total Points: ${pointsPool}`;
@@ -521,5 +530,6 @@ targetRaceSelect.addEventListener('change', addRacialBonustoStatValue);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
+targetLevelInput.addEventListener('change',unlockOptionsOnLevelChange);
 //todo: Rename "ability" variables to be more clear.
 
