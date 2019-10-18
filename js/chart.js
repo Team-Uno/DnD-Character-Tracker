@@ -22,7 +22,7 @@ var levelThresholds = {
   'level20': [355000, 0],
 };
 var ctx = document.getElementById('myChart').getContext('2d');
-
+var exp = document.getElementById('chartGrabThis');
 function levelCalculator(exp){
   return 0 <= exp && exp < 300 ? 'level1'
     : 300 <= exp && exp < 900 ? 'level2'

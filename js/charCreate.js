@@ -203,6 +203,8 @@ var rangerAbilities = [
   'share spells'
 ];
 
+var levelMinimums = [0, 300, 900, 2700, 6500, 14000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
+
 var alignments = ['Lawful Good','Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
 // Global Variables
 var characterClassArray = [];
@@ -259,7 +261,7 @@ var Character = function(name, level, xp, gold, startingHitPoints, skills, abili
   this.characterClass = characterClass;
   this.abilityModifiers = [0, 0, 0, 0, 0, 0];
   this.race = race;
-  this.speed;
+  this.speed = null;
   this.classLogo = '';
 
   characterArray.push(this);
@@ -329,6 +331,8 @@ Character.prototype.pickClassLogo = function(){
 function saveCharacter(){
   var saveCharacter = JSON.stringify(characterArray[0]);
   window.localStorage.setItem(`${characterArray[0].name}`, saveCharacter);
+  var selectedCharacter = JSON.stringify(characterArray[0]);
+  window.localStorage.setItem('selectedCharacter', selectedCharacter);
 
 }
 
@@ -431,12 +435,12 @@ function skillSelectFirstListener(event){
 function submitListener(event){
   event.preventDefault();
   pushAbilitiesToArray();
-  var newCharacter = new Character(formElements.fullName.value, formElements.levelInput.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
+  var newCharacter = new Character(formElements.fullName.value, formElements.levelInput.value, levelMinimums[formElements.levelInput.value - 1], 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
   newCharacter.getSpeed();
   saveCharacter();
-  window.location = '../pages/selectCharacter.html';
+  window.location = '../pages/characterSheet.html';
 }
 
 function generateStatBlockListener (){
@@ -541,5 +545,4 @@ targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
 targetLevelInput.addEventListener('change',unlockOptionsOnLevelChange);
-//todo: Rename "ability" variables to be more clear.
 
