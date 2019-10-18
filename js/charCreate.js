@@ -226,7 +226,6 @@ var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
 var targetRaceSelect = document.getElementById('raceSelect');
-var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
 var targetLevelInput = document.getElementById('levelInput');
 var formElements = document.forms.characterCreatorForm.elements;
@@ -468,7 +467,6 @@ function abilityScoreChangeListener(event){
 }
 
 function displayRacialBonuses(){
-  targetRaceToolTipPrompt.innerText = `Selected Race: ${formElements.raceSelect.value}`;
   for (var i = 0; i < raceArray.length; i++){
     if (formElements.raceSelect.value === raceArray[i].name){
       raceBonusArray = raceArray[i].raceBonus;
