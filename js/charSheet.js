@@ -41,19 +41,19 @@ function displayDiceRoll(){
 }
 //Dice rollers
 function roll20(){
-  return Math.floor(Math.random() * (20 -1 + 1) +1);
+  return Math.floor(Math.random() * (20 - 1 + 1) + 1);
 }
 function roll12(){
-  return Math.floor(Math.random() * (12 -1 + 1) +1);
+  return Math.floor(Math.random() * (12 - 1 + 1) + 1);
 }
 function roll10(){
-  return Math.floor(Math.random() * (10 -1 + 1) +1);
+  return Math.floor(Math.random() * (10 - 1 + 1) + 1);
 }
 function roll6(){
-  return Math.floor(Math.random() * (6 -1 + 1) +1);
+  return Math.floor(Math.random() * (6 - 1 + 1) + 1);
 }
 function roll4(){
-  return Math.floor(Math.random() * (4 -1 + 1) +1);
+  return Math.floor(Math.random() * (4 - 1 + 1) + 1);
 }
 
 //Local storage functions
