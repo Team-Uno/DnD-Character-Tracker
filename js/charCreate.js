@@ -445,7 +445,8 @@ function generateStatBlockListener (){
 
 function abilityScoreChangeListener(event){
   var clickBox = event.target;
-  var targetBox = event.target.parentElement.childNodes[1];
+  console.log(event.target.parentElement.parentElement.childNodes);
+  var targetBox = event.target.parentElement.parentElement.childNodes[3];
   if(clickBox.className === 'abilityScorePlus'){
     pointsPool += -1;
     targetBox.value ++;
