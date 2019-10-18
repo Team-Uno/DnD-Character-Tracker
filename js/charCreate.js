@@ -367,7 +367,6 @@ function populateAbilitiesSelect(){
       for(var j = 0; j < formElements.levelInput.value;j++){
         var newLabelNode = document.createElement('label');
         newLabelNode.for = `abilitySelect${j}`;
-        // newLabelNode.innerText = 'Choose an ability:';
         targetAbilityDivElement.appendChild(newLabelNode);
 
         var newSelectNode = document.createElement('select');
