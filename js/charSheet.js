@@ -17,7 +17,7 @@ function initiativeCalc(){
   return currentCharacter.abilityModifiers[1];
 }
 function proficiencyCalc(){
-  return Math.ceil(1 + currentCharacter.level * .25) 
+  return Math.ceil(1 + currentCharacter.level * .25);
 }
 function displayDiceRoll(){
   var rollTotal = 0;
@@ -177,6 +177,7 @@ function populateExp(){
   var targetExpNode = document.getElementById('experienceTotal');
   var expValueNode = document.createElement('div');
   expValueNode.value = currentCharacter.xp;
+  expValueNode.id = 'chartGrabThis';
   expValueNode.innerText = currentCharacter.xp;
   targetExpNode.appendChild(expValueNode);
 }
