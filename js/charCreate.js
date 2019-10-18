@@ -102,7 +102,7 @@ var fighterAbilities = [
   'advanced combat superiority'
 ];
 
-var rougeAbilities = [
+var rogueAbilities = [
   'expertise',
   'sneak attack',
   'thieves\'s cant',
@@ -213,24 +213,24 @@ var selectedAbilitiesArray = [];
 var pointsPool = null;
 var pointsPoolArray = [];
 var d6 = 6;
+var raceBonusArray = null;
 
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
 var targetFirstSkillSelectElement = document.getElementById('skillSelectFirst');
 var targetSecondSkillSelectElement = document.getElementById('skillSelectSecond');
-var targetAbilityDivElement = document.getElementById('abilityDiv');
+var targetAbilityDivElement = document.getElementById('testID');
 var targetAlignmentSelectElement = document.getElementById('alignmentSelect');
 var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
-var targetRaceDiv = document.getElementById('raceDiv');
 var targetRaceSelect = document.getElementById('raceSelect');
-var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
+var targetLevelInput = document.getElementById('levelInput');
 var formElements = document.forms.characterCreatorForm.elements;
-//Constructor Functions
 
+//Constructor Functions
 var CharacterClass = function(name, startingHitPoints, hitDice, saveThrow, skills, abilities, proficiency) {
   this.name = name;
   this.startingHitPoints = startingHitPoints;
@@ -301,11 +301,12 @@ Character.prototype.calcAbilityModifier = function(){
     }
   }
 };
+
 Character.prototype.pickClassLogo = function(){
   if(this.characterClass.toLowerCase() === 'fighter'){
     this.classLogo = '../imgs/fighterLogo.png';
   }
-  if(this.characterClass.toLowerCase() === 'rouge'){
+  if(this.characterClass.toLowerCase() === 'rogue'){
     this.classLogo = '../imgs/rogueLogo.png';
   }
   if(this.characterClass.toLowerCase() === 'ranger'){
@@ -349,7 +350,7 @@ function populateSkillSelectFirst(){
 function populateSkillsSelectSecond(){
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
-      for(var j = 0; j < characterClassArray[i].skills.length; j++){
+      for(var j = 0; j < characterClassArray[i].skills.length - 1; j++){
         if(selectedFirstSkill !== characterClassArray[i].skills[j]){
           var newSkillSelectNode = document.createElement('option');
           newSkillSelectNode.value = characterClassArray[i].skills[j];
@@ -362,12 +363,16 @@ function populateSkillsSelectSecond(){
 }
 
 function populateAbilitiesSelect(){
+  while(targetAbilityDivElement.firstChild){
+    for(var iterator = 0; iterator <= targetAbilityDivElement.childNodes.length; iterator++){
+      targetAbilityDivElement.removeChild(targetAbilityDivElement.firstChild);
+    }
+  }
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass.name){
       for(var j = 0; j < formElements.levelInput.value;j++){
         var newLabelNode = document.createElement('label');
         newLabelNode.for = `abilitySelect${j}`;
-        // newLabelNode.innerText = 'Choose an ability:';
         targetAbilityDivElement.appendChild(newLabelNode);
 
         var newSelectNode = document.createElement('select');
@@ -396,7 +401,7 @@ function populateAlignmentSelect(){
 }
 
 // Event Listeners
-function CharacterClassSelectListener(event){
+function characterClassSelectListener(event){
   selectedCharacterClass = event.target.value;
   for (var i = 0; i < characterClassArray.length; i++){
     if(characterClassArray[i].name === selectedCharacterClass){
@@ -405,6 +410,8 @@ function CharacterClassSelectListener(event){
   }
   populateSkillSelectFirst();
   populateAbilitiesSelect();
+  formElements.skillSelectFirst.disabled = false;
+  formElements.skillSelectFirst.childNodes[1].innerText = '--Please choose an option--';
 }
 
 function skillSelectFirstListener(event){
@@ -413,9 +420,10 @@ function skillSelectFirstListener(event){
   populateSkillsSelectSecond();
 }
 
-function submitListener(){
+function submitListener(event){
+  event.preventDefault();
   pushAbilitiesToArray();
-  var newCharacter = new Character(formElements.fullName.value, 0, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
+  var newCharacter = new Character(formElements.fullName.value, formElements.levelInput.value, 0, 0, selectedCharacterClass.startingHitPoints, [formElements.skillSelectFirst.value, formElements.skillSelectSecond.value], selectedAbilitiesArray, formElements.alignmentSelect.value, selectedCharacterClass.saveThrow, [parseInt(formElements.strengthNumber.value), parseInt(formElements.dexterityNumber.value), parseInt(formElements.constitutionNumber.value), parseInt(formElements.intelligenceNumber.value), parseInt(formElements.wisdomNumber.value), parseInt(formElements.charismaNumber.value)], formElements.background.value, selectedCharacterClass.name, formElements.raceSelect.value);
   newCharacter.calcAbilityModifier();
   newCharacter.pickClassLogo();
   saveCharacter();
@@ -445,7 +453,8 @@ function generateStatBlockListener (){
 
 function abilityScoreChangeListener(event){
   var clickBox = event.target;
-  var targetBox = event.target.parentElement.childNodes[1];
+  console.log(event.target.parentElement.parentElement.childNodes);
+  var targetBox = event.target.parentElement.parentElement.childNodes[3];
   if(clickBox.className === 'abilityScorePlus'){
     pointsPool += -1;
     targetBox.value ++;
@@ -457,22 +466,33 @@ function abilityScoreChangeListener(event){
 }
 
 function displayRacialBonuses(){
-  targetRaceToolTipPrompt.innerText = `Selected Race: ${formElements.raceSelect.value}`;
-  var raceBonusArray = [];
+  if (raceBonusArray){
+    var statInputToReset = document.getElementById(`${raceBonusArray[0].toLowerCase()}Number`);
+    statInputToReset.value = 0;
+    raceBonusArray = null;
+  }
   for (var i = 0; i < raceArray.length; i++){
     if (formElements.raceSelect.value === raceArray[i].name){
       raceBonusArray = raceArray[i].raceBonus;
     }
   }
-  targetRaceTooltip.textContent = `Racial Bonus: ${raceBonusArray[0]} +${raceBonusArray[1]}`;
+  targetRaceTooltip.innerText = `Racial Bonus: ${raceBonusArray[0]} +${raceBonusArray[1]}`;
 }
 
 function racialBonusToolTipMakeVisible(){
   targetRaceTooltip.id = 'tooltipTextVis';
 }
-function racialBonusToolTipMakeInvisible(){
-  targetRaceTooltip.id = 'tooltipTextInvis';
+
+function addRacialBonustoStatValue(){
+  var targetStatInput = document.getElementById(`${raceBonusArray[0].toLowerCase()}Number`);
+  targetStatInput.value = raceBonusArray[1];
 }
+
+function unlockOptionsOnLevelChange(){
+  formElements.classSelect.disabled = false;
+  formElements.classSelect.childNodes[1].innerText = '--Please choose an option--';
+}
+
 // Helper Functions
 function displayStatBlockListener(){
   targetAbilityOutput.innerText = `Total Points: ${pointsPool}`;
@@ -495,7 +515,7 @@ new CharacterClass('Fighter', 10, 6, ['str', 'con'], ['acrobatics', 'animal hand
 
 new CharacterClass('ranger', 10, 6, ['str', 'dex'], ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'], rangerAbilities, [2, 3, 4, 5, 6]);
 
-new CharacterClass('rouge', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rougeAbilities, [2, 3, 4 ,5, 6]);
+new CharacterClass('rogue', 8, 5, ['dex', 'int'], ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'], rogueAbilities, [2, 3, 4 ,5, 6]);
 
 new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insight','investigation', 'medicine', 'religion'], wizardAbilities, [2, 3, 4, 5, 6]);
 
@@ -504,13 +524,14 @@ new CharacterClass('wizard', 6, 4, ['int', 'wis'], ['arcana', 'history', 'insigh
 // Run Functions
 populateCharacterClassSelect();
 populateAlignmentSelect();
-targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
+targetCharacterClassForm.addEventListener('change', characterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetRaceSelect.addEventListener('change', displayRacialBonuses);
+targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
+targetRaceSelect.addEventListener('change', addRacialBonustoStatValue);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
-// targetRaceToolTipPrompt.addEventListener('mouseenter', racialBonusToolTipMakeVisible);
-// targetRaceToolTipPrompt.addEventListener('mouseleave', racialBonusToolTipMakeInvisible);
+targetLevelInput.addEventListener('change',unlockOptionsOnLevelChange);
 //todo: Rename "ability" variables to be more clear.
 
