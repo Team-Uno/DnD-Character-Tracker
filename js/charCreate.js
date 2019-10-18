@@ -329,6 +329,8 @@ Character.prototype.pickClassLogo = function(){
 function saveCharacter(){
   var saveCharacter = JSON.stringify(characterArray[0]);
   window.localStorage.setItem(`${characterArray[0].name}`, saveCharacter);
+  var selectedCharacter = JSON.stringify(characterArray[0]);
+  window.localStorage.setItem('selectedCharacter', selectedCharacter);
 
 }
 
@@ -436,7 +438,7 @@ function submitListener(event){
   newCharacter.pickClassLogo();
   newCharacter.getSpeed();
   saveCharacter();
-  window.location = '../pages/selectCharacter.html';
+  window.location = '../pages/characterSheet.html';
 }
 
 function generateStatBlockListener (){
