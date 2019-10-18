@@ -7,8 +7,16 @@ function knowledgeExpChart(){
       labels: ['Course Completed', 'Course to Crush'],
       datasets:[{
         data: [25, 75],
-        backgroundColor: ['rgba(0,255,0,1', 'rgba(255,0,0,1'],
+        backgroundColor: ['rgb(0,102,102', 'rgb(64,64,64'],
       }],
+    },
+    options: {
+      legend: {
+        display: true,
+        labels: {
+          fontColor: 'rgb(253,245,230)',
+        },
+      },
     },
   });
 }

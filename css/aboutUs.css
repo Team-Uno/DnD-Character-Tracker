@@ -44,7 +44,10 @@ li {
   grid-column: 3 / 6;
   grid-row: 5 / 6;
 }
-section > img{
+section > a{
+  color: black;
+}
+section > a > img{
   height: 20px;
   width: 20px;
 }
