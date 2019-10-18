@@ -539,7 +539,7 @@ populateAlignmentSelect();
 targetCharacterClassForm.addEventListener('change', characterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetRaceSelect.addEventListener('change', displayRacialBonuses);
-targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
+// targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
 targetRaceSelect.addEventListener('change', addRacialBonustoStatValue);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
