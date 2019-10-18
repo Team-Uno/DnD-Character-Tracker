@@ -6,10 +6,10 @@ body {
   height: 250px;
   width: 250px;
 }
-#rollDiceButton
 header {
   height: 150px;
   grid-area: header;
+  background-color: white;
 }
 main {
   grid-area: main;
