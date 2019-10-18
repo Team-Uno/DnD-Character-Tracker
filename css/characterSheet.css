@@ -80,7 +80,7 @@ h1{
 #upperLeft {
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 150px;
 }
 #name {
   display: flex;
