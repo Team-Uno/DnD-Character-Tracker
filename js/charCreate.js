@@ -213,6 +213,7 @@ var selectedAbilitiesArray = [];
 var pointsPool = null;
 var pointsPoolArray = [];
 var d6 = 6;
+var raceBonusArray = [];
 
 // Dom Variables
 var targetCharacterClassForm = document.getElementById('classSelect');
@@ -224,7 +225,6 @@ var targetSubmitButtonElement = document.getElementById('submitButton');
 var targetAbilityOutput = document.getElementById('abilityScoreOutput');
 var targetStatButton = document.getElementById('statButton');
 var targetAbilityScoreDiv = document.getElementById('abilityScoreDiv');
-var targetRaceDiv = document.getElementById('raceDiv');
 var targetRaceSelect = document.getElementById('raceSelect');
 var targetRaceToolTipPrompt = document.getElementById('tooltipTextContainer');
 var targetRaceTooltip = document.getElementById('tooltipTextInvis');
@@ -459,17 +459,21 @@ function abilityScoreChangeListener(event){
 
 function displayRacialBonuses(){
   targetRaceToolTipPrompt.innerText = `Selected Race: ${formElements.raceSelect.value}`;
-  var raceBonusArray = [];
   for (var i = 0; i < raceArray.length; i++){
     if (formElements.raceSelect.value === raceArray[i].name){
       raceBonusArray = raceArray[i].raceBonus;
     }
   }
-  targetRaceTooltip.textContent = `Racial Bonus: ${raceBonusArray[0]} +${raceBonusArray[1]}`;
+  targetRaceTooltip.innerText = `Racial Bonus: ${raceBonusArray[0]} +${raceBonusArray[1]}`;
 }
 
 function racialBonusToolTipMakeVisible(){
   targetRaceTooltip.id = 'tooltipTextVis';
+}
+
+function addRacialBonustoStatValue(){
+  var targetStatInput = document.getElementById(`${raceBonusArray[0].toLowerCase()}Number`);
+  targetStatInput.value = raceBonusArray[1];
 }
 // Helper Functions
 function displayStatBlockListener(){
@@ -505,9 +509,10 @@ populateAlignmentSelect();
 targetCharacterClassForm.addEventListener('change', CharacterClassSelectListener);
 targetFirstSkillSelectElement.addEventListener('change',skillSelectFirstListener);
 targetRaceSelect.addEventListener('change', displayRacialBonuses);
+targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
+targetRaceSelect.addEventListener('change', addRacialBonustoStatValue);
 targetSubmitButtonElement.addEventListener('click', submitListener);
 targetStatButton.addEventListener('click', generateStatBlockListener);
 targetAbilityScoreDiv.addEventListener('click',abilityScoreChangeListener);
-targetRaceSelect.addEventListener('change', racialBonusToolTipMakeVisible);
 //todo: Rename "ability" variables to be more clear.
 
