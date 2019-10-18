@@ -190,41 +190,41 @@ function populateArmorClass(){
 }
 function populateSkillModifiers(){
   var targetAcrobaticsNode = document.getElementById('acrobatics');
-  targetAcrobaticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetAcrobaticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetAnimalHandlingNode = document.getElementById('animalHandling');
-  targetAnimalHandlingNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetAnimalHandlingNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetArcanaNode = document.getElementById('arcana');
-  targetArcanaNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetArcanaNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetAthleticsNode = document.getElementById('athletics');
-  targetAthleticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  targetAthleticsNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} || `);
   var targetDeceptionNode = document.getElementById('deception');
-  targetDeceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetDeceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetHistoryNode = document.getElementById('history');
-  targetHistoryNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetHistoryNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetInsightNode = document.getElementById('insight');
-  targetInsightNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetInsightNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetIntimidationNode = document.getElementById('intimidation');
-  targetIntimidationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetIntimidationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetInvestigationNode = document.getElementById('investigation');
-  targetInvestigationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetInvestigationNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetMedicineNode = document.getElementById('medicine');
-  targetMedicineNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetMedicineNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetNatureNode = document.getElementById('nature');
-  targetNatureNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetNatureNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetPerceptionNode = document.getElementById('perception');
-  targetPerceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetPerceptionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetPerformanceNode = document.getElementById('performance');
-  targetPerformanceNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetPerformanceNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetPersuasionNode = document.getElementById('persuasion');
-  targetPersuasionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetPersuasionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
   var targetReligionNode = document.getElementById('religion');
-  targetReligionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetReligionNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetSleightOfHandNode = document.getElementById('sleightOfHand');
-  targetSleightOfHandNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetSleightOfHandNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targeStealthNode = document.getElementById('stealth');
-  targeStealthNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targeStealthNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetSurvivalNode = document.getElementById('survival');
-  targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetSurvivalNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
 }
 function populateBackground(){
   var targetBackgroundNode = document.getElementById('background');
@@ -243,17 +243,17 @@ function populateAbilities(){
 }
 function populateSavingThrows(){
   var targetStrengthSTNode = document.getElementById('strengthST');
-  targetStrengthSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} `);
+  targetStrengthSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[0]} || `);
   var targetDexteritySTNode = document.getElementById('dexterityST');
-  targetDexteritySTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} `);
+  targetDexteritySTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[1]} || `);
   var targetConstitutionSTNode = document.getElementById('constitutionST');
-  targetConstitutionSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[2]} `);
+  targetConstitutionSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[2]} || `);
   var targetIntelligenceSTNode = document.getElementById('intelligenceST');
-  targetIntelligenceSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} `);
+  targetIntelligenceSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[3]} || `);
   var targetWisdomSTNode = document.getElementById('wisdomST');
-  targetWisdomSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} `);
+  targetWisdomSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[4]} || `);
   var targetCharismaSTNode = document.getElementById('charismaST');
-  targetCharismaSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} `);
+  targetCharismaSTNode.insertAdjacentHTML('afterbegin', `${currentCharacter.abilityModifiers[5]} || `);
 }
 
 

@@ -9,32 +9,42 @@
 </head>
 <body id="container">
   <header>
-    <nav>
-      <a href="../index.html">Character Creator</a>
-      <a href="./selectCharacter.html">Select Characters</a>
-      <a id="currentPage">About Us</a>
+    <a href="" id="logo"><img src="../imgs/DnD_Logo.png" alt="DnD_Logo" height="50" ></a>
+    <nav id="navBar">
+      <ul class="navLinks">
+        <li class="navItems"><a href="../index.html">Character Creator</a></li>
+        <li class="navItems"><a href="./selectCharacter.html">Select Characters</a></li>
+        <li class="navItems"><a id="currentPage">About Us</a></li>
+      </ul>
     </nav>
   </header>
   <main>
-    <section class="biography" id="bio1">
-      <!-- This Image Tag will point to one of our faces. -->
-      <img/> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
-      <a><img/>GitHub Link and Image goes here:</a>
-      <a><img/>LinkedIn Link and Image goes here:</a>
-    </section>
-    <section class="biography" id="bio2">
-        <img/> 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
-        <a><img/>GitHub Link and Image goes here:</a>
-        <a><img/>LinkedIn Link and Image goes here:</a>
-    </section>
-    <section class="biography" id="bio3">
-        <img/> 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
-        <a><img/>GitHub Link and Image goes here:</a>
-        <a><img/>LinkedIn Link and Image goes here:</a>
-    </section>
+    <h1>About Us</h1>
+    <div id="content">
+      <section class="biography" id="bio1">
+        <div class="picText">
+          <!-- This Image Tag will point to one of our faces. -->
+          <img/> 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
+        </div>
+        <div class="socialMedia">
+          <a><img/>GitHub Link and Image goes here:</a>
+          <a><img/>LinkedIn Link and Image goes here:</a>
+        </div>
+      </section>
+      <section class="biography" id="bio2">
+          <img/> 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
+          <a><img/>GitHub Link and Image goes here:</a>
+          <a><img/>LinkedIn Link and Image goes here:</a>
+      </section>
+      <section class="biography" id="bio3">
+          <img/> 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam modi illum sapiente. Ipsam corporis, fuga suscipit similique dolor iusto dolorum tempore eveniet saepe assumenda, magnam sit perferendis velit numquam.</p>
+          <a><img/>GitHub Link and Image goes here:</a>
+          <a><img/>LinkedIn Link and Image goes here:</a>
+      </section>
+    </div>
     <footer>
       <canvas id="ourChart" width="150px" height="150px"></canvas>
     </footer>
