@@ -1,6 +1,27 @@
 body {
   font-family: 'Alegreya SC', serif;
 }
+#submitButton {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       8px 20px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 14px/1 "Alegreya", sans-serif;
+  text-align:    center;
+}
+#statButton {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       8px 10px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 14px/1 "Alegreya", sans-serif;
+  text-align:    center;
+  margin-left: 15px;
+}
 header {
   height: 150px;
   grid-area: header;

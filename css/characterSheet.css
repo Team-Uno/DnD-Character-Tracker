@@ -5,6 +5,7 @@ body {
   height: 250px;
   width: 250px;
 }
+#rollDiceButton
 header {
   height: 150px;
   grid-area: header;
@@ -173,6 +174,14 @@ h1{
   margin-bottom: 5px;
 }
 #rollDiceButton {
+  background:    #fdf5e6;
+  border:        2px solid #000000;
+  border-radius: 5px;
+  padding:       8px 10px;
+  color:         #000000;
+  display:       inline-block;
+  font:          normal bold 14px/1 "Alegreya", sans-serif;
+  text-align:    center;
   margin-top: 5px;
 }
 #sectionThree {
@@ -220,11 +229,11 @@ h1{
 }
 #skills {
   height: 334px;
-  width: 250px;
+  width: 300px;
 }
 #abilities {
   height: 334px;
-  width: 250px;
+  width: 300px;
   overflow: auto;
 }
 #sectionFive {
